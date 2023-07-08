@@ -98,7 +98,7 @@ export default function Home() {
                     >
                         <svg
                             id="theme-toggle-dark-icon"
-                            className={`${isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
+                            className={`${!isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ export default function Home() {
                         </svg>
                         <svg
                             id="theme-toggle-light-icon"
-                            className={`${!isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
+                            className={`${isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
