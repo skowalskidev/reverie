@@ -1,26 +1,19 @@
 "use client";
 
-import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 
 export default function Home() {
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
     useEffect(() => {
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const colorTheme = localStorage.getItem('color-theme');
-        const isDarkMode = colorTheme === 'dark' || (!colorTheme && prefersDarkMode);
-
-        if (isDarkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        setIsDarkMode(colorTheme ? colorTheme === 'dark' : prefersDarkMode);
     }, []);
 
     const toggleTheme = () => {
-        const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.classList.toggle('dark');
+        setIsDarkMode((prevMode) => !prevMode);
+        const newTheme = isDarkMode ? 'light' : 'dark';
         localStorage.setItem('color-theme', newTheme);
     };
 
@@ -78,19 +71,6 @@ export default function Home() {
 
     return (
         <>
-            <Head>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                        document.documentElement.classList.add('dark');
-                        } else {
-                        document.documentElement.classList.remove('dark');
-                        }
-                    `,
-                    }}
-                />
-            </Head>
             <div className="fixed top-4 right-4 z-10">
                 <button
                     id="theme-toggle"
@@ -100,7 +80,7 @@ export default function Home() {
                 >
                     <svg
                         id="theme-toggle-dark-icon"
-                        className={`${document.documentElement.classList.contains('dark') ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
+                        className={`${isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +89,7 @@ export default function Home() {
                     </svg>
                     <svg
                         id="theme-toggle-light-icon"
-                        className={`${!document.documentElement.classList.contains('dark') ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
+                        className={`${!isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -123,13 +103,12 @@ export default function Home() {
                 </button>
             </div>
 
-            <main>
+            <main className={isDarkMode ? 'dark' : ''}>
                 <section className="bg-white dark:bg-gray-900">
                     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
                         <div className="mr-auto place-self-center lg:col-span-7">
-                            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">100% transparent PRO web development</h1>
+                            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-gray-900 dark:text-white">100% transparent PRO web development</h1>
                             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">High quality websites at fair prices</p>
-
                         </div>
                         <div className="lg:mt-0 lg:col-span-5 flex flex-col">
                             <h2 className="text-2xl font-bold">Get an instant AI Quote</h2>
@@ -217,7 +196,7 @@ export default function Home() {
                                 </span>
                                 <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                     <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">2 months ago</time>
-                                    <div className="text-sm font-normal text-gray-500 dark:text-gray-300">We receive your  project details</div>
+                                    <div className="text-sm font-normal text-gray-500 sm:text-base dark:text-gray-300">We receive your project details</div>
                                 </div>
                             </li>
                             <li className="mb-10 ml-6">
@@ -227,7 +206,7 @@ export default function Home() {
                                 <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-700 dark:border-gray-600">
                                     <div className="items-center justify-between mb-3 sm:flex">
                                         <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">1 month ago</time>
-                                        <div className="text-sm font-normal text-gray-500 lex dark:text-gray-300">Approve the design proposal provided by the designer</div>
+                                        <div className="text-sm font-normal text-gray-500 sm:text-base dark:text-gray-300">Approve the design proposal provided by the designer</div>
                                     </div>
                                     <div className="p-3 text-xs italic font-normal text-gray-500 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-600 dark:border-gray-500 dark:text-gray-300">Hi ya'll! I wanted to share a webinar zeroheight is having regarding how to best measure your design system! This is the second session of our new webinar series on #DesignSystems discussions where we'll be speaking about Measurement.</div>
                                 </div>
@@ -238,7 +217,7 @@ export default function Home() {
                                 </span>
                                 <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                     <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">1 month ago</time>
-                                    <div className="text-sm font-normal text-gray-500 dark:text-gray-300">Development commences based on the approved design</div>
+                                    <div className="text-sm font-normal text-gray-500 sm:text-base dark:text-gray-300">Development commences based on the approved design</div>
                                 </div>
                             </li>
 
@@ -248,7 +227,7 @@ export default function Home() {
                                 </span>
                                 <div className="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:bg-gray-700 dark:border-gray-600">
                                     <time className="mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0">1 day ago</time>
-                                    <div className="text-sm font-normal text-gray-500 lex dark:text-gray-300">Your webiste is <span className="font-semibold text-gray-900 dark:text-white">Online</span></div>
+                                    <div className="text-sm font-normal text-gray-500 sm:text-base dark:text-gray-300">Your website is <span className="font-semibold text-gray-900 dark:text-white">Online</span></div>
                                 </div>
                             </li>
                         </ol>
