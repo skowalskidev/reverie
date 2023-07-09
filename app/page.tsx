@@ -125,7 +125,7 @@ export default function Home() {
 
             <main className='mx-auto max-w-screen-lg'>
                 <section className="bg-white dark:bg-gray-900 mt-28 flex items-end">
-                    <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 grow items-center">
+                    <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
                         <div className="mr-auto place-self-center lg:col-span-7 flex flex-col gap-4">
                             <div className='h-[300px] relative overflow-hidden rounded'>
                                 <Image
@@ -143,11 +143,11 @@ export default function Home() {
                         <div className="lg:mt-0 lg:col-span-5 flex flex-col">
                             {!(estimate.developerHours > 0 && estimate.hourlyRate > 0) && (
                                 <>
-                                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Get a quick estimate</h2>
+                                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Get a quick estimate</h2>
                                     <form onSubmit={(e) => e.preventDefault()} className='flex flex-col gap-3'>
 
-                                        <h3 className="text-lg font-medium text-gray-900 dark:text-white">How many pages?</h3>
-                                        <ul className="grid w-full gap-6 md:grid-cols-4">
+                                        <h3 className="text-lg font-medium text-gray-900 dark:text-white text-center">How many pages?</h3>
+                                        <ul className="grid w-full gap-3 md:grid-cols-4">
                                             <li>
                                                 <input
                                                     type="radio"
@@ -227,34 +227,26 @@ export default function Home() {
 
                                         </ul>
 
-                                        {/* <label htmlFor="numberOfPages" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Number of Pages</label>
-                                        <input
-                                            type="text"
-                                            inputMode="numeric"
-                                            id="numberOfPages"
-                                            value={numberOfPages}
-                                            onChange={handleNumberOfPagesChange}
-                                            onKeyPress={(e) => {
-                                                const onlyNumbers = /^[0-9\b]+$/;
-                                                if (!onlyNumbers.test(e.key)) {
-                                                    e.preventDefault();
-                                                }
-                                            }}
-                                            className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-transparent dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            placeholder="Number of Pages"
-                                        /> */}
-
-                                        <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                                            <input id="bordered-checkbox-1" type="checkbox" value="" name="bordered-checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="bordered-checkbox-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Accept payments</label>
+                                        <div className='flex'>
+                                            <input type="checkbox" id="accept-payments" value="" className="hidden peer" />
+                                            <label htmlFor="accept-payments" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700">
+                                                {/* <svg className="text-red-600 w-5 h-5" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z" /></svg> */}
+                                                <div className="block text-sm font-medium">Accept payments</div>
+                                            </label>
                                         </div>
-                                        <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                                            <input id="bordered-checkbox-1" type="checkbox" value="" name="bordered-checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="bordered-checkbox-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">List products / properties</label>
+                                        <div className='flex'>
+                                            <input type="checkbox" id="list-products" value="" className="hidden peer" />
+                                            <label htmlFor="list-products" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700">
+                                                {/* <svg className="text-red-600 w-5 h-5" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z" /></svg> */}
+                                                <div className="block text-sm font-medium">List products / properties</div>
+                                            </label>
                                         </div>
-                                        <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                                            <input id="bordered-checkbox-1" type="checkbox" value="" name="bordered-checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                            <label htmlFor="bordered-checkbox-1" className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Blog section</label>
+                                        <div className='flex'>
+                                            <input type="checkbox" id="blog-section" value="" className="hidden peer" />
+                                            <label htmlFor="blog-section" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700">
+                                                {/* <svg className="text-red-600 w-5 h-5" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z" /></svg> */}
+                                                <div className="block text-sm font-medium">Blog section</div>
+                                            </label>
                                         </div>
                                         <div className='flex'>
                                             <button
@@ -266,13 +258,14 @@ export default function Home() {
                                                 </span>
                                             </button>
                                         </div>
+
                                     </form>
                                 </>
                             )}
 
                             {estimate.developerHours > 0 && estimate.hourlyRate > 0 && (
                                 <>
-                                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Your Quote</h2>
+                                    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Your Quote</h2>
                                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                         <thead className="text-xs text-white uppercase bg-gradient-to-br from-purple-600 to-blue-500 dark:bg-blue-500">
                                             <tr>
@@ -379,9 +372,9 @@ export default function Home() {
                     </div>
                 </section>
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                        <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Mission</h2>
+                    <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                        <div className="mt-4 md:mt-0">
+                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our mission</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
                                 <li className="flex items-center space-x-3">
                                     <svg
@@ -457,26 +450,13 @@ export default function Home() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 mt-8">
-                            <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-                            <img className="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
-                        </div>
+                        <img className="w-full rounded" src="/images/mission.png" alt="dashboard image" />
                     </div>
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
                     <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                        <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">How It Works</h2>
-                            <ol className="list-decimal list-inside">
-                                <li>You get a 100% transparent cost breakdown</li>
-                                <li>We vet and manage professional contractors for you</li>
-                                <li>We check their work to ensure that it meets technical quality standards</li>
-                                <li>You get the site you paid for</li>
-                            </ol>
-                        </div>
                         <div className="grid grid-cols-1 gap-4 mt-8">
-
                             <div className="relative overflow-x-auto">
                                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                                     <thead className="text-xs text-white uppercase bg-gradient-to-br from-purple-600 to-blue-500 dark:bg-blue-500">
@@ -581,26 +561,33 @@ export default function Home() {
 
                             </div>
                         </div>
-                    </div>
-                </section>
-
-                <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Why are we doing this?</h2>
-                            <p className="mb-4 text-gray-500 dark:text-gray-400">Our founder has been a contractor and grew frustrated with seeing agencies charge 100% markups for bringing the client in the door, meaning you pay 2X for your webite. Another pain point was seeing outdated technology being used for no justified reason other than refusing to spend time learning modern technology and not understanding the benefits of using today's technology. This industry is like the wild west and it's time to set quality standards and make the prices fair.</p>
-                        </div>
-                        <div className="grid grid-cols-2 gap-4 mt-8">
-                            <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-                            <img className="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
+                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">How it works</h2>
+                            <ol className="list-decimal list-inside">
+                                <li>You get a 100% transparent cost breakdown</li>
+                                <li>We vet and manage professional contractors for you</li>
+                                <li>We check their work to ensure that it meets technical quality standards</li>
+                                <li>You get the site you paid for</li>
+                            </ol>
                         </div>
                     </div>
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                        <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Why Choose Us</h2>
+                    <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                        <div className="mt-4 md:mt-0">
+                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our story</h2>
+                            <p className="mb-4 text-gray-500 dark:text-gray-400">Our founder has been a contractor and grew frustrated with seeing agencies charge 100% markups for bringing the client in the door, meaning you pay 2X for your website. Another pain point was seeing outdated technology being used for no justified reason other than being complacent in old ways and not understanding the benefits of using today's technology. <br></br><br></br>The web development business is still in the wild west era and it's time to set quality standards and make the prices fair.</p>
+                        </div>
+                        <img className="w-full rounded" src="/images/scroll.png" alt="dashboard image" />
+                    </div>
+                </section>
+
+                <section className="bg-white dark:bg-gray-900">
+                    <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                        <img className="w-full rounded" src="/images/receipt.png" alt="dashboard image" />
+                        <div className="mt-4 md:mt-0">
+                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Why choose us</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
                                 <li className="flex items-center space-x-3">
                                     <svg
@@ -711,10 +698,6 @@ export default function Home() {
                                     <span>We don't compromise on design</span>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="grid grid-cols-2 gap-4 mt-8">
-                            <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-                            <img className="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
                         </div>
                     </div>
                 </section>
