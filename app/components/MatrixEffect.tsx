@@ -30,17 +30,17 @@ const MatrixEffect = () => {
                 });
 
                 const newRows = [...prevRows, newRow];
-                return newRows.length > 10 ? newRows.slice(1) : newRows;
+                return newRows.length > 15 ? newRows.slice(1) : newRows;
             });
-        }, 300);
+        }, 500);
 
         return () => clearInterval(interval);
     }, []);
 
     const generateRandomRow = () => {
-        const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$$$<>="\'&/';
+        const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$<>="\'&/';
         const rowLength = 19;
-        const availablePrices = ['1', '10', '50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
+        const availablePrices = ['1', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
         let price = availablePrices[Math.floor(Math.random() * availablePrices.length)];
         let followPrice = false;
         const row = Array.from(Array(rowLength).keys()).map(() => {
@@ -87,7 +87,7 @@ const MatrixEffect = () => {
 
     const getCharacterClass = (character: Character) => {
         if (character?.highlight) {
-            return 'font-extrabold';
+            return 'font-extrabold !text-purple-600';
         }
         else if (character?.fadeCount && character?.fadeCount > 0) {
             return 'font-extrabold';
@@ -117,7 +117,7 @@ const MatrixEffect = () => {
                     {row.map((character: Character, characterIndex) => (
                         <div
                             key={characterIndex}
-                            className={`text-gray-500 dark:text-gray-400 text-xl w-5 ml-1 ${getCharacterClass(character)}`}
+                            className={`text-gray-500 dark:text-gray-400 text-sm w-5 ml-1 ${getCharacterClass(character)}`}
                             style={getCharacterStyle(character)}
                         >
                             {character?.char}
