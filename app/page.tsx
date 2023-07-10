@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
+import MatrixEffect from './components/MatrixEffect';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -128,13 +129,7 @@ export default function Home() {
                     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
                         <div className="mr-auto place-self-center lg:col-span-7 flex flex-col gap-4">
                             <div className='h-[300px] relative overflow-hidden rounded'>
-                                <Image
-                                    src="/images/hero.png"
-                                    width={500}
-                                    height={500}
-                                    className='object-cover object-top w-full h-full'
-                                    alt="Picture of the author"
-                                />
+                                <MatrixEffect />
                             </div>
                             <h1 className=" items-center text-5xl font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-gradient-to-br from-purple-600 to-blue-500 rounded dark:bg-blue-500">transparent</mark>  <br></br>web development</h1>
 
