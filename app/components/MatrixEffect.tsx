@@ -6,7 +6,7 @@ type Character = null | {
     fadeCount?: number;
 }
 
-const maxFadeCount = 5;
+const maxFadeCount = 8;
 
 const MatrixEffect = () => {
     const [rows, setRows] = useState([]);
@@ -40,7 +40,7 @@ const MatrixEffect = () => {
     const generateRandomRow = () => {
         const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$$$<>="\'&/';
         const rowLength = 19;
-        const availablePrices = ['100', '200', '300', '400', '500', '600', '700', '800', '900', '1000', '2000', '3000', '4000', '5000'];
+        const availablePrices = ['1', '10', '50', '100', '200', '300', '400', '500', '600', '700', '800', '900'];
         let price = availablePrices[Math.floor(Math.random() * availablePrices.length)];
         let followPrice = false;
         const row = Array.from(Array(rowLength).keys()).map(() => {
@@ -98,8 +98,13 @@ const MatrixEffect = () => {
 
     const getCharacterStyle = (character: Character) => {
         if (!character?.highlight && character?.fadeCount && character?.fadeCount > 0) {
+            if (character.fadeCount === 1) {
+                return {
+                    opacity: 0,
+                }
+            }
             return {
-                opacity: character.fadeCount / (maxFadeCount * 2),
+                opacity: character.fadeCount / (maxFadeCount * 4),
             };
         }
     };
