@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import MatrixEffect from './components/MatrixEffect';
+import StickyMenuCTA from './components/StickyMenuCTA';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -12,6 +13,7 @@ export default function Home() {
         const colorTheme = localStorage.getItem('color-theme');
         const isDarkModeTemp = colorTheme ? colorTheme === 'dark' : prefersDarkMode;
         setIsDarkMode(isDarkModeTemp);
+        // @ts-ignore
         document.querySelector("body").classList.add(isDarkModeTemp ? 'dark' : 'light');
     }, []);
 
@@ -20,7 +22,9 @@ export default function Home() {
         const newTheme = isDarkModeTemp ? 'dark' : 'light';
         setIsDarkMode(isDarkModeTemp);
         localStorage.setItem('color-theme', newTheme);
+        // @ts-ignore
         document.querySelector("body").classList.remove('dark', 'light');
+        // @ts-ignore
         document.querySelector("body").classList.add(newTheme);
     };
 
@@ -68,62 +72,35 @@ export default function Home() {
         });
     };
 
-    const handleNumberOfPagesChange = (e) => {
-        let newValue = e.target.value;
+    const [heroSectionHeight, setHeroSectionHeight] = useState(0);
 
-        // Remove leading zero if present and value is not empty
-        if (newValue.length > 1 && newValue.startsWith("0")) {
-            newValue = newValue.slice(1);
-        }
+    useEffect(() => {
+        const calculateHeroSectionHeight = () => {
+            const heroSectionElement = document.getElementById('hero-section');
+            if (heroSectionElement) {
+                return heroSectionElement.getBoundingClientRect().height;
+            }
+            return 0;
+        };
 
-        setNumberOfPages(newValue);
-    };
+        const handleResize = () => {
+            const height = calculateHeroSectionHeight();
+            setHeroSectionHeight(height);
+        };
 
-    const handleWebsiteDescriptionChange = (event) => {
-        setWebsiteDescription(event.target.value);
-    };
+        // Initial calculation
+        const initialHeight = calculateHeroSectionHeight();
+        setHeroSectionHeight(initialHeight);
+
+        // Recalculate height on window resize
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <>
-            {/* <div className="fixed w-full top-4 z-10 px-4 flex justify-between">
-                <div>
-                    <p className="text-lg font-light text-gray-500/100 dark:text-gray-400/100">Reverie</p>
-                    <p className="ml-4 text-lg font-light text-gray-500/50 dark:text-gray-400/50">Reverie</p>
-                    <p className="ml-2 text-lg font-light text-gray-500/25 dark:text-gray-400/25">Reverie</p>
-                </div>
-                <div>
-                    <button
-                        id="theme-toggle"
-                        type="button"
-                        className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
-                        onClick={toggleTheme}
-                    >
-                        <svg
-                            id="theme-toggle-dark-icon"
-                            className={`${!isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                        <svg
-                            id="theme-toggle-light-icon"
-                            className={`${isDarkMode ? 'w-5 h-5' : 'hidden w-5 h-5'}`}
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                                fillRule="evenodd"
-                                clipRule="evenodd"
-                            ></path>
-                        </svg>
-                    </button>
-                </div>
-            </div> */}
-
             <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 ">
                 <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
                     <a href="#" className="flex items-top">
@@ -132,16 +109,12 @@ export default function Home() {
                         <p className="hidden sm:block ml-2 text-lg font-light text-gray-500/25 dark:text-gray-400/25">Reverie</p>
                     </a>
                     <div className="flex md:order-2 gap-2 items-center">
-                        <button type="button" className="grow inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                            <a href="#get-estimate" className='grow px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
-                                Get estimate
-                            </a>
-                        </button>
+                        <StickyMenuCTA heroSectionHeight={heroSectionHeight} />
 
                         <button
                             id="theme-toggle"
                             type="button"
-                            className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+                            className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-3"
                             onClick={toggleTheme}
                         >
                             <svg
@@ -215,7 +188,7 @@ export default function Home() {
             </button>
 
             <main className='mx-auto max-w-screen-lg'>
-                <section id='get-estimate' className="bg-white dark:bg-gray-900 mt-28 flex items-end">
+                <section id='hero-section' className="bg-white dark:bg-gray-900 mt-28 flex items-end">
                     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
                         <div className="mr-auto place-self-center lg:col-span-7 flex flex-col gap-4">
                             <div className='h-[300px] relative overflow-hidden rounded'>
