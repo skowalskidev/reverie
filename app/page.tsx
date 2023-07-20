@@ -403,45 +403,40 @@ export default function Home() {
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Free guide</h2>
                             <p className="text-gray-500 sm:text-xl dark:text-gray-400 text-center">How do I get a good quality website for a market price?</p>
                         </div>
-                        <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-                            <div className='flex flex-col items-stretch gap-2'>
-                                <div className='relative h-44'>
-                                    <Image
-                                        src="/images/money.png"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        fill
-                                        alt="Picture of money"
-                                        className='rounded object-cover'
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold dark:text-white">How do I not get ripped off / overcharged?</h3>
-                                <p className="text-gray-500 dark:text-gray-400">Find out exactly how much you're paying for each development stage and compare that to the market rates. We haven't seen that yet, that's why we launched Reverie.</p>
+                        <div className="space-y-8 md:grid md:grid-cols-[176px,auto,auto] md:gap-12 md:space-y-0">
+                            <div className='relative w-44 h-44'>
+                                <Image
+                                    src="/images/money.png"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    fill
+                                    alt="Picture of money"
+                                    className='rounded object-cover'
+                                />
                             </div>
-                            <div className='flex flex-col items-stretch gap-2'>
-                                <div className='relative h-44'>
-                                    <Image
-                                        src="/images/podium.png"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        fill
-                                        alt="Picture of a podium"
-                                        className='rounded object-cover'
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold dark:text-white">What’s the best web development agency?</h3>
-                                <p className="text-gray-500 dark:text-gray-400">They all say they're the best though, including us. Go figure. So to make the choice easier we'll make sure you get a quality website for a market price.</p>
+                            <h3 className="text-xl font-bold dark:text-white">How do I not get ripped off / overcharged?</h3>
+                            <p className="text-gray-500 dark:text-gray-400">Find out exactly how much you're paying for each development stage and compare that to the market rates. We haven't seen that yet, that's why we launched Reverie.</p>
+                            <div className='relative w-44 h-44'>
+                                <Image
+                                    src="/images/podium.png"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    fill
+                                    alt="Picture of a podium"
+                                    className='rounded object-cover'
+                                />
                             </div>
-                            <div className='flex flex-col items-stretch gap-2'>
-                                <div className='relative h-44'>
-                                    <Image
-                                        src="/images/technology.png"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        fill
-                                        alt="Picture of money"
-                                        className='rounded object-cover'
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold dark:text-white">What’s the best technology to build my business website?</h3>
-                                <h4 className='text-gray-500 dark:text-gray-400 font-bold'>Good website ranking in Google</h4>
+                            <h3 className="text-xl font-bold dark:text-white">What’s the best web development agency?</h3>
+                            <p className="text-gray-500 dark:text-gray-400">They all say they're the best though, including us. Go figure. So to make the choice easier we'll make sure you get a quality website for a market price.</p>
+                            <div className='relative w-44 h-44'>
+                                <Image
+                                    src="/images/technology.png"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    fill
+                                    alt="Picture of money"
+                                    className='rounded object-cover'
+                                />
+                            </div>
+                            <h3 className="text-xl font-bold dark:text-white">What’s the best technology to build my business website?</h3>
+                            <div><h4 className='text-gray-500 dark:text-gray-400 font-bold'>Good website ranking in Google</h4>
                                 <ul className='text-gray-500 dark:text-gray-400 list-disc'>
                                     <li>
                                         Next.js
@@ -463,58 +458,50 @@ export default function Home() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className='flex flex-col items-stretch gap-2'>
-                                <div className='relative h-44'>
-                                    <Image
-                                        src="/images/dollar.png"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        fill
-                                        alt="Picture of money"
-                                        className='rounded object-cover'
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold dark:text-white">What’s the cheapest way to build a website?</h3>
-                                <p className="text-gray-500 dark:text-gray-400">You can do it yourself using a website builder or Wordpress but consider the quality of the website you're able to produce and the impression you'll make on your customers with a one size fits all design.</p>
+                            <div className='relative w-44 h-44'>
+                                <Image
+                                    src="/images/dollar.png"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    fill
+                                    alt="Picture of money"
+                                    className='rounded object-cover'
+                                />
                             </div>
-                            <div className='flex flex-col items-stretch gap-2'>
-                                <div className='relative h-44'>
-                                    <Image
-                                        src="/images/offers.png"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        fill
-                                        alt="Picture of money"
-                                        className='rounded object-cover'
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold dark:text-white">How to pick a web development agency?</h3>
-                                <p className="text-gray-500 dark:text-gray-400">Get quotes from at least 3 web development agencies, check the technology they're going to use. Or we can do all of that for you and tell you exactly how much we charge for this service.</p>
+                            <h3 className="text-xl font-bold dark:text-white">What’s the cheapest way to build a website?</h3>
+                            <p className="text-gray-500 dark:text-gray-400">You can do it yourself using a website builder or Wordpress but consider the quality of the website you're able to produce and the impression you'll make on your customers with a one size fits all design.</p>
+                            <div className='relative w-44 h-44'>
+                                <Image
+                                    src="/images/offers.png"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    fill
+                                    alt="Picture of money"
+                                    className='rounded object-cover'
+                                />
                             </div>
-                            <div className='flex flex-col items-stretch gap-2'>
-                                <div className='relative h-44'>
-                                    <Image
-                                        src="/images/money.png"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        fill
-                                        alt="Picture of money"
-                                        className='rounded object-cover'
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold dark:text-white">Should I get a Wordpress website in 2023?</h3>
-                                <p className="text-gray-500 dark:text-gray-400">No, you really shouldn't unless you just want an online business card and spend a lot of time and money maintaining it.</p>
+                            <h3 className="text-xl font-bold dark:text-white">How to pick a web development agency?</h3>
+                            <p className="text-gray-500 dark:text-gray-400">Get quotes from at least 3 web development agencies, check the technology they're going to use. Or we can do all of that for you and tell you exactly how much we charge for this service.</p>
+                            <div className='relative w-44 h-44'>
+                                <Image
+                                    src="/images/money.png"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    fill
+                                    alt="Picture of money"
+                                    className='rounded object-cover'
+                                />
                             </div>
-                            <div className='flex flex-col items-stretch gap-2'>
-                                <div className='relative h-44'>
-                                    <Image
-                                        src="/images/code.png"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        fill
-                                        alt="Picture of money"
-                                        className='rounded object-cover'
-                                    />
-                                </div>
-                                <h3 className="text-xl font-bold dark:text-white">I'm not worried about code quality, nobody will see it anyway, right?</h3>
-                                <p className="text-gray-500 dark:text-gray-400">You're kind of right, neither you nor your customer will but Google will notice milliseconds of slower loading times, pushing your website down in search results, so <span className='font-bold'>less clients</span> for you. When you need to maintain your website it will take developers longer meaning they will <span className='font-bold'>charge you more</span>. Finally, Wordpress is the no.1 target for hackers. In your first week after lauch your website admin panel will receive hundreds of login attempts from strangers as well as comments from scammers asking you to click on dodgy website links, <span className='font-bold'>costing you time</span> to protect against.</p>
+                            <h3 className="text-xl font-bold dark:text-white">Should I get a Wordpress website in 2023?</h3>
+                            <p className="text-gray-500 dark:text-gray-400">No, you really shouldn't unless you just want an online business card and spend a lot of time and money maintaining it.</p>
+                            <div className='relative w-44 h-44'>
+                                <Image
+                                    src="/images/code.png"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    fill
+                                    alt="Picture of money"
+                                    className='rounded object-cover'
+                                />
                             </div>
+                            <h3 className="text-xl font-bold dark:text-white">I'm not worried about code quality, nobody will see it anyway, right?</h3>
+                            <p className="text-gray-500 dark:text-gray-400">You're kind of right, neither you nor your customer will but Google will notice milliseconds of slower loading times, pushing your website down in search results, so <span className='font-bold'>less clients</span> for you. When you need to maintain your website it will take developers longer meaning they will <span className='font-bold'>charge you more</span>. Finally, Wordpress is the no.1 target for hackers. In your first week after lauch your website admin panel will receive hundreds of login attempts from strangers as well as comments from scammers asking you to click on dodgy website links, <span className='font-bold'>costing you time</span> to protect against.</p>
                         </div>
                     </div>
                 </section>
