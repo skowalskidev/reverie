@@ -86,7 +86,7 @@ const ExampleTable = () => {
                         Reverie
                     </th>
                     <td className="px-6 py-4">
-                        Our Fee
+                        Quality Control
                     </td>
                     <td className="px-6 py-4">
                         10%

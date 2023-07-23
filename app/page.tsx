@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import MatrixEffect from './components/MatrixEffect';
 import ExampleTable from './components/ExampleTable';
 import FallingChars from './components/FallingChars';
+import DrippingColumn from './components/DrippingColumn';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -126,6 +127,9 @@ export default function Home() {
             </nav>
 
             <main ref={mainRef} className='mx-auto max-w-screen-lg'>
+                <section className="absolute flex justify-center mx-auto left-0 right-0">
+                    <DrippingColumn height={500} />
+                </section>
                 <section id='hero-section' className="bg-white dark:bg-gray-900 mt-28 flex items-end">
                     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
                         <div className="mr-auto place-self-center lg:col-span-7 flex flex-col gap-4">
