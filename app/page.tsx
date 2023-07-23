@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import MatrixEffect from './components/MatrixEffect';
-import EstimateCalculator from './components/EstimateCalculator';
 import ExampleTable from './components/ExampleTable';
+import FallingChars from './components/FallingChars';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -55,6 +55,16 @@ export default function Home() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
+    }, []);
+
+    const mainRef = useRef(null);
+    const [mainHeight, setMainHeight] = useState(0);
+
+    useEffect(() => {
+        if (mainRef.current) {
+            const mainHeight = mainRef.current.clientHeight;
+            setMainHeight(mainHeight);
+        }
     }, []);
 
     return (
@@ -115,7 +125,7 @@ export default function Home() {
                 </div>
             </nav>
 
-            <main className='mx-auto max-w-screen-lg'>
+            <main ref={mainRef} className='mx-auto max-w-screen-lg'>
                 <section id='hero-section' className="bg-white dark:bg-gray-900 mt-28 flex items-end">
                     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
                         <div className="mr-auto place-self-center lg:col-span-7 flex flex-col gap-4">
@@ -131,6 +141,10 @@ export default function Home() {
                             {/* <EstimateCalculator /> */}
                         </div>
                     </div>
+                </section>
+                <section className="absolute flex justify-center mx-auto left-0 right-0">
+                    {/* <FallingChars height={mainHeight} /> */}
+                    <FallingChars height={500} />
                 </section>
                 <section id="free-guide" className="bg-white dark:bg-gray-900">
                     <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">

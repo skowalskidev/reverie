@@ -51,7 +51,8 @@ const ExampleTable = () => {
                     </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                        <img className="w-10 h-10 rounded-full object-cover shrink-0" src="/images/logos/vercel-favicon.ico" alt="Jese image" />
                         Vercel
                     </th>
                     <td className="px-6 py-4">
@@ -65,7 +66,8 @@ const ExampleTable = () => {
                     </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                        <img className="w-10 h-10 rounded-full object-cover shrink-0" src="/images/logos/sanity-logo.webp" alt="Jese image" />
                         Sanity.io
                     </th>
                     <td className="px-6 py-4">
@@ -79,7 +81,8 @@ const ExampleTable = () => {
                     </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                        <div className="w-10 h-10 rounded-full object-cover shrink-0 flex items-center justify-center text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">R</div>
                         Reverie
                     </th>
                     <td className="px-6 py-4">
