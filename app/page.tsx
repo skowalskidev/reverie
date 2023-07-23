@@ -3,8 +3,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import MatrixEffect from './components/MatrixEffect';
 import ExampleTable from './components/ExampleTable';
-import FallingChars from './components/FallingChars';
 import DrippingColumn from './components/DrippingColumn';
+import FallingChars from './components/FallingChars';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -115,7 +115,7 @@ export default function Home() {
                         </button>
                     </div>
                     <div className="items-center justify-center hidden w-fit md:flex md:order-1 absolute mx-auto left-0 right-0" id="navbar-sticky">
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
                             <li>
                                 <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                                     <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
@@ -128,7 +128,7 @@ export default function Home() {
 
             <main ref={mainRef} className='mx-auto max-w-screen-lg'>
                 <section className="absolute flex justify-center mx-auto left-0 right-0">
-                    <DrippingColumn height={500} />
+                    <DrippingColumn height={mainHeight} />
                 </section>
                 <section id='hero-section' className="bg-white dark:bg-gray-900 mt-28 flex items-end">
                     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
@@ -145,10 +145,6 @@ export default function Home() {
                             {/* <EstimateCalculator /> */}
                         </div>
                     </div>
-                </section>
-                <section className="absolute flex justify-center mx-auto left-0 right-0">
-                    {/* <FallingChars height={mainHeight} /> */}
-                    <FallingChars height={500} />
                 </section>
                 <section id="free-guide" className="bg-white dark:bg-gray-900">
                     <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">

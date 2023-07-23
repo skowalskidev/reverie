@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 type Props = {
     height: number;
@@ -39,15 +39,20 @@ function generateColumn(numRows: number): Char[] {
 }
 
 function DrippingColumn({ height }: Props) {
-    const numRows = 20;
-    const trailLength = 10;
+    const charHeight = 24; // adjust according to your styling
+    const numRowsRef = useRef(Math.floor(height / charHeight));
     const [chars, setChars] = useState([]);
+
     useEffect(() => {
-        setChars(generateColumn(numRows));
+        setChars(generateColumn(numRowsRef.current));
+    }, [height]);
+
+    // Update numRowsRef whenever height changes
+    useEffect(() => {
+        numRowsRef.current = Math.floor(height / charHeight);
     }, [height]);
 
     function addNewChar() {
-        console.log('timeout');
         const newChar: FallingChar = {
             char: String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33)),
             type: CharType.FALLING,
@@ -76,7 +81,7 @@ function DrippingColumn({ height }: Props) {
                             opacity: 1,
                         } as TrailingChar;
                         const nextIndex = index += 1;
-                        if (nextIndex < numRows) {
+                        if (nextIndex < numRowsRef.current) {
                             newChars[nextIndex] = {
                                 char: String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33)),
                                 type: CharType.FALLING,
@@ -95,7 +100,7 @@ function DrippingColumn({ height }: Props) {
                 return newChars;
             });
         }, 100);
-    }, []);
+    }, [numRowsRef.current]);
 
     return (
         <div className='flex flex-col justify-center h-full w-4'>
