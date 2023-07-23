@@ -61,7 +61,7 @@ function DrippingColumn({ height }: Props) {
         setChars(prevChars => [newChar, ...prevChars.slice(1)]);
 
         // Set a new timeout with a random interval between 100 and 500 milliseconds
-        const randomInterval = Math.random() * (1500 - 1000) + 1000;
+        const randomInterval = Math.random() * (15000 - 2000) + 2000;
         setTimeout(addNewChar, randomInterval);
     }
 
@@ -107,7 +107,7 @@ function DrippingColumn({ height }: Props) {
             {chars.map((char: Char, i) => {
                 return (
                     <div
-                        className={`text-center ${char.type === CharType.FALLING ? 'font-bold text-purple-600' : 'text-purple-300'}`}
+                        className={`text-center text-xs ${char.type === CharType.FALLING ? 'font-bold text-purple-600' : 'text-purple-300'}`}
                         key={i}
                         style={{
                             opacity: char.opacity != null ? char.opacity : 1,

@@ -129,6 +129,11 @@ export default function Home() {
             <main ref={mainRef} className='mx-auto max-w-screen-lg'>
                 <section className="absolute flex justify-center mx-auto left-0 right-0">
                     <DrippingColumn height={mainHeight} />
+                    <DrippingColumn height={mainHeight} />
+                    <DrippingColumn height={mainHeight} />
+                    <DrippingColumn height={mainHeight} />
+                    <DrippingColumn height={mainHeight} />
+                    <DrippingColumn height={mainHeight} />
                 </section>
                 <section id='hero-section' className="bg-white dark:bg-gray-900 mt-28 flex items-end">
                     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
