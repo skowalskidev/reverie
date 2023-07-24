@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ExampleTable from './components/ExampleTable';
 import DrippingColumn from './components/DrippingColumn';
+import StickyMenuCTA from './components/StickyMenuCTA';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -74,7 +75,7 @@ export default function Home() {
                         <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
                     </a> */}
                     <div className="flex md:order-2 gap-2 items-center">
-                        {/* <StickyMenuCTA heroSectionHeight={heroSectionHeight} /> */}
+                        <StickyMenuCTA alwaysShow heroSectionHeight={heroSectionHeight} />
 
                         <button
                             id="theme-toggle"
