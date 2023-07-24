@@ -4,30 +4,23 @@ type Props = {
     height: number;
 };
 
-
-type Char = TrailingChar | FallingChar;
-
 enum CharType {
     TRAILING,
     FALLING,
 }
 
-type CharBase = {
+type Char = {
     type: CharType;
     char: string;
-}
-
-type TrailingChar = CharBase & {
     opacity: number;
-};
-
-type FallingChar = CharBase;
+}
 
 function generateColumn(numRows: number): Char[] {
     return [
         {
             char: String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33)),
             type: CharType.FALLING,
+            opacity: 1,
         },
         ...Array.from({ length: numRows - 1 }, () => {
             return {
@@ -41,7 +34,7 @@ function generateColumn(numRows: number): Char[] {
 function DrippingColumn({ height }: Props) {
     const charHeight = 24; // adjust according to your styling
     const numRowsRef = useRef(Math.floor(height / charHeight));
-    const [chars, setChars] = useState([]);
+    const [chars, setChars] = useState<Char[]>([]);
 
     useEffect(() => {
         setChars(generateColumn(numRowsRef.current));
@@ -53,9 +46,10 @@ function DrippingColumn({ height }: Props) {
     }, [height]);
 
     function addNewChar() {
-        const newChar: FallingChar = {
+        const newChar: Char = {
             char: String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33)),
             type: CharType.FALLING,
+            opacity: 1,
         };
 
         setChars(prevChars => [newChar, ...prevChars.slice(1)]);
@@ -79,20 +73,20 @@ function DrippingColumn({ height }: Props) {
                             char: char.char,
                             type: CharType.TRAILING,
                             opacity: 1,
-                        } as TrailingChar;
+                        } as Char;
                         const nextIndex = index += 1;
                         if (nextIndex < numRowsRef.current) {
                             newChars[nextIndex] = {
                                 char: String.fromCharCode(Math.floor(Math.random() * (126 - 33) + 33)),
                                 type: CharType.FALLING,
-                            } as FallingChar;
+                            } as Char;
                         }
                     } else {
                         if (char.opacity > 0) {
                             newChars[index] = {
                                 ...newChars[index],
                                 opacity: char.opacity - 0.1,
-                            } as TrailingChar;
+                            } as Char;
                         }
                     }
                 }
