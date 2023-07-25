@@ -142,7 +142,7 @@ export default function Home() {
                         <div className="grid grid-cols-1 gap-4 mt-8">
                             <h1 className="items-center text-5xl leading-normal font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-gradient-to-br from-purple-600 to-blue-500 rounded dark:bg-blue-500">transparent</mark>  <br></br>web development</h1>
 
-                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Fast websites at fair prices,<br></br>from real people</p>
+                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Buy a custom website,<br></br>see who got paid</p>
 
                         </div>
                         <div className='px-4 w-[calc(100%+32px)] overflow-x-auto'>
@@ -157,11 +157,6 @@ export default function Home() {
                             <div className="hidden gap-20 lg:gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
                                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-right">Free</h2>
                                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-left">guide</h2>
-                            </div>
-                            <p className="lg:hidden text-gray-500 sm:text-xl dark:text-gray-400 text-left">How do I get a 'good' website for a market price?</p>
-                            <div className="hidden gap-20 lg:gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
-                                <p className="text-gray-500 sm:text-xl dark:text-gray-400 text-right">How do I get a 'good'</p>
-                                <p className="text-gray-500 sm:text-xl dark:text-gray-400 text-left">website for a market price?</p>
                             </div>
                         </div>
                         <div className="space-y-8 md:grid md:grid-cols-2 gap-20 lg:gap-32 md:space-y-0">
