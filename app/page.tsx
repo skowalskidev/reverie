@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import ExampleTable from './components/ExampleTable';
 import DrippingColumn from './components/DrippingColumn';
 import StickyMenuCTA from './components/StickyMenuCTA';
+import Image from 'next/image';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -126,7 +127,7 @@ export default function Home() {
             </nav>
 
             <main ref={mainRef} className='mx-auto max-w-screen-lg'>
-                <section className="absolute flex justify-center mx-auto left-0 right-0 pointer-events-none">
+                <section className="hidden lg:flex absolute justify-center mx-auto left-0 right-0 pointer-events-none">
                     <div className='flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
                         <DrippingColumn height={mainHeight} />
                         <DrippingColumn height={mainHeight} />
@@ -136,14 +137,15 @@ export default function Home() {
                         <DrippingColumn height={mainHeight} />
                     </div>
                 </section>
-                <section id='hero-section' className="bg-white dark:bg-gray-900 mt-28 flex items-end">
-                    <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:grid-cols-12 grow items-center">
-                        <div className="mr-auto place-self-center lg:col-span-7 flex flex-col gap-4">
+                <section className="bg-white dark:bg-gray-900 mt-28">
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                        <div className="grid grid-cols-1 gap-4 mt-8">
                             <h1 className="items-center text-5xl leading-normal font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-gradient-to-br from-purple-600 to-blue-500 rounded dark:bg-blue-500">transparent</mark>  <br></br>web development</h1>
 
-                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Websites at fair prices,<br></br>from real people</p>
+                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Fast websites at fair prices,<br></br>from real people</p>
+
                         </div>
-                        <div className="lg:mt-0 lg:col-span-5 flex flex-col">
+                        <div className='px-4 w-[calc(100%+32px)] overflow-x-auto'>
                             <ExampleTable />
                         </div>
                     </div>
@@ -151,16 +153,18 @@ export default function Home() {
                 <section id="free-guide" className="bg-white dark:bg-gray-900">
                     <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                         <div className="mb-8 lg:mb-16">
-                            <div className="gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
+                            <h2 className="lg:hidden mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-left">Free guide</h2>
+                            <div className="hidden gap-20 lg:gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
                                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-right">Free</h2>
                                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-left">guide</h2>
                             </div>
-                            <div className="gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
+                            <p className="lg:hidden text-gray-500 sm:text-xl dark:text-gray-400 text-left">How do I get a 'good' website for a market price?</p>
+                            <div className="hidden gap-20 lg:gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
                                 <p className="text-gray-500 sm:text-xl dark:text-gray-400 text-right">How do I get a 'good'</p>
                                 <p className="text-gray-500 sm:text-xl dark:text-gray-400 text-left">website for a market price?</p>
                             </div>
                         </div>
-                        <div className="space-y-8 md:grid md:grid-cols-2 gap-32 md:space-y-0">
+                        <div className="space-y-8 md:grid md:grid-cols-2 gap-20 lg:gap-32 md:space-y-0">
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
@@ -236,7 +240,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-32 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our mission</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
@@ -332,17 +336,25 @@ export default function Home() {
                                 </li>
                             </ul>
                         </div>
-                        <img className="w-full rounded" src="/images/mission.png" alt="dashboard image" />
+                        <div className='relative w-full lg:h-80 h-52'>
+                            <Image
+                                src="/images/mission.png"
+                                alt="dashboard image"
+                                fill
+                                className='object-cover rounded'
+                                sizes="100vw,(min-width: 1024px) 33vw"
+                            ></Image>
+                        </div>
                     </div>
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                        <div className="grid grid-cols-1 gap-4 mt-8">
-                            <div className="relative overflow-x-auto">
-                                <ExampleTable />
-                            </div>
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+
+                        <div className='px-4 w-[calc(100%+32px)] overflow-x-auto'>
+                            <ExampleTable />
                         </div>
+
                         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">How it works</h2>
                             <ol className="list-decimal list-inside">
@@ -357,18 +369,34 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-32 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our story</h2>
                             <p className="mb-4 text-gray-500 dark:text-gray-400">Our founder has been a contractor and grew frustrated with seeing agencies charge 100% markups for bringing the client in the door, meaning you pay 2X for your website. Another pain point was seeing outdated technology being used for no justified reason other than being complacent in old ways and not understanding the benefits of using today's technology. <br></br><br></br>The web development business is still in the wild west era and it's time to set quality standards and make the prices fair.</p>
                         </div>
-                        <img className="w-full rounded" src="/images/scroll.png" alt="dashboard image" />
+                        <div className='relative w-full lg:h-80 h-52'>
+                            <Image
+                                src="/images/scroll.png"
+                                alt="dashboard image"
+                                fill
+                                className='object-cover rounded'
+                                sizes="100vw,(min-width: 1024px) 33vw"
+                            ></Image>
+                        </div>
                     </div>
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-32 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-                        <img className="w-full rounded" src="/images/receipt.png" alt="dashboard image" />
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                        <div className='relative w-full lg:h-80 h-52'>
+                            <Image
+                                src="/images/receipt.png"
+                                alt="dashboard image"
+                                fill
+                                className='object-cover rounded'
+                                sizes="100vw,(min-width: 1024px) 33vw"
+                            ></Image>
+                        </div>
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Why choose us</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
@@ -486,7 +514,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">For You</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
@@ -554,7 +582,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">For Developers and Designers</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
