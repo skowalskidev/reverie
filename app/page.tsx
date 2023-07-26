@@ -138,11 +138,11 @@ export default function Home() {
                     </div>
                 </section>
                 <section className="bg-white dark:bg-gray-900 mt-28">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 text-center">
                         <div className="grid grid-cols-1 gap-4 mt-8">
                             <h1 className="items-center text-5xl leading-normal font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-gradient-to-br from-purple-600 to-blue-500 rounded dark:bg-blue-500">transparent</mark>  <br></br>web development</h1>
 
-                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Buy a custom website,<br></br>see who got paid</p>
+                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Buy a custom website<br></br>we manage and quality control<br></br>you get your bang for your buck</p>
 
                         </div>
                         <div className='px-4 w-[calc(100%+32px)] overflow-x-auto'>
@@ -235,7 +235,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="flex flex-col flex flex-col gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our mission</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
@@ -346,7 +346,7 @@ export default function Home() {
                 <section className="bg-white dark:bg-gray-900">
                     <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 
-                        <div className='px-4 w-[calc(100%+32px)] overflow-x-auto'>
+                        <div className='w-[calc(100%+32px)] px-4 lg:px-0 lg:w-full overflow-x-auto'>
                             <ExampleTable />
                         </div>
 
@@ -364,7 +364,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="flex flex-col gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our story</h2>
                             <p className="mb-4 text-gray-500 dark:text-gray-400">Our founder has been a contractor and grew frustrated with seeing agencies charge 100% markups for bringing the client in the door, meaning you pay 2X for your website. Another pain point was seeing outdated technology being used for no justified reason other than being complacent in old ways and not understanding the benefits of using today's technology. <br></br><br></br>The web development business is still in the wild west era and it's time to set quality standards and make the prices fair.</p>
@@ -382,7 +382,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="flex flex-col gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className='relative w-full lg:h-80 h-52'>
                             <Image
                                 src="/images/receipt.png"
