@@ -54,8 +54,7 @@ function DrippingColumn({ height }: Props) {
 
         setChars(prevChars => [newChar, ...prevChars.slice(1)]);
 
-        // Set a new timeout with a random interval between 100 and 500 milliseconds
-        const randomInterval = Math.random() * (15000 - 2000) + 2000;
+        const randomInterval = Math.random() * (4000 - 50) + 50;
         setTimeout(addNewChar, randomInterval);
     }
 
