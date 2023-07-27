@@ -71,7 +71,7 @@ export default function Home() {
     return (
         <>
             <nav className="bg-transparent fixed w-full z-20 top-0 left-0 ">
-                <div className="max-w-screen-2xl flex flex-wrap items-center justify-end mx-auto px-4 py-2 relative">
+                <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-2 relative">
                     {/* <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                         <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
                     </a> */}
@@ -107,15 +107,9 @@ export default function Home() {
                                 ></path>
                             </svg>
                         </button>
-                        <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-                            <span className="sr-only">Open main menu</span>
-                            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M1 1h15M1 7h15M1 13h15" />
-                            </svg>
-                        </button>
                     </div>
-                    <div className="items-center justify-center hidden w-fit md:flex md:order-1 absolute mx-auto left-0 right-0" id="navbar-sticky">
-                        <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
+                    <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
+                        <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
                             <li>
                                 <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                                     <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
@@ -142,7 +136,11 @@ export default function Home() {
                         <div className="grid grid-cols-1 gap-4 mt-8">
                             <h1 className="items-center text-5xl leading-normal font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-gradient-to-br from-purple-600 to-blue-500 rounded dark:bg-blue-500">transparent</mark>  <br></br>web development</h1>
 
-                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Buy a custom website<br></br>we manage and quality control<br></br>you get your bang for your buck</p>
+                            <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">
+                                Custom websites
+                                <br></br>No hidden fees
+                                <br></br>Quality control
+                            </p>
 
                         </div>
                         <div className='px-4 w-[calc(100%+32px)] overflow-x-auto'>
