@@ -139,7 +139,6 @@ export default function Home() {
                             <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">
                                 Custom websites
                                 <br></br>No hidden fees
-                                <br></br>Quality control
                             </p>
 
                         </div>
