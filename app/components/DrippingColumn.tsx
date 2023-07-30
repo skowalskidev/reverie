@@ -32,7 +32,7 @@ function generateColumn(numRows: number): Char[] {
 }
 
 function DrippingColumn({ height }: Props) {
-    const charHeight = 24; // adjust according to your styling
+    const charHeight = 16; // adjust according to your styling
     const numRowsRef = useRef(Math.floor(height / charHeight));
     const [chars, setChars] = useState<Char[]>([]);
 

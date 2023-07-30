@@ -86,13 +86,13 @@ const ExampleTable = () => {
                         Reverie
                     </th>
                     <td className="px-5 py-4">
-                        Quality Control
+                        Quality Control & Insurance
                     </td>
                     <td className="px-5 py-4">
-                        10%
+                        30%
                     </td>
                     <td className="px-5 py-4">
-                        $340
+                        $1422
                     </td>
                 </tr>
             </tbody>
@@ -101,7 +101,7 @@ const ExampleTable = () => {
                     <th scope="row" className="px-5 py-3 text-base">Total</th>
                     <td className="px-5 py-3"></td>
                     <td className="px-5 py-3"></td>
-                    <td className="px-5 py-3">$3740</td>
+                    <td className="px-5 py-3">$6162</td>
                 </tr>
             </tfoot>
         </table>

@@ -75,9 +75,7 @@ export default function Home() {
                     {/* <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                         <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
                     </a> */}
-                    <div className="flex md:order-2 gap-2 items-center">
-                        <StickyMenuCTA alwaysShow heroSectionHeight={heroSectionHeight} />
-
+                    <div className="flex gap-2 items-center">
                         <button
                             id="theme-toggle"
                             type="button"
@@ -107,6 +105,7 @@ export default function Home() {
                                 ></path>
                             </svg>
                         </button>
+                        <StickyMenuCTA alwaysShow heroSectionHeight={heroSectionHeight} />
                     </div>
                     <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
                         <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
@@ -131,8 +130,16 @@ export default function Home() {
                         <DrippingColumn height={mainHeight} />
                     </div>
                 </section>
+                <section className="lg:hidden pointer-events-none">
+                    <div className='absolute left-0 flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
+                        <DrippingColumn height={mainHeight} />
+                    </div>
+                    <div className='absolute right-0 flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
+                        <DrippingColumn height={mainHeight} />
+                    </div>
+                </section>
                 <section className="bg-white dark:bg-gray-900 mt-28">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 text-center">
+                    <div className="gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 text-center">
                         <div className="grid grid-cols-1 gap-4 mt-8">
                             <h1 className="items-center text-5xl leading-normal font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-gradient-to-br from-purple-600 to-blue-500 rounded dark:bg-blue-500">transparent</mark>  <br></br>web development</h1>
 
@@ -151,12 +158,12 @@ export default function Home() {
                     <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                         <div className="mb-8 lg:mb-16">
                             <h2 className="lg:hidden mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-left">Free guide</h2>
-                            <div className="hidden gap-20 lg:gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
+                            <div className="hidden gap-4 lg:gap-32 items-center mx-auto max-w-screen-xl lg:grid lg:grid-cols-2">
                                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-right">Free</h2>
                                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-left">guide</h2>
                             </div>
                         </div>
-                        <div className="space-y-8 md:grid md:grid-cols-2 gap-20 lg:gap-32 md:space-y-0">
+                        <div className="space-y-8 md:grid md:grid-cols-2 gap-4 lg:gap-32 md:space-y-0">
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
@@ -232,13 +239,13 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="flex flex-col flex flex-col gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="flex flex-col-reverse lg:flex-col gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our mission</h2>
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -256,7 +263,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -274,7 +281,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -292,7 +299,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -310,7 +317,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -341,7 +348,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+                    <div className="gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 
                         <div className='w-[calc(100%+32px)] px-4 lg:px-0 lg:w-full overflow-x-auto'>
                             <ExampleTable />
@@ -349,7 +356,7 @@ export default function Home() {
 
                         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">How it works</h2>
-                            <ol className="list-decimal list-inside">
+                            <ol className="list-decimal list-inside marker:text-purple-600">
                                 <li>You get a 100% transparent cost breakdown</li>
                                 <li>See the names and faces of the people making your website</li>
                                 <li>We vet and manage professional contractors for you</li>
@@ -361,7 +368,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="flex flex-col gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="flex flex-col-reverse lg:flex-col gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our story</h2>
                             <p className="mb-4 text-gray-500 dark:text-gray-400">Our founder has been a contractor and grew frustrated with seeing agencies charge 100% markups for bringing the client in the door, meaning you pay 2X for your website. Another pain point was seeing outdated technology being used for no justified reason other than being complacent in old ways and not understanding the benefits of using today's technology. <br></br><br></br>The web development business is still in the wild west era and it's time to set quality standards and make the prices fair.</p>
@@ -379,7 +386,7 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="flex flex-col gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <div className="flex flex-col gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className='relative w-full lg:h-80 h-52'>
                             <Image
                                 src="/images/receipt.png"
@@ -394,7 +401,7 @@ export default function Home() {
                             <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -412,7 +419,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -430,7 +437,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -448,7 +455,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -466,7 +473,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -484,7 +491,7 @@ export default function Home() {
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+                                        className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
                                         aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
@@ -506,142 +513,154 @@ export default function Home() {
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                        <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">For You</h2>
-                            <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
-                                <li className="flex items-center space-x-3">
-                                    <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 16 12"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M1 5.917 5.724 10.5 15 1.5"
-                                        />
-                                    </svg>
-                                    <span>Create websites that load fast</span>
-                                </li>
-                                <li className="flex items-center space-x-3">
-                                    <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 16 12"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M1 5.917 5.724 10.5 15 1.5"
-                                        />
-                                    </svg>
-                                    <span>Create websites that rank in Google</span>
-                                </li>
-                                <li className="flex items-center space-x-3">
-                                    <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 16 12"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M1 5.917 5.724 10.5 15 1.5"
-                                        />
-                                    </svg>
-                                    <span>Get fair and competitive pricing, ensuring you receive the best value</span>
-                                </li>
-                            </ul>
+                    <div className="flex flex-col-reverse lg:flex-col gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                        <div className="mt-4 md:mt-0">
+                            <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">For You</h2>
+                                <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
+                                    <li className="flex items-center space-x-3">
+                                        <svg
+                                            className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 16 12"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M1 5.917 5.724 10.5 15 1.5"
+                                            />
+                                        </svg>
+                                        <span>Create websites that load fast</span>
+                                    </li>
+                                    <li className="flex items-center space-x-3">
+                                        <svg
+                                            className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 16 12"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M1 5.917 5.724 10.5 15 1.5"
+                                            />
+                                        </svg>
+                                        <span>Create websites that rank in Google</span>
+                                    </li>
+                                    <li className="flex items-center space-x-3">
+                                        <svg
+                                            className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 16 12"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M1 5.917 5.724 10.5 15 1.5"
+                                            />
+                                        </svg>
+                                        <span>Get fair and competitive pricing, ensuring you receive the best value</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 mt-8">
-                            <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-                            <img className="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
+                        <div className='relative w-full lg:h-80 h-52'>
+                            <Image
+                                src="/images/briefcase.png"
+                                alt="dashboard image"
+                                fill
+                                className='object-cover rounded'
+                                sizes="100vw,(min-width: 1024px) 33vw"
+                            ></Image>
                         </div>
                     </div>
                 </section>
 
                 <section className="bg-white dark:bg-gray-900">
-                    <div className="gap-20 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                        <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">For Developers and Designers</h2>
-                            <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
-                                <li className="flex items-center space-x-3">
-                                    <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 16 12"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M1 5.917 5.724 10.5 15 1.5"
-                                        />
-                                    </svg>
-                                    <span>Join us for opportunities to work with modern technology</span>
-                                </li>
-                                <li className="flex items-center space-x-3">
-                                    <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 16 12"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M1 5.917 5.724 10.5 15 1.5"
-                                        />
-                                    </svg>
-                                    <span>Enjoy transparent rates and fair compensation for your expertise</span>
-                                </li>
-                                <li className="flex items-center space-x-3">
-                                    <svg
-                                        className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-                                        aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 16 12"
-                                    >
-                                        <path
-                                            stroke="currentColor"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth="2"
-                                            d="M1 5.917 5.724 10.5 15 1.5"
-                                        />
-                                    </svg>
-                                    <span>Asynchronous communication, we respect your time</span>
-                                </li>
-                            </ul>
+                    <div className="flex flex-col gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                        <div className='relative w-full lg:h-80 h-52'>
+                            <Image
+                                src="/images/creator-symbol.png"
+                                alt="dashboard image"
+                                fill
+                                className='object-cover rounded'
+                                sizes="100vw,(min-width: 1024px) 33vw"
+                            ></Image>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 mt-8">
-                            <img className="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1" />
-                            <img className="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2" />
+                        <div className="mt-4 md:mt-0">
+                            <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">For Developers and Designers</h2>
+                                <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
+                                    <li className="flex items-center space-x-3">
+                                        <svg
+                                            className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 16 12"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M1 5.917 5.724 10.5 15 1.5"
+                                            />
+                                        </svg>
+                                        <span>Join us for opportunities to work with modern technology</span>
+                                    </li>
+                                    <li className="flex items-center space-x-3">
+                                        <svg
+                                            className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 16 12"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M1 5.917 5.724 10.5 15 1.5"
+                                            />
+                                        </svg>
+                                        <span>Enjoy transparent rates and fair compensation for your expertise</span>
+                                    </li>
+                                    <li className="flex items-center space-x-3">
+                                        <svg
+                                            className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 16 12"
+                                        >
+                                            <path
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M1 5.917 5.724 10.5 15 1.5"
+                                            />
+                                        </svg>
+                                        <span>Asynchronous communication, we respect your time</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>
-
-
             </main >
         </>
     );
