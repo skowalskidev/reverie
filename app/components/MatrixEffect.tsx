@@ -15,15 +15,21 @@ const MatrixEffect = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
+            // @ts-ignore
             setRows((prevRows) => {
                 const newRow: Character[] = generateRandomRow();
-
+                // @ts-ignore
                 prevRows[prevRows.length - 1]?.forEach((character: Character, index) => {
+                    // @ts-ignore
                     if (character.highlight) {
+                        // @ts-ignore
                         newRow[index].fadeCount = maxFadeCount;
+                        // @ts-ignore
                     } else if (character.fadeCount && character.fadeCount > 0) {
+                        // @ts-ignore
                         newRow[index].fadeCount = character.fadeCount - 1;
                     }
+                    // @ts-ignore
                     if (!newRow[index].highlight && !newRow[index].fadeCount) {
                         newRow[index] = character;
                     }
@@ -80,7 +86,7 @@ const MatrixEffect = () => {
         return row;
     };
 
-
+    // @ts-ignore
     const getRandomChar = (charSet) => {
         return charSet.charAt(Math.floor(Math.random() * charSet.length));
     };
@@ -114,15 +120,18 @@ const MatrixEffect = () => {
         <div>
             {rows.map((row, rowIndex) => (
                 <div className="flex" key={rowIndex}>
-                    {row.map((character: Character, characterIndex) => (
-                        <div
-                            key={characterIndex}
-                            className={`text-gray-500 dark:text-gray-400 text-sm w-5 ml-1 ${getCharacterClass(character)}`}
-                            style={getCharacterStyle(character)}
-                        >
-                            {character?.char}
-                        </div>
-                    ))}
+                    {
+                        // @ts-ignore
+                        row.map((character: Character, characterIndex) => (
+                            <div
+                                key={characterIndex}
+                                className={`text-gray-500 dark:text-gray-400 text-sm w-5 ml-1 ${getCharacterClass(character)}`}
+                                style={getCharacterStyle(character)}
+                            >
+                                {character?.char}
+                            </div>
+                        ))
+                    }
                 </div>
             ))
             }

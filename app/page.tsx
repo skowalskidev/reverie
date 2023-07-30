@@ -63,6 +63,7 @@ export default function Home() {
 
     useEffect(() => {
         if (mainRef.current) {
+            // @ts-ignore
             const mainHeight = mainRef.current.clientHeight;
             setMainHeight(mainHeight);
         }
@@ -171,14 +172,14 @@ export default function Home() {
                                 <h3 className="text-xl font-bold dark:text-white">How do I not get ripped off / overcharged?</h3>
                             </div>
 
-                            <p className="text-gray-500 dark:text-gray-400">Find out exactly how much you're paying for each development stage and compare that to the market rates. We haven't seen that yet, that's why we launched Reverie.</p>
+                            <p className="text-gray-500 dark:text-gray-400">Find out exactly how much you&apos;re paying for each development stage and compare that to the market rates. We haven&apos;t seen that yet, that&apos;s why we launched Reverie.</p>
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 21">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="m6.072 10.072 2 2 6-4m3.586 4.314.9-.9a2 2 0 0 0 0-2.828l-.9-.9a2 2 0 0 1-.586-1.414V5.072a2 2 0 0 0-2-2H13.8a2 2 0 0 1-1.414-.586l-.9-.9a2 2 0 0 0-2.828 0l-.9.9a2 2 0 0 1-1.414.586H5.072a2 2 0 0 0-2 2v1.272a2 2 0 0 1-.586 1.414l-.9.9a2 2 0 0 0 0 2.828l.9.9a2 2 0 0 1 .586 1.414v1.272a2 2 0 0 0 2 2h1.272a2 2 0 0 1 1.414.586l.9.9a2 2 0 0 0 2.828 0l.9-.9a2 2 0 0 1 1.414-.586h1.272a2 2 0 0 0 2-2V13.8a2 2 0 0 1 .586-1.414Z" />
                                 </svg>
                                 <h3 className="text-xl font-bold dark:text-white">What’s the best web development agency?</h3>
                             </div>
-                            <p className="text-gray-500 dark:text-gray-400">They all say they're the best though, including us. Go figure. So to make the choice easier we'll be 100% transparent with you.</p>
+                            <p className="text-gray-500 dark:text-gray-400">They all say they&apos;re the best though, including us. Go figure. So to make the choice easier we&apos;ll be 100% transparent with you.</p>
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" viewBox="0 0 20 18">
                                     <path stroke="currentColor" strokeLinecap="round" strokeWidth="1" d="M1 7h18M4 4h.01M7 4h.01M10 4h.01M3 17h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" />
@@ -197,7 +198,7 @@ export default function Home() {
                                         Vercel hosting + Content Delivery Network
                                     </li>
                                 </ul>
-                                <p className='text-gray-500 dark:text-gray-400 mt-3'>Fear not, it's super easy to manage after we set it up for you.</p>
+                                <p className='text-gray-500 dark:text-gray-400 mt-3'>Fear not, it&apos;s super easy to manage after we set it up for you.</p>
                             </div>
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 11 20">
@@ -205,28 +206,28 @@ export default function Home() {
                                 </svg>
                                 <h3 className="text-xl font-bold dark:text-white">What’s the cheapest way to build a website?</h3>
                             </div>
-                            <p className="text-gray-500 dark:text-gray-400">You can do it yourself using a website builder or Wordpress but consider the quality of the website you're able to produce and the impression you'll make on your customers with a one size fits all design.</p>
+                            <p className="text-gray-500 dark:text-gray-400">You can do it yourself using a website builder or Wordpress but consider the quality of the website you&apos;re able to produce and the impression you&apos;ll make on your customers with a one size fits all design.</p>
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1" />
                                 </svg>
                                 <h3 className="text-xl font-bold dark:text-white">How to pick a web development agency?</h3>
                             </div>
-                            <p className="text-gray-500 dark:text-gray-400">Get quotes from at least 3 web development agencies, check the technology they're going to use. Or we can do all of that for you and tell you exactly how much we charge for this service.</p>
+                            <p className="text-gray-500 dark:text-gray-400">Get quotes from at least 3 web development agencies, check the technology they&apos;re going to use. Or we can do all of that for you and tell you exactly how much we charge for this service.</p>
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M6 1v4a1 1 0 0 1-1 1H1m4 4 1 6 2-4 2 4 1-6m4-8v16a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2Z" />
                                 </svg>
                                 <h3 className="text-xl font-bold dark:text-white">Should I get a Wordpress website in 2023?</h3>
                             </div>
-                            <p className="text-gray-500 dark:text-gray-400">No, you really shouldn't unless you just want an online business card and spend a lot of time and money maintaining it.</p>
+                            <p className="text-gray-500 dark:text-gray-400">No, you really shouldn&apos;t unless you just want an online business card and spend a lot of time and money maintaining it.</p>
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
                                 </svg>
                                 <h3 className="text-xl font-bold dark:text-white">Code quality, nobody will see it anyway, right?</h3>
                             </div>
-                            <p className="text-gray-500 dark:text-gray-400">You're kind of right, neither you nor your customer will but Google will notice milliseconds of slower loading times, pushing your website down in search results, so <span className='font-bold'>less clients</span> will find you. When you need to maintain your website it will take developers longer meaning they will <span className='font-bold'>charge you more</span>. Finally, Wordpress is the no.1 target for hackers. In your first week after lauch your website admin panel will receive hundreds of login attempts from strangers as well as comments from scammers asking you to click on dodgy website links, <span className='font-bold'>costing you time</span> to protect against.</p>
+                            <p className="text-gray-500 dark:text-gray-400">You&apos;re kind of right, neither you nor your customer will but Google will notice milliseconds of slower loading times, pushing your website down in search results, so <span className='font-bold'>less clients</span> will find you. When you need to maintain your website it will take developers longer meaning they will <span className='font-bold'>charge you more</span>. Finally, Wordpress is the no.1 target for hackers. In your first week after lauch your website admin panel will receive hundreds of login attempts from strangers as well as comments from scammers asking you to click on dodgy website links, <span className='font-bold'>costing you time</span> to protect against.</p>
                             <div className='flex gap-4'>
                                 <svg className="shrink-0 w-10 h-10 text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15" />
@@ -313,7 +314,7 @@ export default function Home() {
                                             d="M1 5.917 5.724 10.5 15 1.5"
                                         />
                                     </svg>
-                                    <span>Give you your dollar's worth</span>
+                                    <span>Give you your dollar&apos;s worth</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
@@ -371,7 +372,7 @@ export default function Home() {
                     <div className="flex flex-col-reverse lg:flex-col gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl md:grid md:grid-cols-2 sm:py-16 lg:px-6">
                         <div className="mt-4 md:mt-0">
                             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our story</h2>
-                            <p className="mb-4 text-gray-500 dark:text-gray-400">Our founder has been a contractor and grew frustrated with seeing agencies charge 100% markups for bringing the client in the door, meaning you pay 2X for your website. Another pain point was seeing outdated technology being used for no justified reason other than being complacent in old ways and not understanding the benefits of using today's technology. <br></br><br></br>The web development business is still in the wild west era and it's time to set quality standards and make the prices fair.</p>
+                            <p className="mb-4 text-gray-500 dark:text-gray-400">Our founder has been a contractor and grew frustrated with seeing agencies charge 100% markups for bringing the client in the door, meaning you pay 2X for your website. Another pain point was seeing outdated technology being used for no justified reason other than being complacent in old ways and not understanding the benefits of using today&apos;s technology. <br></br><br></br>The web development business is still in the wild west era and it&apos;s time to set quality standards and make the prices fair.</p>
                         </div>
                         <div className='relative w-full lg:h-80 h-52'>
                             <Image
@@ -415,7 +416,7 @@ export default function Home() {
                                             d="M1 5.917 5.724 10.5 15 1.5"
                                         />
                                     </svg>
-                                    <span>We don't add unfair markups to prices</span>
+                                    <span>We don&apos;t add unfair markups to prices</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
@@ -487,7 +488,7 @@ export default function Home() {
                                             d="M1 5.917 5.724 10.5 15 1.5"
                                         />
                                     </svg>
-                                    <span>We don't compromise on code quality</span>
+                                    <span>We don&apos;t compromise on code quality</span>
                                 </li>
                                 <li className="flex items-center space-x-3">
                                     <svg
@@ -505,7 +506,7 @@ export default function Home() {
                                             d="M1 5.917 5.724 10.5 15 1.5"
                                         />
                                     </svg>
-                                    <span>We don't compromise on design</span>
+                                    <span>We don&apos;t compromise on design</span>
                                 </li>
                             </ul>
                         </div>
