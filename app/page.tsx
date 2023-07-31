@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Fragment } from 'react';
 import ExampleTable from './components/ExampleTable';
 import DrippingColumn from './components/DrippingColumn';
 import StickyMenuCTA from './components/StickyMenuCTA';
 import Image from 'next/image';
+import { Dialog, Transition } from '@headlessui/react'
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -69,9 +70,18 @@ export default function Home() {
         }
     }, []);
 
+    let [isOpen, setIsOpen] = useState(false)
+
+    function closeModal() {
+        setIsOpen(false)
+    }
+
+    function openModal() {
+        setIsOpen(true)
+    }
     return (
         <>
-            <nav className="bg-transparent fixed w-full z-20 top-0 left-0 ">
+            <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
                 <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-2 relative">
                     {/* <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                         <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
@@ -106,7 +116,7 @@ export default function Home() {
                                 ></path>
                             </svg>
                         </button>
-                        <StickyMenuCTA alwaysShow heroSectionHeight={heroSectionHeight} />
+                        <StickyMenuCTA alwaysShow heroSectionHeight={heroSectionHeight} onClick={openModal} />
                     </div>
                     <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
                         <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
@@ -663,6 +673,62 @@ export default function Home() {
                     </div>
                 </section>
             </main >
+
+            <Transition appear show={isOpen} as={Fragment}>
+                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+                    <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                    >
+                        <div className="fixed inset-0 bg-black bg-opacity-25" />
+                    </Transition.Child>
+
+                    <div className="fixed inset-0 overflow-y-auto">
+                        <div className="flex min-h-full items-center justify-center p-4 text-center">
+                            <Transition.Child
+                                as={Fragment}
+                                enter="ease-out duration-300"
+                                enterFrom="opacity-0 scale-95"
+                                enterTo="opacity-100 scale-100"
+                                leave="ease-in duration-200"
+                                leaveFrom="opacity-100 scale-100"
+                                leaveTo="opacity-0 scale-95"
+                            >
+                                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                    <Dialog.Title
+                                        as="h3"
+                                        className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
+                                    >
+                                        Contact Us
+                                    </Dialog.Title>
+                                    <section className="bg-white dark:bg-gray-900">
+                                        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+                                            <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Want a new website? Get in touch.</p>
+                                            <form action="#" className="space-y-8">
+                                                <div>
+                                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                                                    <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required></input>
+                                                </div>
+                                                <div className="sm:col-span-2">
+                                                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
+                                                    <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                                                </div>
+                                                <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-purple-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-purple-600 dark:focus:ring-primary-800">Send message</button>
+                                                <button type="button" onClick={closeModal} className="py-3 px-5 text-sm font-medium text-center text-gray-900 rounded-lg bg-gray-50 sm:w-fit hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-primary-800">Cancel</button>
+                                            </form>
+                                        </div>
+                                    </section>
+                                </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                    </div>
+                </Dialog>
+            </Transition>
         </>
     );
 }
