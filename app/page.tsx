@@ -82,7 +82,10 @@ export default function Home() {
     return (
         <>
             <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
-                <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-2 relative">
+                <div className='w-full flex justify-center items-center text-white bg-purple-600 p-1 text-center'>
+                    Reverie, just launched, the first 2 clients are eligible for a limited time discount.
+                </div>
+                <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-1 relative bg-white dark:bg-gray-900 !bg-opacity-80">
                     {/* <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                         <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
                     </a> */}
@@ -674,6 +677,29 @@ export default function Home() {
                 </section>
             </main >
 
+
+
+            <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
+                <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                    <div className="sm:flex sm:items-center sm:justify-between">
+                        <div className='text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white'>Reverie</div>
+                        <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                            <li>
+                                <a href="#free-guide" className="mr-4 hover:underline md:mr-6">Free Guide</a>
+                            </li>
+                            <li>
+                                <button onClick={openModal} className="mr-4 hover:underline md:mr-6 ">Start</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                    <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">2023 <a href="https://flowbite.com/" className="hover:underline">Reverie</a></span>
+                </div>
+            </footer>
+
+
+
+
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
@@ -699,7 +725,8 @@ export default function Home() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-gray-900 dark:border dark:border-gray-500 p-6 text-left align-middle shadow-xl transition-all relative">
+                                    <button type="button" onClick={closeModal} className="absolute top-6 right-6 py-3 px-5 text-sm font-medium text-center text-gray-900 dark:text-white rounded-lg  sm:w-fit hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:hover:bg-gray-700 dark:focus:ring-primary-800">X</button>
                                     <Dialog.Title
                                         as="h3"
                                         className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
@@ -707,8 +734,8 @@ export default function Home() {
                                         Contact Us
                                     </Dialog.Title>
                                     <section className="bg-white dark:bg-gray-900">
-                                        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                                            <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Want a new website? Get in touch.</p>
+                                        <div className="py-8 px-4 mx-auto max-w-screen-md">
+                                            <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Want a new website? Get in touch.</p>
                                             <form action="#" className="space-y-8">
                                                 <div>
                                                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
@@ -718,8 +745,9 @@ export default function Home() {
                                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
                                                     <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
                                                 </div>
-                                                <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-purple-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-purple-600 dark:focus:ring-primary-800">Send message</button>
-                                                <button type="button" onClick={closeModal} className="py-3 px-5 text-sm font-medium text-center text-gray-900 rounded-lg bg-gray-50 sm:w-fit hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-primary-800">Cancel</button>
+                                                <div className='flex justify-center'>
+                                                    <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-purple-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-purple-600 dark:focus:ring-primary-800">Send message</button>
+                                                </div>
                                             </form>
                                         </div>
                                     </section>

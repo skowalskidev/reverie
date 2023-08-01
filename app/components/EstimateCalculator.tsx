@@ -174,7 +174,7 @@ const EstimateCalculator: React.FC = () => {
                 estimate.developerHours > 0 && estimate.hourlyRate > 0 && (
                     <>
                         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white text-center">Your Quote</h2>
-                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400">
                             <thead className="text-xs text-white uppercase bg-gradient-to-br from-purple-600 to-blue-500 dark:bg-blue-500">
                                 <tr>
                                     <th scope="col" className="px-6 py-3 rounded-l-lg">
