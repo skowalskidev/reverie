@@ -6,6 +6,39 @@ import DrippingColumn from './components/DrippingColumn';
 import StickyMenuCTA from './components/StickyMenuCTA';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react'
+import { useForm, ValidationError } from '@formspree/react';
+
+function ContactForm() {
+    const [state, handleSubmit] = useForm("xoqojrzb");
+    if (state.succeeded) {
+        return <p className='flex justify-center text-purple-600 text-center'>Thank you.<br></br><br></br> Your message has been sent, we'll get back to you as soon as we can :)</p>;
+    }
+    return (
+        <form onSubmit={handleSubmit} className="space-y-8">
+            <div>
+                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                <input type="email" id="email" name='email' className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required></input>
+                <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                />
+            </div>
+            <div className="sm:col-span-2">
+                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
+                <textarea id="message" name="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                />
+            </div>
+            <div className='flex justify-center'>
+                <button type="submit" disabled={state.submitting} className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-purple-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-purple-600 dark:focus:ring-primary-800">Send message</button>
+            </div>
+        </form>
+    );
+}
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -83,7 +116,7 @@ export default function Home() {
         <>
             <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
                 <div className='w-full flex justify-center items-center text-white bg-purple-600 p-1 text-center'>
-                    Reverie, just launched, the first 2 clients are eligible for a limited time discount.
+                    Offer: first 2 clients are eligible for 0% QC & Management fees, since Reverie just launched.
                 </div>
                 <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-1 relative bg-white dark:bg-gray-900 !bg-opacity-80">
                     {/* <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
@@ -736,19 +769,7 @@ export default function Home() {
                                     <section className="bg-white dark:bg-gray-900">
                                         <div className="py-8 px-4 mx-auto max-w-screen-md">
                                             <p className="mb-8 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Want a new website? Get in touch.</p>
-                                            <form action="#" className="space-y-8">
-                                                <div>
-                                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-                                                    <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required></input>
-                                                </div>
-                                                <div className="sm:col-span-2">
-                                                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                                                    <textarea id="message" rows={6} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
-                                                </div>
-                                                <div className='flex justify-center'>
-                                                    <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-purple-600 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-purple-600 dark:focus:ring-primary-800">Send message</button>
-                                                </div>
-                                            </form>
+                                            <ContactForm />
                                         </div>
                                     </section>
                                 </Dialog.Panel>
