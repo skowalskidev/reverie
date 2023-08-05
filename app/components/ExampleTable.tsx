@@ -82,8 +82,8 @@ const ExampleTable = () => {
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
                     <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
-                        <div className="w-10 h-10 rounded-full object-cover shrink-0 flex items-center justify-center text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">R</div>
-                        Reverie
+                        <div className="w-10 h-10 rounded-full object-cover shrink-0 flex items-center justify-center text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">RZ</div>
+                        Reverie<br></br>Zero
                     </th>
                     <td className="px-5 py-4">
                         Quality Control & Management
