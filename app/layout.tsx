@@ -1,3 +1,4 @@
+import GoogleAnalytics from './components/GoogleAnalytics'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -15,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics GA_MEASUREMENT_ID='G-P7DNHH4T3M' />
       <body className={inter.className}>{children}</body>
     </html>
   )
