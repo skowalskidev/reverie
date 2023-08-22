@@ -1,9 +1,7 @@
-"use client";
-
+"use client"
 import React, { useEffect, useState, useRef } from 'react';
-import DrippingColumn from './components/DrippingColumn';
+import DrippingColumn from '@/app/components/DrippingColumn';
 import Link from 'next/link';
-import ToolLink from './components/ToolLink';
 
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -77,9 +75,9 @@ export default function Home() {
                     <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
                         <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
                             <li>
-                                <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
+                                <Link href="/" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                                     <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie Zero</p>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -88,14 +86,11 @@ export default function Home() {
 
             <main ref={mainRef} className='mx-auto max-w-screen-lg'>
                 <section className="bg-white dark:bg-gray-900 mt-28 text-center p-6">
-                    <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Free, fun & easy <span className="text-purple-600 dark:text-purple-600">tools</span>.</h1>
-                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">A collection of tools made by myself for myself with the hopes of helping others.</p>
-                    <p><a href="mailto:skowalskidev@gmail.com" className='text-lg text-purple-600'><span className='text-gray-500 dark:text-gray-400'>Suggestions or queries? Email me</span> skowalskidev@gmail.com</a></p>
+                    <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tigh md:text-5xl lg:text-6xl dark:text-white">Subscription Management</h1>
+                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Keep track of all subscriptions and invoices for expense accounting</p>
                 </section>
-
-                <section className="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
-                    <ToolLink title='Subscription Management' imgSrc='https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg' toolLinkHref='subscription-management' />
-                    <ToolLink title='Web Development' imgSrc='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg' toolLinkHref='web-development' label='*Service' />
+                <section className="bg-white dark:bg-gray-900 mt-28 text-center p-6">
+                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Coming soon...</p>
                 </section>
 
             </main >
@@ -105,7 +100,7 @@ export default function Home() {
             <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-                    <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">2023 <a href="#" className="hover:underline">Reverie Zero</a></span>
+                    <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">2023 <Link href="/" className="hover:underline">Reverie Zero</Link></span>
                 </div>
             </footer>
         </>
