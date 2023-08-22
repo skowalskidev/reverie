@@ -87,14 +87,6 @@ export default function Home() {
             </nav>
 
             <main ref={mainRef} className='mx-auto max-w-screen-lg'>
-                <section className="pointer-events-none">
-                    <div className='absolute left-0 flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
-                        <DrippingColumn height={mainHeight} />
-                    </div>
-                    <div className='absolute right-0 flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
-                        <DrippingColumn height={mainHeight} />
-                    </div>
-                </section>
                 <section className="bg-white dark:bg-gray-900 mt-28 text-center p-6">
                     <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Free, fun & easy <span className="text-purple-600 dark:text-purple-600">tools</span>.</h1>
                     <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">A collection of tools made by myself for myself with the hopes of helping others.</p>
@@ -103,7 +95,7 @@ export default function Home() {
 
                 <section className="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
                     <ToolLink title='Subscription Management' imgSrc='https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg' toolLinkHref='subscription-management' />
-                    <ToolLink title='Web Development' imgSrc='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg' toolLinkHref='web-development' />
+                    <ToolLink title='Web Development' imgSrc='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg' toolLinkHref='web-development' label='*Service' />
                 </section>
 
             </main >

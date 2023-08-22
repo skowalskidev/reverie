@@ -85,19 +85,13 @@ export default function Home() {
             </nav>
 
             <main ref={mainRef} className='mx-auto max-w-screen-lg'>
-                <section className="pointer-events-none">
-                    <div className='absolute left-0 flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
-                        <DrippingColumn height={mainHeight} />
-                    </div>
-                    <div className='absolute right-0 flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
-                        <DrippingColumn height={mainHeight} />
-                    </div>
-                </section>
                 <section className="bg-white dark:bg-gray-900 mt-28 text-center p-6">
                     <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tigh md:text-5xl lg:text-6xl dark:text-white">Subscription Management</h1>
-                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Keep track of all subscriptions and their invoices for accounting expenses</p>
+                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Keep track of all subscriptions and invoices for expense accounting</p>
                 </section>
-
+                <section className="bg-white dark:bg-gray-900 mt-28 text-center p-6">
+                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Coming soon...</p>
+                </section>
 
             </main >
 
