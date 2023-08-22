@@ -1,7 +1,6 @@
-"use client";
-
+"use client"
 import React, { useEffect, useState, useRef } from 'react';
-import DrippingColumn from './components/DrippingColumn';
+import DrippingColumn from '@/app/components/DrippingColumn';
 import Link from 'next/link';
 
 export default function Home() {
@@ -95,21 +94,10 @@ export default function Home() {
                     </div>
                 </section>
                 <section className="bg-white dark:bg-gray-900 mt-28 text-center p-6">
-                    <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Free <span className="text-purple-600 dark:text-purple-600">tools</span> which save me time.</h1>
-                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">A collection of tools made by myself for myself with the hopes of helping others.</p>
-                    <p><a href="mailto:skowalskidev@gmail.com" className='text-lg text-purple-600'>Suggestions or queries? Email me skowalskidev@gmail.com</a></p>
+                    <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tigh md:text-5xl lg:text-6xl dark:text-white">Subscription Management</h1>
+                    <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Keep track of all subscriptions and their invoices for accounting expenses</p>
                 </section>
 
-                <section className="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
-                    <Link className='outline outline-purple-600 p-3 rounded flex flex-col justify-between gap-4' href={'/subscription-management'}>
-                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="" />
-                        <h2 className='text-lg lg:text-2xl dark:text-purple-600 font-extrabold text-center'>Subscription Management</h2>
-                    </Link>
-                    <Link className='outline outline-purple-600 p-3 rounded flex flex-col justify-between gap-4' href={'/web-development'}>
-                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="" />
-                        <h2 className='text-lg lg:text-2xl dark:text-purple-600 font-extrabold text-center'>Web Development</h2>
-                    </Link>
-                </section>
 
             </main >
 
