@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 interface Subscription {
     name: string;
@@ -23,13 +26,13 @@ const initialSubscriptions: Subscription[] = [
     {
         name: 'Chat GPT',
         price: '$20',
-        invoiceLink: 'https://pay.openai.com/p/session/live_YWNjdF8xSE9yU3dDNmgxbnhHb0kzLF9PV2xIV2hmWnBMRVVZYXVnMG9odDZieXpoUHhGU3c50100nCSFYkDZ',
+        invoiceLink: 'https://chat.openai.com/',
         usedThisMonth: 'Yes',
     },
     {
         name: 'Midjourney',
         price: '$10',
-        invoiceLink: 'https://billing.stripe.com/p/session/live_YWNjdF8xS2xueTZKYXZJeTlwWWRPLF9PV2xIZTZFdGd5OWxvWlllcHp6Qmc4ZG9KWlh1NEw40100yCUJUwr7',
+        invoiceLink: 'https://www.midjourney.com/account/',
         usedThisMonth: 'No',
     },
 ];
@@ -37,6 +40,7 @@ const initialSubscriptions: Subscription[] = [
 
 const SubscriptionTable: React.FC = () => {
     const [subscriptions, setSubscriptions] = useState<Subscription[]>(initialSubscriptions);
+    const [editableLinkIndex, setEditableLinkIndex] = useState<number | null>(null);
 
     const handleEdit = (index: number, key: keyof Subscription, value: string) => {
         const newSubscriptions = [...subscriptions];
@@ -49,7 +53,7 @@ const SubscriptionTable: React.FC = () => {
             name: '',
             price: '$0',
             invoiceLink: '',
-            usedThisMonth: 'No',
+            usedThisMonth: 'Yes',
         }]);
     };
 
@@ -60,24 +64,51 @@ const SubscriptionTable: React.FC = () => {
     };
 
     return (
-        <table className='dark:text-white'>
-            <thead>
+        <table className='dark:text-white w-full'>
+            <thead className='text-gray-500 dark:text-gray-400'>
                 <tr>
-                    <th>Subscriptions</th>
+                    <th>Subscription</th>
                     <th>Price</th>
                     <th>Invoice link</th>
                     <th>Used this month?</th>
-                    <th className='min-w-[140px]'></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 {subscriptions.map((sub, index) => (
-                    <tr key={index} className='group'>
+                    <tr key={index}>
                         {Object.keys(sub).map((key, colIndex) => (
                             <td key={key}>
-                                {key === 'usedThisMonth' ? (
+                                {key === 'invoiceLink' ? (
+                                    <div className="relative group">
+                                        {editableLinkIndex === index ? (
+                                            <input
+                                                className="text-center dark:bg-gray-900 border-l-0 border-r-0 border-t-0 border-gray-200 dark:border-gray-800"
+                                                type="text"
+                                                value={sub[key as keyof Subscription]}
+                                                onChange={(e) => handleEdit(index, key as keyof Subscription, e.target.value)}
+                                                onBlur={() => setEditableLinkIndex(null)}
+                                            />
+                                        ) : (
+                                            <a
+                                                href={sub[key as keyof Subscription]}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                cmd/ctrl-click
+                                            </a>
+                                        )}
+                                        <span
+                                            className="absolute invisible group-hover:visible top-1/2 transform -translate-y-1/2 ml-2 hover:text-blue-500 cursor-pointer"
+                                            onClick={() => setEditableLinkIndex(index)}
+                                        >
+                                            <FontAwesomeIcon icon={faEdit} />
+                                        </span>
+
+                                    </div>
+                                ) : key === 'usedThisMonth' ? (
                                     <input
-                                        className={`focus:border-gray-800 focus:ring-0 hover:cursor-pointer text-center dark:bg-gray-900 border-l-0 border-r-0 border-t-0 ${sub.usedThisMonth === 'No' ? '!border-red-600 !text-red-600' : 'border-gray-800'}`}
+                                        className={`w-full hover:!text-blue-500 focus:border-gray-200 dark:border-gray-800 focus:ring-0 hover:cursor-pointer text-center dark:bg-gray-900 border-0 border-gray-200 ${sub.usedThisMonth === 'No' && ' !text-red-600'}`}
                                         type="text"
                                         value={sub[key as keyof Subscription]}
                                         onClick={() => handleEdit(index, 'usedThisMonth', sub.usedThisMonth === 'Yes' ? 'No' : 'Yes')}
@@ -86,7 +117,7 @@ const SubscriptionTable: React.FC = () => {
 
                                 ) : (
                                     <input
-                                        className={`text-center dark:bg-gray-900 border-l-0 border-r-0 border-t-0 border-gray-800 ${sub.usedThisMonth === 'No' && '!border-red-600 !text-red-600'}`}
+                                        className={`hover:!text-blue-500 text-center dark:bg-gray-900 border-0 border-gray-200 dark:border-gray-800 ${sub.usedThisMonth === 'No' && '!text-red-600'}`}
                                         type="text"
                                         value={sub[key as keyof Subscription]}
                                         onChange={(e) => handleEdit(index, key as keyof Subscription, e.target.value)}
@@ -94,8 +125,8 @@ const SubscriptionTable: React.FC = () => {
                                 )}
                             </td>
                         ))}
-                        <td className='text-center hover:cursor-pointer' onClick={() => handleDeleteRow(index)}>
-                            <span className="dark:text-white hidden group-hover:block">Delete</span>
+                        <td className='text-center hover:cursor-pointer hover:text-red-600' onClick={() => handleDeleteRow(index)}>
+                            <FontAwesomeIcon icon={faTrash} />
                         </td>
                     </tr>
                 ))}
@@ -103,8 +134,8 @@ const SubscriptionTable: React.FC = () => {
                     {Array.from({ length: Object.keys(subscriptions[0]).length }).map((_, i) => (
                         <td key={i}></td>
                     ))}
-                    <td>
-                        <button onClick={handleAddRow}>Add</button>
+                    <td onClick={handleAddRow} className='hover:text-blue-500 hover:cursor-pointer'>
+                        <FontAwesomeIcon icon={faPlus} />
                     </td>
                 </tr>
             </tbody>
@@ -117,7 +148,7 @@ const SubscriptionTable: React.FC = () => {
                     <td></td>
                 </tr>
                 {subscriptions.reduce((acc, sub) => sub.usedThisMonth === 'No' ? acc + parseFloat(sub.price.substring(1)) : acc, 0) > 0 && (
-                    <tr className='text-green-400'>
+                    <tr>
                         <td>Potential Savings</td>
                         <td>${subscriptions.reduce((acc, sub) => sub.usedThisMonth === 'No' ? acc + parseFloat(sub.price.substring(1)) : acc, 0)}</td>
                         <td></td>
