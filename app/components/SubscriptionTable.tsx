@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 interface Subscription {
     name: string;
@@ -37,10 +36,9 @@ const initialSubscriptions: Subscription[] = [
     },
 ];
 
-
 const SubscriptionTable: React.FC = () => {
     const [subscriptions, setSubscriptions] = useState<Subscription[]>(initialSubscriptions);
-    const [editableLinkIndex, setEditableLinkIndex] = useState<number | null>(null);
+    const [editableRowIndex, setEditableRowIndex] = useState<number | null>(null);
 
     const handleEdit = (index: number, key: keyof Subscription, value: string) => {
         const newSubscriptions = [...subscriptions];
@@ -49,115 +47,78 @@ const SubscriptionTable: React.FC = () => {
     };
 
     const handleAddRow = () => {
-        setSubscriptions([...subscriptions, {
-            name: '',
-            price: '$0',
-            invoiceLink: '',
-            usedThisMonth: 'Yes',
-        }]);
+        setSubscriptions([...subscriptions, { name: '', price: '$0', invoiceLink: '', usedThisMonth: 'Yes' }]);
     };
 
     const handleDeleteRow = (index: number) => {
         const newSubscriptions = [...subscriptions];
         newSubscriptions.splice(index, 1);
         setSubscriptions(newSubscriptions);
+        setEditableRowIndex(null);
     };
 
     return (
-        <table className='dark:text-white w-full'>
-            <thead className='text-gray-500 dark:text-gray-400'>
-                <tr>
-                    <th>Subscription</th>
-                    <th>Price</th>
-                    <th>Invoice link</th>
-                    <th>Used this month?</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {subscriptions.map((sub, index) => (
-                    <tr key={index}>
-                        {Object.keys(sub).map((key, colIndex) => (
-                            <td key={key}>
-                                {key === 'invoiceLink' ? (
-                                    <div className="relative group">
-                                        {editableLinkIndex === index ? (
-                                            <input
-                                                className="text-center dark:bg-gray-900 border-l-0 border-r-0 border-t-0 border-gray-200 dark:border-gray-800"
-                                                type="text"
-                                                value={sub[key as keyof Subscription]}
-                                                onChange={(e) => handleEdit(index, key as keyof Subscription, e.target.value)}
-                                                onBlur={() => setEditableLinkIndex(null)}
-                                            />
-                                        ) : (
-                                            <a
-                                                href={sub[key as keyof Subscription]}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                cmd/ctrl-click
-                                            </a>
-                                        )}
-                                        <span
-                                            className="absolute invisible group-hover:visible top-1/2 transform -translate-y-1/2 ml-2 hover:text-blue-500 cursor-pointer"
-                                            onClick={() => setEditableLinkIndex(index)}
-                                        >
-                                            <FontAwesomeIcon icon={faEdit} />
-                                        </span>
-
-                                    </div>
-                                ) : key === 'usedThisMonth' ? (
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg grow">
+            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" className="px-6 py-3">Subscription</th>
+                        <th scope="col" className="px-6 py-3">Price</th>
+                        <th scope="col" className="px-6 py-3">Used this month?</th>
+                        <th scope="col" className="px-6 py-3"><span className="sr-only">Edit</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {subscriptions.map((sub, index) => (
+                        <tr key={index} className="hover:cursor-pointer bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" onClick={() => { if (editableRowIndex === null) window.open(sub.invoiceLink, '_blank') }}>
+                            {Object.keys(sub).filter((key) => key !== 'invoiceLink').map((key, colIndex) => (
+                                <td key={key} className="px-6 py-4">
                                     <input
-                                        className={`w-full hover:!text-blue-500 focus:border-gray-200 dark:border-gray-800 focus:ring-0 hover:cursor-pointer text-center dark:bg-gray-900 border-0 border-gray-200 ${sub.usedThisMonth === 'No' && ' !text-red-600'}`}
-                                        type="text"
-                                        value={sub[key as keyof Subscription]}
-                                        onClick={() => handleEdit(index, 'usedThisMonth', sub.usedThisMonth === 'Yes' ? 'No' : 'Yes')}
-                                        readOnly
-                                    />
-
-                                ) : (
-                                    <input
-                                        className={`hover:!text-blue-500 text-center dark:bg-gray-900 border-0 border-gray-200 dark:border-gray-800 ${sub.usedThisMonth === 'No' && '!text-red-600'}`}
+                                        className={`text-center bg-inherit border-0 border-gray-200 dark:border-gray-800 ${sub.usedThisMonth === 'No' && '!text-red-600'}`}
                                         type="text"
                                         value={sub[key as keyof Subscription]}
                                         onChange={(e) => handleEdit(index, key as keyof Subscription, e.target.value)}
+                                        readOnly={editableRowIndex !== index}
                                     />
-                                )}
+                                </td>
+                            ))}
+                            <td className="flex gap-1 px-6 py-4 text-right text-2xl" onClick={(e) => e.stopPropagation()}>
+                                <span className="cursor-pointer text-inherit hover:text-red-600" onClick={() => handleDeleteRow(index)}>
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </span>
+
+                                <span className="cursor-pointer text-inherit hover:text-blue-500" onClick={() => setEditableRowIndex(index)}>
+                                    <FontAwesomeIcon icon={faEdit} />
+                                </span>
                             </td>
-                        ))}
-                        <td className='text-center hover:cursor-pointer hover:text-red-600' onClick={() => handleDeleteRow(index)}>
-                            <FontAwesomeIcon icon={faTrash} />
+                        </tr>
+                    ))}
+                    <tr>
+                        <td className="px-6 py-4 text-right" colSpan={Object.keys(subscriptions[0]).length}>
+                            <span className="font-medium hover:text-blue-500 hover:cursor-pointer text-2xl" onClick={handleAddRow}>
+                                <FontAwesomeIcon icon={faPlus} />
+                            </span>
                         </td>
                     </tr>
-                ))}
-                <tr>
-                    {Array.from({ length: Object.keys(subscriptions[0]).length }).map((_, i) => (
-                        <td key={i}></td>
-                    ))}
-                    <td onClick={handleAddRow} className='hover:text-blue-500 hover:cursor-pointer'>
-                        <FontAwesomeIcon icon={faPlus} />
-                    </td>
-                </tr>
-            </tbody>
-
-            <tfoot>
-                <tr>
-                    <td>Total</td>
-                    <td>${subscriptions.reduce((acc, sub) => acc + parseFloat(sub.price.substring(1)), 0)}</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                {subscriptions.reduce((acc, sub) => sub.usedThisMonth === 'No' ? acc + parseFloat(sub.price.substring(1)) : acc, 0) > 0 && (
+                </tbody>
+                <tfoot>
                     <tr>
-                        <td>Potential Savings</td>
-                        <td>${subscriptions.reduce((acc, sub) => sub.usedThisMonth === 'No' ? acc + parseFloat(sub.price.substring(1)) : acc, 0)}</td>
-                        <td></td>
-                        <td></td>
+                        <td className='px-6 py-4'></td>
+                        <td className='px-6 py-4'></td>
+                        <td className='px-6 py-4'>Total</td>
+                        <td className='px-6 py-4'>${subscriptions.reduce((acc, sub) => acc + parseFloat(sub.price.substring(1)), 0)}</td>
                     </tr>
-                )}
-
-            </tfoot>
-        </table>
+                    {subscriptions.reduce((acc, sub) => sub.usedThisMonth === 'No' ? acc + parseFloat(sub.price.substring(1)) : acc, 0) > 0 && (
+                        <tr>
+                            <td className='px-6 py-4'></td>
+                            <td className='px-6 py-4'></td>
+                            <td className='px-6 py-4'>Potential Savings</td>
+                            <td className='px-6 py-4'>${subscriptions.reduce((acc, sub) => sub.usedThisMonth === 'No' ? acc + parseFloat(sub.price.substring(1)) : acc, 0)}</td>
+                        </tr>
+                    )}
+                </tfoot>
+            </table>
+        </div>
     );
 };
 
