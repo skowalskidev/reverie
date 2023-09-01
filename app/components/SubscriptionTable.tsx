@@ -93,11 +93,19 @@ const SubscriptionTable: React.FC = () => {
                                 </td>
                             ))}
                             <td className="flex gap-4 px-6 py-4 text-right text-2xl" onClick={(e) => e.stopPropagation()}>
-                                <span className="cursor-pointer text-inherit hover:text-blue-500" onClick={() => setEditableRowIndex(index)}>
-                                    <FontAwesomeIcon icon={faEdit} />
-                                </span>
+                                {editableRowIndex !== index &&
+                                    <span className="cursor-pointer text-gray-400 hover:text-blue-500" onClick={() => setEditableRowIndex(index)}>
+                                        <FontAwesomeIcon icon={faEdit} />
+                                    </span>}
+                                {editableRowIndex === index && <>
+                                    <span className="cursor-pointer text-gray-400 hover:text-blue-500">
+                                        <FontAwesomeIcon icon={faCheck} />
+                                    </span>
+                                    <span className="cursor-pointer text-gray-400 hover:text-red-600" onClick={() => setEditableRowIndex(null)}>
+                                        <FontAwesomeIcon icon={faXmark} />
+                                    </span></>}
 
-                                <span className="cursor-pointer text-inherit hover:text-red-600" onClick={() => handleDeleteRow(index)}>
+                                <span className="cursor-pointer text-inherit text-gray-400 hover:text-red-600" onClick={() => handleDeleteRow(index)}>
                                     <FontAwesomeIcon icon={faTrash} />
                                 </span>
                             </td>
