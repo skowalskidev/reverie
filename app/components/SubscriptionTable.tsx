@@ -154,8 +154,8 @@ const SubscriptionTable: React.FC = () => {
                         <tr>
                             <td className='px-6 py-4'></td>
                             <td className='px-6 py-4'></td>
-                            <td className='px-6 py-4'>Potential Savings</td>
-                            <td className='px-6 py-4'>${subscriptions.reduce((acc, sub) => !sub.usedThisMonth ? acc + parseFloat(sub.price.substring(1)) : acc, 0)}</td>
+                            <td className='px-6 py-4 text-red-600'>Potential Savings</td>
+                            <td className='px-6 py-4 text-red-600'>${subscriptions.reduce((acc, sub) => !sub.usedThisMonth ? acc + parseFloat(sub.price.substring(1)) : acc, 0)}</td>
                         </tr>
                     )}
                 </tfoot>
