@@ -74,13 +74,13 @@ const SubscriptionTable: React.FC = () => {
 
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg grow">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <table className="w-full text-left text-gray-500 dark:text-gray-400 font-extrabold text-lg">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" className="px-6 py-3">Subscription</th>
-                        <th scope="col" className="px-6 py-3">Price</th>
-                        <th scope="col" className="px-6 py-3">Used this month?</th>
-                        <th scope="col" className="px-6 py-3"><span className="sr-only">Edit</span></th>
+                        <th scope="col" className="px-9 py-3">Subscription</th>
+                        <th scope="col" className="px-9 py-3">Price</th>
+                        <th scope="col" className="px-9 py-3">Used this month?</th>
+                        <th scope="col" className="px-9 py-3"><span className="sr-only">Edit</span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -98,7 +98,7 @@ const SubscriptionTable: React.FC = () => {
                                         </label>
                                     ) : (
                                         <input
-                                            className={`w-full bg-inherit border-transparent
+                                            className={`w-full bg-inherit border-transparent font-extrabold text-lg
                             ${!sub.usedThisMonth && 'text-red-600'} 
                             ${editableRowIndex !== index && 'cursor-pointer'}
                             ${editableRowIndex === index && '!bg-gray-50 border !border-gray-300 text-gray-900 rounded-lg focus:ring-purple-text-purple-600 focus:border-purple-text-purple-600 block w-full p-2 px-3 dark:!bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-text-purple-600 dark:focus:border-purple-text-purple-600'}`}
@@ -114,7 +114,7 @@ const SubscriptionTable: React.FC = () => {
                                     )}
                                 </td>
                             ))}
-                            <td className="flex gap-4 px-6 py-4 text-right text-2xl" onClick={(e) => e.stopPropagation()}>
+                            <td className="flex gap-4 px-6 py-4 text-right font-extrabold text-lg" onClick={(e) => e.stopPropagation()}>
                                 {editableRowIndex !== index && <>
                                     <span className="cursor-pointer text-gray-400 hover:text-purple-600" onClick={() => startEditRow(index)}>
                                         <FontAwesomeIcon icon={faEdit} />
@@ -135,15 +135,15 @@ const SubscriptionTable: React.FC = () => {
                         </tr>
                     ))}
                     <tr>
-                        <td className="px-6 py-4 text-right" colSpan={Object.keys(subscriptions[0]).length - 1}>
-                            <span className="font-medium hover:text-purple-600 hover:cursor-pointer text-2xl" onClick={handleAddRow}>
+                        <td className="px-6 py-4 text-left" colSpan={Object.keys(subscriptions[0]).length - 1}>
+                            <span className="ml-[13px] font-medium hover:text-purple-600 hover:cursor-pointer text-2xl" onClick={handleAddRow}>
                                 <FontAwesomeIcon icon={faPlus} />
                             </span>
                         </td>
                     </tr>
                 </tbody>
 
-                <tfoot>
+                <tfoot className='font-extrabold text-lg'>
                     <tr>
                         <td className='px-6 py-4'></td>
                         <td className='px-6 py-4'></td>
