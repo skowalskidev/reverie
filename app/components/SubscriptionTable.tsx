@@ -40,8 +40,8 @@ const SubscriptionTable: React.FC = () => {
     const [subscriptions, setSubscriptions] = useState<Subscription[]>(initialSubscriptions);
     const [editableRowIndex, setEditableRowIndex] = useState<number | null>(null);
 
-    const handleEdit = (index: number, key: keyof Subscription, value: string) => {
-        const newSubscriptions = [...subscriptions];
+    const handleEdit = (index: number, key: keyof Subscription, value: any) => {
+        const newSubscriptions: any[] = [...subscriptions];
         newSubscriptions[index][key] = value;
         setSubscriptions(newSubscriptions);
     };
@@ -85,7 +85,7 @@ const SubscriptionTable: React.FC = () => {
                             ${editableRowIndex !== index && 'cursor-pointer'}
                             ${editableRowIndex === index && '!bg-gray-50 border !border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 px-3 dark:!bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'}`}
                                             type="text"
-                                            value={sub[key as keyof Subscription]}
+                                            value={sub[key as keyof Subscription].toString()}
                                             onChange={(e) => handleEdit(index, key as keyof Subscription, e.target.value)}
                                             readOnly={editableRowIndex !== index}
                                         />
