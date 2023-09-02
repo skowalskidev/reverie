@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const EstimateCalculator: React.FC = () => {
     const [numberOfPages, setNumberOfPages] = useState(1);
@@ -198,7 +199,15 @@ const EstimateCalculator: React.FC = () => {
                                     </th>
                                     <td className="px-6 py-4 flex justify-start items-center gap-3">
                                         Bonnie
-                                        <img className="w-10 h-10 rounded-full object-cover shrink-0" src="/images/profile.png" alt="Jese image" />
+                                        <div className="relative w-10 h-10">
+                                            <Image
+                                                src="/images/profile.png"
+                                                alt="Jese image"
+                                                layout="fill"
+                                                objectFit="cover"
+                                                className="rounded-full"
+                                            />
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4">
                                         {estimate.designerHours} hours
@@ -213,7 +222,15 @@ const EstimateCalculator: React.FC = () => {
                                     </th>
                                     <td className="px-6 py-4 flex justify-start items-center gap-3">
                                         Roger
-                                        <img className="w-10 h-10 rounded-full object-cover shrink-0" src="/images/profile2.jpeg" alt="Jese image" />
+                                        <div className="relative w-10 h-10">
+                                            <Image
+                                                src="/images/profile2.jpeg"
+                                                alt="Jese image"
+                                                layout="fill"
+                                                objectFit="cover"
+                                                className="rounded-full"
+                                            />
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4">
                                         {estimate.developerHours} hours
