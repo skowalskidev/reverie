@@ -94,8 +94,8 @@ export default function Home() {
                 </section>
 
                 <section className="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
-                    <ToolLink title='Subscription Management' imgSrc='https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg' toolLinkHref='subscription-management' />
-                    <ToolLink title='Web Development' imgSrc='https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg' toolLinkHref='web-development' label='*Service' />
+                    <ToolLink title='Subscription Management' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
+                    <ToolLink title='Web Development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' label='*Service' />
                 </section>
 
             </main >
