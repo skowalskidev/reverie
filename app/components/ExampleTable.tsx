@@ -3,7 +3,7 @@ import React from 'react';
 const ExampleTable = () => {
     return (
         <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-white uppercase bg-gradient-to-br from-purple-600 to-blue-500 dark:bg-blue-500">
+            <thead className="text-xs text-white uppercase bg-purple-600">
                 <tr>
                     <th scope="col" className="px-5 py-3 rounded-l-lg">
                         Provider

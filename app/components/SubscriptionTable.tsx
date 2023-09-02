@@ -99,7 +99,7 @@ const SubscriptionTable: React.FC = () => {
                                     ) : (
                                         <input
                                             className={`w-full bg-inherit border-transparent
-                            ${!sub.usedThisMonth && '!text-red-600'} 
+                            ${!sub.usedThisMonth && 'text-red-600'} 
                             ${editableRowIndex !== index && 'cursor-pointer'}
                             ${editableRowIndex === index && '!bg-gray-50 border !border-gray-300 text-gray-900 rounded-lg focus:ring-purple-text-purple-600 focus:border-purple-text-purple-600 block w-full p-2 px-3 dark:!bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-text-purple-600 dark:focus:border-purple-text-purple-600'}`}
                                             type="text"

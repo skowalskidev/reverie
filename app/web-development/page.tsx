@@ -117,7 +117,7 @@ export default function Home() {
         <>
             <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
                 <div onClick={openModal} className='hover:cursor-pointer w-full flex justify-center items-center text-white bg-purple-600 p-1 text-center'>
-                    The first 2 clients are eligible for 0% QC & Management fees, Start now
+                    Are you looking for a fast and beautiful website? Start now
                 </div>
                 <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-1 relative bg-white dark:bg-gray-900 !bg-opacity-80">
                     {/* <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
@@ -189,7 +189,7 @@ export default function Home() {
                 <section className="bg-white dark:bg-gray-900 mt-28">
                     <div className="gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 text-center">
                         <div className="grid grid-cols-1 gap-4 mt-8">
-                            <h1 className="items-center text-5xl leading-normal font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-gradient-to-br from-purple-600 to-blue-500 rounded dark:bg-blue-500">transparent</mark>  <br></br>web development</h1>
+                            <h1 className="items-center text-5xl leading-normal font-extrabold text-gray-900 dark:text-white">100% <mark className="px-2 text-white dark:text-gray-900 bg-purple-600 rounded">transparent</mark>  <br></br>web development</h1>
 
                             <p className="max-w-2xl font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">
                                 Custom websites
