@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faEdit, faPlus, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -37,9 +37,16 @@ const initialSubscriptions: Subscription[] = [
 ];
 
 const SubscriptionTable: React.FC = () => {
-    const [subscriptions, setSubscriptions] = useState<Subscription[]>(initialSubscriptions);
+    const [subscriptions, setSubscriptions] = useState<Subscription[]>(() => {
+        const storedData = localStorage.getItem('subscriptions');
+        return storedData ? JSON.parse(storedData) : initialSubscriptions;
+    });
     const [editableRowIndex, setEditableRowIndex] = useState<number | null>(null);
     const [subscriptionDraftRow, setSubscriptionDraftRow] = useState<Subscription | null>(null);
+
+    useEffect(() => {
+        localStorage.setItem('subscriptions', JSON.stringify(subscriptions));
+    }, [subscriptions]);
 
     const handleEdit = (index: number, key: keyof Subscription, value: any) => {
         const newSubscriptions: any[] = [...subscriptions];
