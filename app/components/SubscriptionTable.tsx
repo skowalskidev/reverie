@@ -80,7 +80,7 @@ const SubscriptionTable: React.FC = () => {
     }
 
     return (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg grow">
+        <div className="relative overflow-x-auto border-black dark:border-purple-600 border sm:rounded-lg grow">
             <table className="w-full text-left text-gray-500 dark:text-gray-400 font-extrabold text-lg">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -92,7 +92,7 @@ const SubscriptionTable: React.FC = () => {
                 </thead>
                 <tbody>
                     {subscriptions.map((sub, index) => (
-                        <tr key={index} className="hover:cursor-pointer hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <tr key={index} className="hover:cursor-pointer hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900">
                             {Object.keys(sub).filter((key) => key !== 'invoiceLink').map((key, colIndex) => (
                                 <td key={key} className="px-6 py-4" onClick={() => { if (key !== 'usedThisMonth' && editableRowIndex === null) window.open(sub.invoiceLink, '_blank') }}>
                                     {key === 'usedThisMonth' ? (
