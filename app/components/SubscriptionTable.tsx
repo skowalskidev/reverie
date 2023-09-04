@@ -7,6 +7,7 @@ interface Subscription {
     price: string;
     invoiceLink: string;
     usedThisMonth: boolean;
+    unsaved?: boolean;
 }
 
 const initialSubscriptions: Subscription[] = [
@@ -64,7 +65,8 @@ const SubscriptionTable: React.FC = () => {
             invoiceLink: '',
             name: '',
             price: '$',
-            usedThisMonth: true
+            usedThisMonth: true,
+            unsaved: true,
         }]);
     };
 
@@ -82,12 +84,22 @@ const SubscriptionTable: React.FC = () => {
 
     function saveEditRow() {
         if (subscriptionDraftRow) {
+            if (subscriptionDraftRow.unsaved) {
+                delete subscriptionDraftRow.unsaved;
+            }
             const newSubscriptions = [...subscriptions];
             newSubscriptions[editableRowIndex as number] = subscriptionDraftRow;
             setSubscriptions(newSubscriptions);
             setEditableRowIndex(null);
         }
     };
+
+    function cancelEditing() {
+        if (subscriptionDraftRow?.unsaved) {
+            handleDeleteRow(editableRowIndex as number);
+        }
+        setEditableRowIndex(null);
+    }
 
     return (
         <div className="relative overflow-x-auto border-black dark:border-purple-600 border sm:rounded-lg grow">
@@ -108,7 +120,7 @@ const SubscriptionTable: React.FC = () => {
                             className="hover:cursor-pointer hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900"
                         >
                             {Object.keys(sub)
-                                .filter((key) => !(key === 'invoiceLink' && editableRowIndex === null))
+                                .filter((key) => !(key === 'invoiceLink' && editableRowIndex === null) && !(key === 'unsaved'))
                                 .map((key, colIndex) => (
                                     <td
                                         key={key}
@@ -129,14 +141,14 @@ const SubscriptionTable: React.FC = () => {
                                             </label>
                                         ) : (
                                             editableRowIndex === null || editableRowIndex !== index
-                                                ? key === 'invoiceLink' && editableRowIndex === index ? <div></div> : <div className='truncate max-w-xs'>{sub[key as keyof Subscription].toString()}</div>
+                                                ? key === 'invoiceLink' && editableRowIndex === index ? <div></div> : <div className='truncate max-w-xs'>{sub[key as keyof Subscription]?.toString()}</div>
                                                 : <input
                                                     className={
                                                         `w-full bg-inherit border-transparent font-extrabold text-lg !bg-gray-50 border !border-gray-300 text-gray-900 rounded-lg focus:ring-purple-text-purple-600 focus:border-purple-text-purple-600 block p-2 px-3 dark:!bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-text-purple-600 dark:focus:border-purple-text-purple-600'
                                                         ${!sub.usedThisMonth && 'text-red-600'}`}
                                                     type="text"
                                                     value={subscriptionDraftRow && subscriptionDraftRow[key as keyof Subscription]
-                                                        ? subscriptionDraftRow[key as keyof Subscription].toString()
+                                                        ? subscriptionDraftRow[key as keyof Subscription]?.toString()
                                                         : ''}
                                                     onChange={(e) => setSubscriptionDraftRow({
                                                         ...subscriptionDraftRow,
@@ -159,7 +171,7 @@ const SubscriptionTable: React.FC = () => {
                                     <span className="cursor-pointer text-gray-400 hover:text-purple-600" onClick={() => saveEditRow()}>
                                         <FontAwesomeIcon icon={faCheck} />
                                     </span>
-                                    <span className="cursor-pointer text-gray-400 hover:text-red-600" onClick={() => setEditableRowIndex(null)}>
+                                    <span className="cursor-pointer text-gray-400 hover:text-red-600" onClick={() => cancelEditing()}>
                                         <FontAwesomeIcon icon={faXmark} />
                                     </span></>}
 
