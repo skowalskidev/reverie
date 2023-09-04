@@ -55,7 +55,12 @@ const SubscriptionTable: React.FC = () => {
     };
 
     const handleAddRow = () => {
-        setSubscriptions([...subscriptions, { name: '', price: '$0', invoiceLink: '', usedThisMonth: true }]);
+        setSubscriptions([...subscriptions, {
+            invoiceLink: '',
+            name: '',
+            price: '$0',
+            usedThisMonth: true
+        }]);
     };
 
     const handleDeleteRow = (index: number) => {
