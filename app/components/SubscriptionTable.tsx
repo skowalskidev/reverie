@@ -11,27 +11,27 @@ interface Subscription {
 
 const initialSubscriptions: Subscription[] = [
     {
+        invoiceLink: 'https://cloud.digitalocean.com/account/billing?i=59b4d8',
         name: 'DigitalOcean',
         price: '$6',
-        invoiceLink: 'https://cloud.digitalocean.com/account/billing?i=59b4d8',
         usedThisMonth: true,
     },
     {
+        invoiceLink: 'https://github.com/account/billing/history',
         name: 'Github Copilot',
         price: '$10',
-        invoiceLink: 'https://github.com/account/billing/history',
         usedThisMonth: true,
     },
     {
+        invoiceLink: 'https://chat.openai.com/',
         name: 'Chat GPT',
         price: '$20',
-        invoiceLink: 'https://chat.openai.com/',
         usedThisMonth: true,
     },
     {
+        invoiceLink: 'https://www.midjourney.com/account/',
         name: 'Midjourney',
         price: '$10',
-        invoiceLink: 'https://www.midjourney.com/account/',
         usedThisMonth: false,
     },
 ];
@@ -84,6 +84,7 @@ const SubscriptionTable: React.FC = () => {
             <table className="w-full text-left text-gray-500 dark:text-gray-400 font-extrabold text-lg">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
+                        {editableRowIndex !== null && <th scope="col" className="px-9 py-3">Link</th>}
                         <th scope="col" className="px-9 py-3">Subscription</th>
                         <th scope="col" className="px-9 py-3">Price</th>
                         <th scope="col" className="px-9 py-3">Used this month?</th>
@@ -93,31 +94,37 @@ const SubscriptionTable: React.FC = () => {
                 <tbody>
                     {subscriptions.map((sub, index) => (
                         <tr key={index} className="hover:cursor-pointer hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900">
-                            {Object.keys(sub).filter((key) => key !== 'invoiceLink').map((key, colIndex) => (
+                            {Object.keys(sub).filter((key) => !(key === 'invoiceLink' && editableRowIndex === null)).map((key, colIndex) => (
                                 <td key={key} className="px-6 py-4" onClick={() => { if (key !== 'usedThisMonth' && editableRowIndex === null) window.open(sub.invoiceLink, '_blank') }}>
                                     {key === 'usedThisMonth' ? (
-                                        <label className="relative inline-flex items-center cursor-pointer">
-                                            <input type="checkbox" checked={editableRowIndex === index ? subscriptionDraftRow?.usedThisMonth : sub.usedThisMonth} className="sr-only peer" onChange={(e) => editableRowIndex === index ? setSubscriptionDraftRow({
-                                                ...subscriptionDraftRow,
-                                                usedThisMonth: e.target.checked,
-                                            } as Subscription) : handleEdit(index, key, e.target.checked)} />
-                                            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600"></div>
-                                        </label>
+                                        <div className='border border-transparent px-3 py-2'>
+                                            <label className="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" checked={editableRowIndex === index ? subscriptionDraftRow?.usedThisMonth : sub.usedThisMonth} className="sr-only peer" onChange={(e) => editableRowIndex === index ? setSubscriptionDraftRow({
+                                                    ...subscriptionDraftRow,
+                                                    usedThisMonth: e.target.checked,
+                                                } as Subscription) : handleEdit(index, key, e.target.checked)} />
+                                                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600"></div>
+                                            </label>
+                                        </div>
                                     ) : (
-                                        <input
-                                            className={`w-full bg-inherit border-transparent font-extrabold text-lg
-                            ${!sub.usedThisMonth && 'text-red-600'} 
-                            ${editableRowIndex !== index && 'cursor-pointer'}
-                            ${editableRowIndex === index && '!bg-gray-50 border !border-gray-300 text-gray-900 rounded-lg focus:ring-purple-text-purple-600 focus:border-purple-text-purple-600 block w-full p-2 px-3 dark:!bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-text-purple-600 dark:focus:border-purple-text-purple-600'}`}
-                                            type="text"
-                                            value={editableRowIndex === index ? (subscriptionDraftRow ? subscriptionDraftRow[key as keyof Subscription].toString() : '') : sub[key as keyof Subscription].toString()}
-                                            onChange={(e) => editableRowIndex === index ? setSubscriptionDraftRow({
-                                                ...subscriptionDraftRow,
-                                                [key as keyof Subscription]: e.target.value,
-                                            } as Subscription)
-                                                : handleEdit(index, key as keyof Subscription, e.target.value)}
-                                            readOnly={editableRowIndex !== index}
-                                        />
+                                        key === 'invoiceLink' && editableRowIndex === null
+                                            ? <div></div>
+                                            : <input
+                                                className={
+                                                    `w-full bg-inherit border-transparent font-extrabold text-lg
+                                                ${!sub.usedThisMonth && 'text-red-600'} 
+                                                ${editableRowIndex !== index && 'cursor-pointer'}
+                                                ${editableRowIndex === index && '!bg-gray-50 border !border-gray-300 text-gray-900 rounded-lg focus:ring-purple-text-purple-600 focus:border-purple-text-purple-600 block w-full p-2 px-3 dark:!bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-text-purple-600 dark:focus:border-purple-text-purple-600'}`
+                                                }
+                                                type="text"
+                                                value={editableRowIndex === index ? (subscriptionDraftRow ? subscriptionDraftRow[key as keyof Subscription].toString() : '') : sub[key as keyof Subscription].toString()}
+                                                onChange={(e) => editableRowIndex === index ? setSubscriptionDraftRow({
+                                                    ...subscriptionDraftRow,
+                                                    [key as keyof Subscription]: e.target.value,
+                                                } as Subscription)
+                                                    : handleEdit(index, key as keyof Subscription, e.target.value)}
+                                                readOnly={editableRowIndex !== index}
+                                            />
                                     )}
                                 </td>
                             ))}
