@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faEdit, faPlus, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
+import SubscriptionInput from './SubscriptionInput';
 
-interface Subscription {
+export interface Subscription {
     name: string;
-    price: string;
+    price: number | null;
     usedThisMonth: boolean;
     invoiceLink: string;
     unsaved?: boolean;
@@ -13,25 +14,25 @@ interface Subscription {
 const initialSubscriptions: Subscription[] = [
     {
         name: 'DigitalOcean',
-        price: '$6',
+        price: 6,
         usedThisMonth: true,
         invoiceLink: 'https://cloud.digitalocean.com/account/billing?i=59b4d8',
     },
     {
         name: 'Github Copilot',
-        price: '$10',
+        price: 10,
         usedThisMonth: true,
         invoiceLink: 'https://github.com/account/billing/history',
     },
     {
         name: 'Chat GPT',
-        price: '$20',
+        price: 20,
         usedThisMonth: true,
         invoiceLink: 'https://chat.openai.com/',
     },
     {
         name: 'Midjourney',
-        price: '$10',
+        price: 10,
         usedThisMonth: false,
         invoiceLink: 'https://www.midjourney.com/account/',
     },
@@ -63,7 +64,7 @@ const SubscriptionTable: React.FC = () => {
     function handleAddRow() {
         setSubscriptions([...subscriptions, {
             name: '',
-            price: '$',
+            price: null,
             usedThisMonth: true,
             invoiceLink: '',
             unsaved: true,
@@ -102,7 +103,7 @@ const SubscriptionTable: React.FC = () => {
     }
 
     return (
-        <div className="relative overflow-x-auto border-black dark:border-purple-600 border sm:rounded-lg grow">
+        <div className="relative overflow-x-auto border-black dark:border-purple-600 border rounded-lg grow">
             <table className="w-full text-left text-gray-500 dark:text-gray-400 font-extrabold text-lg">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -118,6 +119,7 @@ const SubscriptionTable: React.FC = () => {
                         <tr
                             key={index}
                             className="hover:cursor-pointer hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900"
+                            onClick={() => { window.open(sub.invoiceLink, '_blank') }}
                         >
                             {Object.keys(sub)
                                 .filter(key => {
@@ -130,10 +132,9 @@ const SubscriptionTable: React.FC = () => {
                                     <td
                                         key={key}
                                         className="px-6 py-4"
-                                        onClick={() => { if (key !== 'usedThisMonth' && editableRowIndex === null) window.open(sub.invoiceLink, '_blank') }}
                                     >
                                         {key === 'usedThisMonth' ? (
-                                            <label className="relative inline-flex items-center cursor-pointer">
+                                            <label className="relative inline-flex items-center cursor-pointer" onClick={(e) => e.stopPropagation()}>
                                                 <input
                                                     type="checkbox"
                                                     checked={editableRowIndex === index && subscriptionDraftRow ? subscriptionDraftRow.usedThisMonth : sub.usedThisMonth} className="sr-only peer"
@@ -146,21 +147,27 @@ const SubscriptionTable: React.FC = () => {
                                             </label>
                                         ) : (
                                             editableRowIndex === null || editableRowIndex !== index
-                                                ? key === 'invoiceLink' && editableRowIndex === index ? <div></div> : <div className='truncate max-w-xs'>{sub[key as keyof Subscription]?.toString()}</div>
-                                                : <input
-                                                    className={
-                                                        `w-full bg-inherit border-transparent font-extrabold text-lg !bg-gray-50 border !border-gray-300 text-gray-900 rounded-lg focus:ring-purple-text-purple-600 focus:border-purple-text-purple-600 block p-2 px-3 dark:!bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-text-purple-600 dark:focus:border-purple-text-purple-600'
-                                                        ${!sub.usedThisMonth && 'text-red-600'}`}
-                                                    type="text"
-                                                    value={subscriptionDraftRow && subscriptionDraftRow[key as keyof Subscription]
-                                                        ? subscriptionDraftRow[key as keyof Subscription]?.toString()
-                                                        : ''}
-                                                    onChange={(e) => setSubscriptionDraftRow({
-                                                        ...subscriptionDraftRow,
-                                                        [key as keyof Subscription]: e.target.value,
-                                                    } as Subscription)}
-                                                />
-                                        )}
+                                                ? key === 'invoiceLink' && editableRowIndex === index ? <div></div> : <div className='truncate max-w-xs'>
+                                                    {key === 'price' && sub.price !== null ? `$${sub.price}` : sub[key as keyof Subscription]?.toString()}
+                                                </div>
+                                                : (
+                                                    <div className="flex items-center">
+                                                        {key === 'price' && <span className='mr-2'>$</span>}
+                                                        <SubscriptionInput
+                                                            autoFocus={editableRowIndex === index && key === 'name'}
+                                                            value={subscriptionDraftRow?.[key as keyof Subscription]?.toString() ?? ""}
+                                                            onChange={(e) => setSubscriptionDraftRow({
+                                                                ...subscriptionDraftRow,
+                                                                [key as keyof Subscription]: e.target.value,
+                                                            } as Subscription)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEditRow();
+                                                                if (e.key === 'Escape') cancelEditing();
+                                                            }}
+                                                            usedThisMonth={sub.usedThisMonth}
+                                                        />
+                                                    </div>
+                                                ))}
                                     </td>
                                 ))}
                             <td className="flex gap-4 px-6 py-4 text-right font-extrabold text-lg" onClick={(e) => e.stopPropagation()}>
@@ -197,14 +204,18 @@ const SubscriptionTable: React.FC = () => {
                         <td className='px-6 py-4'></td>
                         <td className='px-6 py-4'></td>
                         <td className='px-6 py-4'>Total</td>
-                        <td className='px-6 py-4'>${subscriptions.reduce((acc, sub) => acc + parseFloat(sub.price.substring(1)), 0)}</td>
+                        <td className='px-6 py-4'>
+                            ${subscriptions.reduce((acc, sub) => acc + (sub.price !== null ? sub.price : 0), 0)}
+                        </td>
                     </tr>
-                    {subscriptions.reduce((acc, sub) => !sub.usedThisMonth ? acc + parseFloat(sub.price.substring(1)) : acc, 0) > 0 && (
+                    {subscriptions.reduce((acc, sub) => !sub.usedThisMonth ? acc + (sub.price !== null ? sub.price : 0) : acc, 0) > 0 && (
                         <tr>
                             <td className='px-6 py-4'></td>
                             <td className='px-6 py-4'></td>
                             <td className='px-6 py-4 text-red-600'>Potential Savings</td>
-                            <td className='px-6 py-4 text-red-600'>${subscriptions.reduce((acc, sub) => !sub.usedThisMonth ? acc + parseFloat(sub.price.substring(1)) : acc, 0)}</td>
+                            <td className='px-6 py-4 text-red-600'>
+                                ${subscriptions.reduce((acc, sub) => !sub.usedThisMonth ? acc + (sub.price !== null ? sub.price : 0) : acc, 0)}
+                            </td>
                         </tr>
                     )}
                 </tfoot>
