@@ -5,35 +5,35 @@ import { faCheck, faEdit, faPlus, faTrash, faXmark } from '@fortawesome/free-sol
 interface Subscription {
     name: string;
     price: string;
-    invoiceLink: string;
     usedThisMonth: boolean;
+    invoiceLink: string;
     unsaved?: boolean;
 }
 
 const initialSubscriptions: Subscription[] = [
     {
-        invoiceLink: 'https://cloud.digitalocean.com/account/billing?i=59b4d8',
         name: 'DigitalOcean',
         price: '$6',
         usedThisMonth: true,
+        invoiceLink: 'https://cloud.digitalocean.com/account/billing?i=59b4d8',
     },
     {
-        invoiceLink: 'https://github.com/account/billing/history',
         name: 'Github Copilot',
         price: '$10',
         usedThisMonth: true,
+        invoiceLink: 'https://github.com/account/billing/history',
     },
     {
-        invoiceLink: 'https://chat.openai.com/',
         name: 'Chat GPT',
         price: '$20',
         usedThisMonth: true,
+        invoiceLink: 'https://chat.openai.com/',
     },
     {
-        invoiceLink: 'https://www.midjourney.com/account/',
         name: 'Midjourney',
         price: '$10',
         usedThisMonth: false,
+        invoiceLink: 'https://www.midjourney.com/account/',
     },
 ];
 
@@ -62,10 +62,10 @@ const SubscriptionTable: React.FC = () => {
 
     function handleAddRow() {
         setSubscriptions([...subscriptions, {
-            invoiceLink: '',
             name: '',
             price: '$',
             usedThisMonth: true,
+            invoiceLink: '',
             unsaved: true,
         }]);
     };
@@ -106,10 +106,10 @@ const SubscriptionTable: React.FC = () => {
             <table className="w-full text-left text-gray-500 dark:text-gray-400 font-extrabold text-lg">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        {editableRowIndex !== null && <th scope="col" className="px-9 py-3">Link</th>}
                         <th scope="col" className="px-9 py-3">Subscription</th>
                         <th scope="col" className="px-9 py-3">Price</th>
-                        <th scope="col" className="px-9 py-3">Used this month?</th>
+                        {editableRowIndex === null && <th scope="col" className="px-9 py-3">Used this month?</th>}
+                        {editableRowIndex !== null && <th scope="col" className="px-9 py-3">Link</th>}
                         <th scope="col" className="px-9 py-3"><span className="sr-only">Edit</span></th>
                     </tr>
                 </thead>
@@ -120,7 +120,12 @@ const SubscriptionTable: React.FC = () => {
                             className="hover:cursor-pointer hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900"
                         >
                             {Object.keys(sub)
-                                .filter((key) => !(key === 'invoiceLink' && editableRowIndex === null) && !(key === 'unsaved'))
+                                .filter(key => {
+                                    if (key === 'invoiceLink' && editableRowIndex === null) return false;
+                                    if (key === 'unsaved') return false;
+                                    if (editableRowIndex !== null && key === 'usedThisMonth') return false;
+                                    return true;
+                                })
                                 .map((key, colIndex) => (
                                     <td
                                         key={key}
