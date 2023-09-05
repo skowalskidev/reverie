@@ -24,6 +24,7 @@ const SubscriptionInput = ({ autoFocus, value, onChange, onKeyDown, usedThisMont
             value={value}
             onChange={onChange}
             onKeyDown={onKeyDown}
+            onClick={(e) => e.stopPropagation()}
         />
     );
 };
