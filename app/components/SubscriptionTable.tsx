@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faEdit, faPlus, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -39,14 +41,19 @@ const initialSubscriptions: Subscription[] = [
 ];
 
 const SubscriptionTable: React.FC = () => {
-    const [subscriptions, setSubscriptions] = useState<Subscription[]>(() => {
-        // @ts-ignore
-        const storedData = localStorage.getItem('subscriptions');
-        return storedData ? JSON.parse(storedData) : initialSubscriptions;
-    });
+    const [subscriptions, setSubscriptions] = useState<Subscription[]>(initialSubscriptions);
     const [editableRowIndex, setEditableRowIndex] = useState<number | null>(null);
     const [subscriptionDraftRow, setSubscriptionDraftRow] = useState<Subscription | null>(null);
     const [prevSubscriptionsLength, setPrevSubscriptionsLength] = useState(subscriptions.length);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedData = localStorage.getItem('subscriptions');
+            if (storedData) {
+                setSubscriptions(JSON.parse(storedData));
+            }
+        }
+    }, []);
 
     useEffect(() => {
         if (subscriptions.length > prevSubscriptionsLength) {
