@@ -3,6 +3,11 @@ import Link from 'next/link';
 import SubscriptionTable from '../components/SubscriptionTable';
 import ThemeToggle from '../components/ThemeToggle';
 
+export const metadata = {
+    title: 'Subscription Management',
+    description: 'Keep track of all subscriptions and invoices for expense accounting',
+}
+
 export default function Home() {
     return (
         <>
