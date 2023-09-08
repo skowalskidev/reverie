@@ -5,7 +5,7 @@ import ScaleMain from '../components/ScaleMain';
 import Client from './Client';
 
 export const metadata = {
-    title: 'Reverie Zero Web Development',
+    title: 'Web Development',
     description: '100% Fully transparent web development',
 }
 
