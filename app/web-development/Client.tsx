@@ -11,12 +11,10 @@ const Client: React.FC<any> = ({ children }: any) => {
 
     const closeModal = () => {
         setIsOpen(false);
-        console.log('close modal');
     };
 
     const openModal = () => {
         setIsOpen(true);
-        console.log('open modal');
     };
 
     return (

@@ -7,7 +7,6 @@ import ContactForm from './ContactForm';
 const ContactModal: React.FC<{ isOpen: boolean; closeModal: () => void; openModal: () => void }> = ({ isOpen, closeModal, openModal }) => {
     return (
         <>
-            <button onClick={openModal}>Open Modal</button>
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
