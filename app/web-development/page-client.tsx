@@ -6,7 +6,7 @@ import ContactModal from '../components/ContactModal';
 import Navigation from '../components/Navigation';
 import Link from 'next/link';
 
-const Client: React.FC<any> = ({ children }: any) => {
+const PageClient: React.FC<any> = ({ children }: any) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const closeModal = () => {
@@ -38,9 +38,9 @@ const Client: React.FC<any> = ({ children }: any) => {
                     <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">2023 <Link href="/" className="hover:underline">Reverie Zero</Link></span>
                 </div>
             </footer>
-            <ContactModal isOpen={isOpen} closeModal={closeModal} openModal={openModal} />
+            <ContactModal isOpen={isOpen} closeModal={closeModal} />
         </>
     );
 };
 
-export default Client;
+export default PageClient;

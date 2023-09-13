@@ -8,7 +8,10 @@ export const metadata = {
   description: 'A collection of tools made by myself for myself with the hopes of helping others',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout(props: {
+  children: React.ReactNode
+  modal: React.ReactNode
+}) {
   return (
     <html lang="en">
       <head>
@@ -24,7 +27,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {props.children}
+        {props.modal}
+      </body>
     </html>
   );
 }

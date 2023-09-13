@@ -2,7 +2,7 @@ import React from 'react';
 import ExampleTable from '../components/ExampleTable';
 import Image from 'next/image';
 import ScaleMain from '../components/ScaleMain';
-import Client from './Client';
+import PageClient from './page-client';
 
 export const metadata = {
     title: 'Web Development',
@@ -12,7 +12,7 @@ export const metadata = {
 export default function Home() {
     return (
         <>
-            <Client>
+            <PageClient>
                 <ScaleMain>
                     <section className="bg-white dark:bg-gray-900 mt-28">
                         <div className="gap-4 lg:gap-32 items-center py-8 px-4 mx-auto max-w-screen-xl flex flex-col lg:grid lg:grid-cols-2 lg:py-16 lg:px-6 text-center">
@@ -538,7 +538,7 @@ export default function Home() {
                         </div>
                     </section>
                 </ScaleMain >
-            </Client>
+            </PageClient>
         </>
     );
 }

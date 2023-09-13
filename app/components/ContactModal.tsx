@@ -3,12 +3,14 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import ContactForm from './ContactForm';
+import { useRouter } from 'next/navigation';
 
-const ContactModal: React.FC<{ isOpen: boolean; closeModal: () => void; openModal: () => void }> = ({ isOpen, closeModal, openModal }) => {
+export default function ContactModal() {
+    const router = useRouter()
     return (
         <>
-            <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={closeModal}>
+            <Transition appear show={true} as={Fragment}>
+                <Dialog as="div" className="relative z-10" onClose={() => router.back()}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -32,7 +34,7 @@ const ContactModal: React.FC<{ isOpen: boolean; closeModal: () => void; openModa
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-gray-900 dark:border dark:border-gray-500 p-6 text-left align-middle shadow-xl transition-all relative">
-                                    <button type="button" onClick={closeModal} className="absolute top-6 right-6 py-3 px-5 text-sm font-medium text-center text-gray-900 dark:text-white rounded-lg  sm:w-fit hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:hover:bg-gray-700 dark:focus:ring-primary-800">X</button>
+                                    <button type="button" onClick={() => router.back()} className="absolute top-6 right-6 py-3 px-5 text-sm font-medium text-center text-gray-900 dark:text-white rounded-lg  sm:w-fit hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:hover:bg-gray-700 dark:focus:ring-primary-800">X</button>
                                     <Dialog.Title as="h3" className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
                                         Contact Us
                                     </Dialog.Title>
@@ -51,5 +53,3 @@ const ContactModal: React.FC<{ isOpen: boolean; closeModal: () => void; openModa
         </>
     );
 };
-
-export default ContactModal;

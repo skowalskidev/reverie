@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import ToolLink from './components/ToolLink';
-import ScaleMain from './components/ScaleMain';
 import ThemeToggle from './components/ThemeToggle';
+import Link from 'next/link';
 
 export const metadata = {
     title: 'Reverie Zero',
@@ -33,6 +33,9 @@ export default function Home() {
                     <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">free <span className="text-purple-600 dark:text-purple-600">fun</span> easy</h1>
                     <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">A collection of tools made by myself for myself with the hopes of helping others</p>
                     {/* <p><a href="mailto:skowalskidev@gmail.com" className='text-lg text-purple-600'><span className='text-gray-500 dark:text-gray-400'>Suggestions or queries? Email me</span> skowalskidev@gmail.com</a></p> */}
+                    <Link href='/contact' scroll={false}>
+                        Contact me
+                    </Link>
                 </section>
 
                 <section className="grid grid-cols-2 md:grid-cols-5 gap-4 p-6">
