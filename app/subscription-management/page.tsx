@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import SubscriptionTable from '../components/SubscriptionTable';
-import ThemeToggle from '../components/ThemeToggle';
+import SubscriptionTable from '../../components/SubscriptionTable';
+import ThemeToggle from '../../components/ThemeToggle';
 
 export const metadata = {
     title: 'Subscription Management',

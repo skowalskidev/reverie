@@ -1,5 +1,5 @@
 import Home from "@/app/page";
-import ContactModal from "../../components/ContactModal";
+import ContactModal from "../../../components/ContactModal";
 import WebDevelopment from "@/app/web-development/page";
 
 export default function Page({

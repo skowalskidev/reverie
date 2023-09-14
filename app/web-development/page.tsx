@@ -1,8 +1,8 @@
 import React from 'react';
-import ExampleTable from '../components/ExampleTable';
+import ExampleTable from '../../components/ExampleTable';
 import Image from "next/image";
-import ScaleMain from '../components/ScaleMain';
-import Navigation from '../components/Navigation';
+import ScaleMain from '../../components/ScaleMain';
+import Navigation from '../../components/Navigation';
 import Link from 'next/link';
 
 export const metadata = {
