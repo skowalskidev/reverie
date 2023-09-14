@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const ExampleTable = () => {
     return (
@@ -23,13 +23,13 @@ const ExampleTable = () => {
             <tbody>
                 <tr className="bg-white dark:bg-gray-800">
                     <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
-                        <div className="relative w-10 h-10">
+                        <div className="relative">
                             <Image
                                 src="/images/profile.png"
                                 alt="Jese image"
-                                layout="fill"
-                                objectFit="cover"
-                                className="rounded-full"
+                                className="rounded-full w-10 h-10 object-cover"
+                                width={40}
+                                height={40}
                             />
                         </div>
                         Bonnie
@@ -46,13 +46,13 @@ const ExampleTable = () => {
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
                     <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
-                        <div className="relative w-10 h-10">
+                        <div className="relative">
                             <Image
                                 src="/images/profile2.jpeg"
                                 alt="Jese image"
-                                layout="fill"
-                                objectFit="cover"
-                                className="rounded-full"
+                                className="rounded-full w-10 h-10 object-cover"
+                                width={40}
+                                height={40}
                             />
                         </div>
                         Roger
@@ -69,13 +69,13 @@ const ExampleTable = () => {
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
                     <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
-                        <div className="relative w-10 h-10">
+                        <div className="relative">
                             <Image
                                 src="/images/logos/vercel-favicon.ico"
                                 alt="Jese image"
-                                layout="fill"
-                                objectFit="cover"
-                                className="rounded-full"
+                                className="rounded-full w-10 h-10 object-cover"
+                                width={40}
+                                height={40}
                             />
                         </div>
                         Vercel
@@ -92,13 +92,13 @@ const ExampleTable = () => {
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
                     <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
-                        <div className="relative w-10 h-10">
+                        <div className="relative">
                             <Image
                                 src="/images/logos/sanity-logo.webp"
                                 alt="Jese image"
-                                layout="fill"
-                                objectFit="cover"
-                                className="rounded-full"
+                                className="rounded-full w-10 h-10 object-cover"
+                                width={40}
+                                height={40}
                             />
                         </div>
                         Sanity

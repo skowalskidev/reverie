@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 type Props = {
     title: string;
@@ -21,8 +21,7 @@ const ToolLink = ({ title, imgSrc, alt, toolLinkHref, label }: Props) => {
                     alt={alt}
                     fill
                     className='object-cover rounded-lg'
-                    sizes="40vw,(min-width: 1024px) 33vw"
-                ></Image>
+                    sizes="40vw,(min-width: 1024px) 33vw"></Image>
             </div>
             <h2 className='text-lg lg:text-2xl font-extrabold'>{title}</h2>
         </Link >
