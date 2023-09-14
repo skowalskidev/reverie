@@ -3,13 +3,22 @@ import ToolLink from '../components/ToolLink';
 import ThemeToggle from '../components/ThemeToggle';
 import Link from 'next/link';
 import Button from '../components/Button';
+import { getSortedPostsData } from '@/lib/posts';
+import Date from '@/components/Date'
 
 export const metadata = {
     title: 'Reverie Zero',
     description: 'A collection of tools made by myself for myself with the hopes of helping others',
 }
 
+type AllPostsData = {
+    date: string
+    title: string
+    id: string
+}[]
+
 export default function Home() {
+    const allPostsData: AllPostsData = getSortedPostsData()
     return (
         <>
             <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
@@ -44,6 +53,23 @@ export default function Home() {
                     <ToolLink title='Subscription Management' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
                     <ToolLink title='Web Development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' label='*Service' />
                 </section>
+
+                <section className="text-base py-1">
+                    <h2 className="text-lg">Blog</h2>
+                    <ul className="list-decimal list-inside">
+                        {allPostsData.map(({ id, date, title }) => (
+                            <li key={id} className="mb-4">
+                                <div className="font-medium mb-1 mt-5">
+                                    <Link href={`/posts/${id}`}>{title}</Link>
+                                </div>
+                                <small className="text-gray-500 font-medium">
+                                    <Date dateString={date} />
+                                </small>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
 
             </main >
 
