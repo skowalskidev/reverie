@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 const EstimateCalculator: React.FC = () => {
     const [numberOfPages, setNumberOfPages] = useState(1);

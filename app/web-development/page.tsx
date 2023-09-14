@@ -1,6 +1,6 @@
 import React from 'react';
 import ExampleTable from '../components/ExampleTable';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import ScaleMain from '../components/ScaleMain';
 import Navigation from '../components/Navigation';
 import Link from 'next/link';
