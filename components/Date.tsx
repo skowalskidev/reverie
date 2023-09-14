@@ -1,13 +1,9 @@
-'use client'
+import { formatDistanceToNow, parseISO } from 'date-fns';
 
-// date-fns is a modern JavaScript date utility library
-// https://date-fns.org/
-import { parseISO, format } from 'date-fns'
+export default function Date(props: { dateString?: string }) {
+    const { dateString } = props;
+    if (!dateString) return null;
 
-export default function Date({ dateString }: { dateString: string }) {
-    const date = parseISO(dateString)
-
-    return <time dateTime={dateString}>{format(date, 'LLL d, yyyy')}</time>
-    // view different format() string options here:
-    // https://date-fns.org/v2.16.1/docs/format
+    const date = parseISO(dateString);
+    return <time dateTime={dateString}>{formatDistanceToNow(date, { addSuffix: true })}</time>;
 }

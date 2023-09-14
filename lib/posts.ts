@@ -33,38 +33,28 @@ const postsDirectory = path.join(process.cwd(), 'posts') // process.cwd() return
   ]
 */
 
-export function getSortedPostsData() {
-    // Get file names under /posts
-    const fileNames = fs.readdirSync(postsDirectory) // [ 'pre-rendering.md', 'ssg-ssr.md' ]
+export async function getSortedPostsData() {
+    const fileNames = fs.readdirSync(postsDirectory);
+    const allPostsData = [];
 
-    // Get the data from each file
-    const allPostsData = fileNames.map((filename) => {
-        // Remove ".md" from file name to get id
-        const id = filename.replace(/\.md$/, '') // id = 'pre-rendering', 'ssg-ssr'
-
-        // Read markdown file as string
-        const fullPath = path.join(postsDirectory, filename)
-        // /Users/ef/Desktop/nextjs-blog/posts/pre-rendering.md
-        const fileContents = fs.readFileSync(fullPath, 'utf8') // .md string content
-
-        // Use gray-matter to parse the post metadata section
-        const matterResult = matter(fileContents)
-
-        // Combine the data with the id
-        return {
+    for (const fileName of fileNames) {
+        const id = fileName.replace(/\.md$/, '');
+        const postData = await getPostData(id);
+        allPostsData.push({
             id,
-            ...(matterResult.data as { date: string; title: string }),
-        }
-    })
+            title: postData.title,
+            date: postData.date,
+            preview: postData.contentHtml.substring(0, 250) // First 100 characters
+        });
+    }
 
-    // Sort posts by date and return
     return allPostsData.sort((a, b) => {
         if (a.date < b.date) {
-            return 1
+            return 1;
         } else {
-            return -1
+            return -1;
         }
-    })
+    });
 }
 
 // ------------------------------------------------
