@@ -10,7 +10,7 @@ export const metadata = {
     description: '100% Fully transparent web development',
 }
 
-export default function Home() {
+export default function WebDevelopment() {
     return <>
         <Navigation />
         <ScaleMain>
@@ -547,7 +547,7 @@ export default function Home() {
                             <a href="#free-guide" className="mr-4 hover:underline md:mr-6">Free Guide</a>
                         </li>
                         <li>
-                            <Link href='/contact' scroll={false}>
+                            <Link href='/contact?source=web-development' scroll={false}>
                                 <button className="mr-4 hover:underline md:mr-6 ">Start</button>
                             </Link>
                         </li>
