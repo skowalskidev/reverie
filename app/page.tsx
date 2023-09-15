@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Button from '../components/Button';
 import { getSortedPostsData } from '@/lib/posts';
 import Date from '@/components/Date'
+import Image from 'next/image';
 
 export const metadata = {
     title: 'Reverie Zero',
@@ -14,6 +15,8 @@ export const metadata = {
 type AllPostsData = {
     date: string;
     title: string;
+    author: string;
+    authorImage: string;
     id: string;
     preview: string;
 }[];
@@ -62,8 +65,8 @@ export default async function Home() {
                             <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Random insights in the hopes of saving you time</p>
                         </div>
                         <div className="grid gap-8 lg:grid-cols-2">
-                            {allPostsData.map(({ id, date, title, preview }) => (
-                                <Link href={`/posts/${id}`}>
+                            {allPostsData.map(({ id, date, title, author, authorImage, preview }, index) => (
+                                <Link key={index} href={`/posts/${id}`}>
                                     <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                                         <div className="flex justify-between items-center mb-5 text-gray-500">
                                             <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
@@ -76,9 +79,14 @@ export default async function Home() {
                                         <div className="line-clamp-3 mb-5 font-light text-gray-500 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: preview }}></div>
                                         <div className="flex justify-between items-center">
                                             <div className="flex items-center space-x-4">
-                                                <img className="w-7 h-7 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Leos avatar" />
+                                                <Image className="w-7 h-7 rounded-full object-cover"
+                                                    width={28}
+                                                    height={28}
+                                                    src={authorImage}
+                                                    alt="Jese Leos avatar"
+                                                />
                                                 <span className="font-medium dark:text-white">
-                                                    Simon
+                                                    {author}
                                                 </span>
                                             </div>
                                             <div className="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline">

@@ -17,6 +17,7 @@ const ToolLink = ({ title, imgSrc, alt, toolLinkHref, label }: Props) => {
             </div>
             <div className='relative aspect-square'>
                 <Image
+                    priority
                     src={imgSrc}
                     alt={alt}
                     fill
