@@ -1,4 +1,4 @@
-import Home from "@/app/page";
+import Home from "@/app/(simple)/page";
 import ContactModal from "../../../components/ContactModal";
 import WebDevelopment from "@/app/web-development/page";
 
