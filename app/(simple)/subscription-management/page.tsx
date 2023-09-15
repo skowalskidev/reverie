@@ -11,7 +11,7 @@ export const metadata = {
 export default function Home() {
     return (
         <>
-            <section className="bg-white dark:bg-gray-900 mt-28 text-center p-6">
+            <section className="bg-white dark:bg-gray-900 text-center p-6">
                 <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tigh md:text-5xl lg:text-6xl dark:text-white">Subscription Management</h1>
                 <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Keep track of all subscriptions and invoices for expense accounting</p>
             </section>

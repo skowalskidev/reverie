@@ -1,5 +1,5 @@
 ---
-title: 'Two Forms of Pre-rendering'
+title: 'Test Article'
 date: '2023-09-14 13:00'
 author: 'Simon'
 authorImage: '/images/profile.png'

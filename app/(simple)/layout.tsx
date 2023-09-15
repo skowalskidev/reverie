@@ -23,7 +23,7 @@ export default function Layout(props: {
                 </div>
             </nav>
 
-            <main className='mx-auto max-w-screen-lg'>
+            <main className='mx-auto max-w-screen-lg mt-28'>
                 {props.children}
             </main>
             <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
