@@ -1,6 +1,8 @@
 import Home from "@/app/(simple)/page";
 import ContactModal from "../../../components/ContactModal";
 import WebDevelopment from "@/app/web-development/page";
+import WebDevelopmentLayout from "@/app/web-development/layout";
+import SimpleLayout from "@/app/(simple)/layout";
 
 export default function Page({
   params,
@@ -11,7 +13,13 @@ export default function Page({
 }) {
   return (
     <>
-      {searchParams.source === 'web-development' ? <WebDevelopment /> : <Home />}
+      {searchParams.source === 'web-development'
+        ? <WebDevelopmentLayout>
+          <WebDevelopment />
+        </WebDevelopmentLayout>
+        : <SimpleLayout>
+          <Home />
+        </SimpleLayout>}
       <ContactModal />
     </>
   )
