@@ -9,7 +9,7 @@ const Navigation: React.FC<any> = () => {
     return (
         <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
             {/* <Link href='/contact?source=web-development' scroll={false}>
-                <div className='hover-hover:cursor-pointer w-full flex justify-center items-center text-white bg-purple-600 p-1 text-center'>
+                <div className='hover:cursor-pointer w-full flex justify-center items-center text-white bg-purple-600 p-1 text-center'>
                     Are you looking for a fast and beautiful website? Start now
                 </div>
             </Link> */}
@@ -24,7 +24,7 @@ const Navigation: React.FC<any> = () => {
                     </Link>
                 </div>
                 <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
-                    <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover-hover:bg-opacity-0">
+                    <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
                         <li>
                             <Link href="/" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                                 <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie Zero</p>

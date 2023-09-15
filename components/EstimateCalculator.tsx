@@ -66,7 +66,7 @@ const EstimateCalculator: React.FC = () => {
                                 />
                                 <label
                                     htmlFor="hosting-small"
-                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover-hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover-hover:text-gray-600 hover-hover:bg-gray-100 dark:text-gray-300 dark:hover-hover:bg-gray-700"
+                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                 >
                                     <div className="block text-sm font-medium">
                                         1
@@ -85,7 +85,7 @@ const EstimateCalculator: React.FC = () => {
                                 />
                                 <label
                                     htmlFor="hosting-medium"
-                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover-hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover-hover:text-gray-600 hover-hover:bg-gray-100 dark:text-gray-300 dark:hover-hover:bg-gray-700"
+                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                 >
                                     <div className="block text-sm font-medium">
                                         5
@@ -104,7 +104,7 @@ const EstimateCalculator: React.FC = () => {
                                 />
                                 <label
                                     htmlFor="hosting-large"
-                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover-hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover-hover:text-gray-600 hover-hover:bg-gray-100 dark:text-gray-300 dark:hover-hover:bg-gray-700"
+                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                 >
                                     <div className="block text-sm font-medium">
                                         10
@@ -123,7 +123,7 @@ const EstimateCalculator: React.FC = () => {
                                 />
                                 <label
                                     htmlFor="hosting-extra-large"
-                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover-hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover-hover:text-gray-600 hover-hover:bg-gray-100 dark:text-gray-300 dark:hover-hover:bg-gray-700"
+                                    className="inline-flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                                 >
                                     <div className="block text-sm font-medium">
                                         10+
@@ -135,31 +135,31 @@ const EstimateCalculator: React.FC = () => {
 
                         <div className='flex'>
                             <input type="checkbox" id="accept-payments" value="" className="hidden peer" />
-                            <label htmlFor="accept-payments" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover-hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover-hover:text-gray-600 hover-hover:bg-gray-100 dark:text-gray-300 dark:hover-hover:bg-gray-700">
+                            <label htmlFor="accept-payments" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700">
                                 {/* <svg className="text-red-600 w-5 h-5" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z" /></svg> */}
                                 <div className="block text-sm font-medium">Accept payments</div>
                             </label>
                         </div>
                         <div className='flex'>
                             <input type="checkbox" id="list-products" value="" className="hidden peer" />
-                            <label htmlFor="list-products" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover-hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover-hover:text-gray-600 hover-hover:bg-gray-100 dark:text-gray-300 dark:hover-hover:bg-gray-700">
+                            <label htmlFor="list-products" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700">
                                 {/* <svg className="text-red-600 w-5 h-5" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z" /></svg> */}
                                 <div className="block text-sm font-medium">List products / properties</div>
                             </label>
                         </div>
                         <div className='flex'>
                             <input type="checkbox" id="blog-section" value="" className="hidden peer" />
-                            <label htmlFor="blog-section" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover-hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover-hover:text-gray-600 hover-hover:bg-gray-100 dark:text-gray-300 dark:hover-hover:bg-gray-700">
+                            <label htmlFor="blog-section" className="flex items-center justify-center w-full p-4 text-gray-910 bg-transparent border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700">
                                 {/* <svg className="text-red-600 w-5 h-5" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M185.7 268.1h76.2l-38.1-91.6-38.1 91.6zM223.8 32L16 106.4l31.8 275.7 176 97.9 176-97.9 31.8-275.7zM354 373.8h-48.6l-26.2-65.4H168.6l-26.2 65.4H93.7L223.8 81.5z" /></svg> */}
                                 <div className="block text-sm font-medium">Blog section</div>
                             </label>
                         </div>
                         <div className='flex'>
                             <button
-                                className="grow inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-purple-600 group-hover-hover:from-purple-600 group-hover-hover:to-blue-500 hover-hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                                className="grow inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-purple-600 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
                                 onClick={calculateEstimate}
                             >
-                                <span className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover-hover:bg-opacity-0">
+                                <span className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                                     Get estimate
                                 </span>
                             </button>

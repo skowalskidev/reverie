@@ -11,7 +11,7 @@ type Props = {
 
 const ToolLink = ({ title, imgSrc, alt, toolLinkHref, label }: Props) => {
     return (
-        <Link className='outline outline-black text-black hover-hover:text-purple-600 hover-hover:outline-purple-600 dark:outline-purple-600 dark:hover-hover:outline-white dark:text-purple-600 dark:hover-hover:text-white p-3 rounded flex flex-col justify-between gap-4 relative' href={toolLinkHref} >
+        <Link className='outline outline-black text-black hover:text-purple-600 hover:outline-purple-600 dark:outline-purple-600 dark:hover:outline-white dark:text-purple-600 dark:hover:text-white p-3 rounded flex flex-col justify-between gap-4 relative' href={toolLinkHref} >
             <div className='text-sm absolute -bottom-6 left-0 right-0 text-gray-500 dark:text-gray-400'>
                 {label}
             </div>
