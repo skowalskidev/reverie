@@ -125,7 +125,7 @@ const SubscriptionTable: React.FC = () => {
                     {subscriptions.map((sub, index) => (
                         <tr
                             key={index}
-                            className="hover:cursor-pointer hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900"
+                            className="hover-hover:cursor-pointer hover-hover:text-purple-600 bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover-hover:bg-gray-50 dark:hover-hover:bg-gray-900"
                             onClick={() => { window.open(sub.invoiceLink, '_blank') }}
                         >
                             {Object.keys(sub)
@@ -179,18 +179,18 @@ const SubscriptionTable: React.FC = () => {
                                 ))}
                             <td className="flex gap-4 px-6 py-4 text-right font-extrabold text-lg" onClick={(e) => e.stopPropagation()}>
                                 {editableRowIndex !== index && <>
-                                    <span className="cursor-pointer text-gray-400 hover:text-purple-600" onClick={() => startEditRow(index)}>
+                                    <span className="cursor-pointer text-gray-400 hover-hover:text-purple-600" onClick={() => startEditRow(index)}>
                                         <FontAwesomeIcon icon={faEdit} />
                                     </span>
-                                    <span className="cursor-pointer text-gray-400 hover:text-red-600" onClick={() => handleDeleteRow(index)}>
+                                    <span className="cursor-pointer text-gray-400 hover-hover:text-red-600" onClick={() => handleDeleteRow(index)}>
                                         <FontAwesomeIcon icon={faTrash} />
                                     </span>
                                 </>}
                                 {editableRowIndex === index && <>
-                                    <span className="cursor-pointer text-gray-400 hover:text-purple-600" onClick={() => saveEditRow()}>
+                                    <span className="cursor-pointer text-gray-400 hover-hover:text-purple-600" onClick={() => saveEditRow()}>
                                         <FontAwesomeIcon icon={faCheck} />
                                     </span>
-                                    <span className="cursor-pointer text-gray-400 hover:text-red-600" onClick={() => cancelEditing()}>
+                                    <span className="cursor-pointer text-gray-400 hover-hover:text-red-600" onClick={() => cancelEditing()}>
                                         <FontAwesomeIcon icon={faXmark} />
                                     </span></>}
 
@@ -199,7 +199,7 @@ const SubscriptionTable: React.FC = () => {
                     ))}
                     <tr>
                         <td className="px-6 py-4 text-left" colSpan={Object.keys(subscriptions[0]).length - 1}>
-                            <span className="ml-[13px] font-medium hover:text-purple-600 hover:cursor-pointer text-2xl" onClick={handleAddRow}>
+                            <span className="ml-[13px] font-medium hover-hover:text-purple-600 hover-hover:cursor-pointer text-2xl" onClick={handleAddRow}>
                                 <FontAwesomeIcon icon={faPlus} />
                             </span>
                         </td>
