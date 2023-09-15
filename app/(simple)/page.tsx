@@ -44,7 +44,7 @@ export default async function Home() {
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
                         <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
-                        <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Random insights in the hopes of saving you time</p>
+                        <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Insights in the hopes of saving you time</p>
                     </div>
                     <div className="grid gap-8 lg:grid-cols-2">
                         {allPostsData.map(({ id, date, title, author, authorImage, preview }, index) => (
