@@ -8,11 +8,11 @@ import StickyMenuCTA from './StickyMenuCTA';
 const Navigation: React.FC<any> = () => {
     return (
         <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
-            <Link href='/contact?source=web-development' scroll={false}>
+            {/* <Link href='/contact?source=web-development' scroll={false}>
                 <div className='hover:cursor-pointer w-full flex justify-center items-center text-white bg-purple-600 p-1 text-center'>
                     Are you looking for a fast and beautiful website? Start now
                 </div>
-            </Link>
+            </Link> */}
             <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-1 relative bg-white dark:bg-gray-900 !bg-opacity-80">
                 {/* <a href="#" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                         <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie</p>
