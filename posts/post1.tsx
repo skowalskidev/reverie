@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 Post.metadata = {
-    title: 'Your Post Title',
-    date: '2023-01-01',
+    title: 'How to live with 3 swimming pools, an office lounge, a gym, a golf course, an arcade, a library and a private park for $360 a month.',
+    date: '2023-09-16 23:29',
     author: 'Simon',
     authorImage: '/images/profile.png',
 };
@@ -10,138 +10,50 @@ Post.metadata = {
 export default async function Post() {
     return (
         <>
-            <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
-                <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                    <ol className="list-decimal list-inside">
-                        <li>First</li>
-                        <li>Second</li>
-                    </ol>
+            <div className="flex flex-col justify-between px-4 mx-auto max-w-screen-xl text-gray-900 dark:text-gray-400">
+                <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert flex flex-col gap-4">
 
-                    <Image src="/images/profile.png" alt="Picture of the author" width={100} height={100} />
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.419645034808!2d100.47663647509248!3d13.873838086530869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ad4b986bed7%3A0xc407310b6ec1aef8!2sThe%20Politan%20Rive!5e0!3m2!1sen!2sus!4v1694872659853!5m2!1sen!2sus" width="600" height="450" className="border-none" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 
-                    <p className="lead">Flowbite is an open-source library of UI components built with the utility-first
-                        classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals,
-                        datepickers.</p>
-                    <p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way,
-                        you can think things through before committing to an actual design project.</p>
-                    <h2>When does design come in handy?</h2>
-                    <p>While it might seem like extra work at a first glance, here are some key moments in which prototyping
-                        will come in handy:</p>
-                    <ol>
-                        <li><strong>Usability testing</strong>. Does your user know how to exit out of screens? Can they
-                            follow your intended user journey and buy something from the site you’ve designed? By running a
-                            usability test, you’ll be able to see how users will interact with your design once it’s live;
-                        </li>
-                        <li><strong>Involving stakeholders</strong>. Need to check if your GDPR consent boxes are displaying
-                            properly? Pass your prototype to your data protection team and they can test it for real;</li>
-                        <li><strong>Impressing a client</strong>. Prototypes can help explain or even sell your idea by
-                            providing your client with a hands-on experience;</li>
-                        <li><strong>Communicating your vision</strong>. By using an interactive medium to preview and test
-                            design elements, designers and developers can understand each other — and the project — better.
-                        </li>
-                    </ol>
-                    <h3>Laying the groundwork for best design</h3>
-                    <p>Before going digital, you might benefit from scribbling down some ideas in a sketchbook. This way,
-                        you can think things through before committing to an actual design project.</p>
-                    <p>Let's start by including the CSS file inside the <code>head</code> tag of your HTML.</p>
-                    <h3>Understanding typography</h3>
-                    <h4>Type properties</h4>
-                    <p>A typeface is a collection of letters. While each letter is unique, certain shapes are shared across
-                        letters. A typeface represents shared patterns across a collection of letters.</p>
-                    <h4>Baseline</h4>
-                    <p>A typeface is a collection of letters. While each letter is unique, certain shapes are shared across
-                        letters. A typeface represents shared patterns across a collection of letters.</p>
-                    <h4>Measurement from the baseline</h4>
-                    <p>A typeface is a collection of letters. While each letter is unique, certain shapes are shared across
-                        letters. A typeface represents shared patterns across a collection of letters.</p>
-                    <h3>Type classification</h3>
-                    <h4>Serif</h4>
-                    <p>A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
-                        Typefaces with serifs are called serif typefaces. Serif fonts are classified as one of the
-                        following:</p>
-                    <h4>Old-Style serifs</h4>
-                    <ul>
-                        <li>Low contrast between thick and thin strokes</li>
-                        <li>Diagonal stress in the strokes</li>
-                        <li>Slanted serifs on lower-case ascenders</li>
-                    </ul><img src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-2.png" alt="" />
-                    <ol>
-                        <li>Low contrast between thick and thin strokes</li>
-                        <li>Diagonal stress in the strokes</li>
-                        <li>Slanted serifs on lower-case ascenders</li>
-                    </ol>
-                    <h3>Laying the best for successful prototyping</h3>
-                    <p>A serif is a small shape or projection that appears at the beginning:</p>
-                    <blockquote>
-                        <p>Flowbite is just awesome. It contains tons of predesigned components and pages starting from
-                            login screen to complex dashboard. Perfect choice for your next SaaS application.</p>
-                    </blockquote>
-                    <h4>Code example</h4>
-                    <p>A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
-                        Typefaces with serifs are called serif typefaces. Serif fonts are classified as one of the
-                        following:</p>
-                    <h4>Table example</h4>
-                    <p>A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
-                    </p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Country</th>
-                                <th>Date &amp; Time</th>
-                                <th>Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>United States</td>
-                                <td>April 21, 2021</td>
-                                <td><strong>$2,300</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Canada</td>
-                                <td>May 31, 2021</td>
-                                <td><strong>$300</strong></td>
-                            </tr>
-                            <tr>
-                                <td>United Kingdom</td>
-                                <td>June 3, 2021</td>
-                                <td><strong>$2,500</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Australia</td>
-                                <td>June 23, 2021</td>
-                                <td><strong>$3,543</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Germany</td>
-                                <td>July 6, 2021</td>
-                                <td><strong>$99</strong></td>
-                            </tr>
-                            <tr>
-                                <td>France</td>
-                                <td>August 23, 2021</td>
-                                <td><strong>$2,540</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h3>Best practices for setting up your prototype</h3>
-                    <p><strong>Low fidelity or high fidelity?</strong> Fidelity refers to how close a prototype will be to
-                        the real deal. If you’re simply preparing a quick visual aid for a presentation, a low-fidelity
-                        prototype — like a wireframe with placeholder images and some basic text — would be more than
-                        enough. But if you’re going for more intricate usability testing, a high-fidelity prototype — with
-                        on-brand colors, fonts and imagery — could help get more pointed results.</p>
-                    <p><strong>Consider your user</strong>. To create an intuitive user flow, try to think as your user
-                        would when interacting with your product. While you can fine-tune this during beta testing,
-                        considering your user’s needs and habits early on will save you time by setting you on the right
-                        path.</p>
-                    <p><strong>Start from the inside out</strong>. A nice way to both organize your tasks and create more
-                        user-friendly prototypes is by building your prototypes ‘inside out’. Start by focusing on what will
-                        be important to your user, like a Buy now button or an image gallery, and list each element by order
-                        of priority. This way, you’ll be able to create a prototype that puts your users’ needs at the heart
-                        of your design.</p>
-                    <p>And there you have it! Everything you need to design and share prototypes — right in Flowbite Figma.
-                    </p>
+                    <p>I have lived it, here's how.</p>
+
+                    <p>The place is called <b>The Politan Rive</b> and it's located in a city near Bangkok called Nonthaburi.</p>
+
+                    <p>The contracts start at 6 months which allow you to rent for 12,500 THB / mo excl. bills (~1200 THB / mo) for the electric and a water bill that is also low but I cannot remember how much it was. but I've heard even lower prices depending on the condo you choose i.e. floor, size etc.</p>
+
+                    <p>You can also find condos in this complex on AirBnb for good rates.</p>
+
+                    <p>The ideal setup, which I had is as follows: get a remote job e.g. web developer and move here. It's like living in a 5 star hotel every day.</p>
+
+                    <p>Living in Nonthaburi has its merrits i.e. the immigration is not as crowded as the one in Bangkok so you're able to re-new your visa much quicker. The prices are also lower when you go to restaurants etc.</p>
+
+                    <p>The major drawback is that it takes around an hour to get to the Bangkok city centre where all the clubs and bars are.</p>
                 </article>
+                <section>
+                    <h3 className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>Tags</h3>
+                    <div className='flex flex-wrap gap-1'>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Travelling</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Thailand</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Bangkok</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Nontaburit</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Remote Work</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Web Development</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Immigration</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Visa</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Affordable Living</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Condo</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Nightlife</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">City Centre</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Restaurant</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">AirBnb</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Lifestyle</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Cost of Living</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Tourism</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Contracts</span>
+                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Digital Nomad</span>
+                    </div>
+                </section>
+
             </div>
         </>
     )
