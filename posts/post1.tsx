@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 Post.metadata = {
-    title: 'How to live with 3 swimming pools, an office lounge, a gym, a golf course, an arcade, a library and a private park for $360 a month.',
+    title: 'How to live in a 57 floor riverside condo, with 3 swimming pools, an office lounge, a gym, a golf course, an arcade, a library and a private park for $360 a month.',
     date: '2023-09-16 23:29',
     author: 'Simon',
     authorImage: '/images/captain-tylor.jpg',
