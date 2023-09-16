@@ -1,5 +1,6 @@
 import Date from '@/components/Date';
 import { getPostData } from '@/lib/posts';
+import Image from 'next/image';
 
 type Params = {
     id: string;
@@ -36,7 +37,7 @@ export default async function Post({ params }: Props) {
                         <header className="mb-4 px-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
                                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                    <img className="mr-4 w-16 h-16 rounded-full object-cover" src={postData.authorImage} alt="Jese Leos" />
+                                    <Image width={64} height={64} className="mr-4 w-16 h-16 rounded-full object-cover" src={postData.authorImage} alt="Jese Leos" />
                                     <div>
                                         <a href="#" rel="author" className="text-xl font-bold text-gray-900 dark:text-white">{postData.author}</a>
                                         <p className="text-base text-gray-500 dark:text-gray-400">Developer, Traveller</p>
