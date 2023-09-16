@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 Post.metadata = {
     title: 'Your Post Title',
     date: '2023-01-01',
@@ -14,6 +16,8 @@ export default async function Post() {
                         <li>First</li>
                         <li>Second</li>
                     </ol>
+
+                    <Image src="/images/profile.png" alt="Picture of the author" width={100} height={100} />
 
                     <p className="lead">Flowbite is an open-source library of UI components built with the utility-first
                         classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals,
