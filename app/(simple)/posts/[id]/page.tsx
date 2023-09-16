@@ -1,41 +1,39 @@
-import Date from '@/components/Date'
-
-import { getAllPostIds, getPostData } from '@/lib/posts'
+import Date from '@/components/Date';
+import { getPostData } from '@/lib/posts';
 
 type Params = {
-    id: string
-}
+    id: string;
+};
 
 type Props = {
-    params: Params
-}
+    params: Params;
+};
 
 type PostData = {
-    title: string
-    date: string
-    author: string
-    authorImage: string
-    contentHtml: string
-}
+    title: string;
+    date: string;
+    author: string;
+    authorImage: string;
+    PostComponent: React.FC;
+};
 
 export async function generateMetadata({ params }: Props) {
-    const postData: PostData = await getPostData(params.id)
-
+    const postData: PostData = await getPostData(params.id);
     return {
         title: postData.title,
-    }
+    };
 }
 
-// -< Post >-
 export default async function Post({ params }: Props) {
-    const postData: PostData = await getPostData(params.id)
+    const postData: PostData = await getPostData(params.id);
+    const PostComponent = postData.PostComponent;
 
     return (
         <>
             <main className="p-6 bg-white dark:bg-gray-900 antialiased">
                 <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
-                    <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                        <header className="mb-4 lg:mb-6 not-format">
+                    <article className="mx-auto w-full max-w-2xl">
+                        <header className="mb-4 px-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
                                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                                     <img className="mr-4 w-16 h-16 rounded-full object-cover" src={postData.authorImage} alt="Jese Leos" />
@@ -48,13 +46,10 @@ export default async function Post({ params }: Props) {
                             </address>
                             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{postData.title}</h1>
                         </header>
-                        <div
-                            className='text-gray-600 dark:text-white'
-                            dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-                        />
+                        <PostComponent />
                     </article>
                 </div>
             </main>
         </>
-    )
+    );
 }

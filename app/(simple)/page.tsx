@@ -58,7 +58,7 @@ export default async function Home() {
                                         <span className="text-sm"><Date dateString={date} /></span>
                                     </div>
                                     <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h2>
-                                    <div className="line-clamp-3 mb-5 font-light text-gray-500 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: preview }}></div>
+                                    <div className="line-clamp-3 mb-5 font-light text-gray-500 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: preview ? preview.toString() : '' }}></div>
                                     <div className="flex justify-between items-center">
                                         <div className="flex items-center space-x-4">
                                             <Image className="w-7 h-7 rounded-full object-cover"
