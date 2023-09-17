@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
 Post.metadata = {
-    title: 'How to live in a 57 floor riverside condo, with 3 swimming pools, an office lounge, a gym, a golf course, an arcade, a library and a private park for $360 a month.',
+    category: 'Travel',
+    title: 'How to Live in a 57-Floor Riverside Condo with a Rooftop Office Lounge, 3 Swimming Pools, a Gym, a Golf Course, an Arcade, a Library, and a Private Park for $360 a Month.',
     date: '2023-09-16 23:29',
     author: 'Simon',
     authorImage: '/images/captain-tylor.jpg',
@@ -16,7 +17,7 @@ export default async function Post() {
 
                     <p>I have lived it, here's how.</p>
 
-                    <p>The place is called <b>The Politan Rive</b> and it's located in a city near Bangkok called Nonthaburi.</p>
+                    <p>The place is called <b>The Politan Rive</b> and it's located in a city near Bangkok, Thailand called Nonthaburi.</p>
 
                     <p>The contracts start at 6 months which allow you to rent for 12,500 THB / mo excl. bills (~1200 THB / mo) for the electric and a water bill that is also low but I cannot remember how much it was. but I've heard even lower prices depending on the condo you choose i.e. floor, size etc.</p>
 

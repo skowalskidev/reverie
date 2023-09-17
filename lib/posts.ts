@@ -1,16 +1,16 @@
 import fs from 'fs'
 import path from 'path'
 
-const postsDirectory = path.join(process.cwd(), 'posts')
+const postsDirectory = path.join(process.cwd(), 'blog')
 
 export async function getSortedPostsData() {
-  const postsDirectory = path.join(process.cwd(), 'posts');
+  const postsDirectory = path.join(process.cwd(), 'blog');
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = [];
 
   for (const fileName of fileNames) {
     const id = fileName.replace(/\.tsx$/, '');
-    const PostComponent = (await import(`../posts/${id}`)).default;
+    const PostComponent = (await import(`../blog/${id}`)).default;
     const metadata = PostComponent.metadata;
 
     allPostsData.push({
@@ -44,7 +44,7 @@ export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.tsx`);
 
   // Dynamically import the component
-  const PostComponent = (await import(`posts/${id}`)).default;
+  const PostComponent = (await import(`blog/${id}`)).default;
 
   // Access metadata
   const metadata = PostComponent.metadata;

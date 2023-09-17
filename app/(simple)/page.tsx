@@ -13,6 +13,7 @@ export const metadata = {
 }
 
 type AllPostsData = {
+    category: string;
     date: string;
     title: string;
     author: string;
@@ -47,13 +48,13 @@ export default async function Home() {
                         <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Onlining offline info</p>
                     </div>
                     <div className="grid gap-8 lg:grid-cols-2">
-                        {allPostsData.map(({ id, date, title, author, authorImage, preview }, index) => (
-                            <Link key={index} href={`/posts/${id}`}>
+                        {allPostsData.map(({ id, date, title, author, authorImage, category }, index) => (
+                            <Link key={index} href={`/blog/${id}`}>
                                 <article className="outline outline-black text-black hover:!text-purple-600 hover:!outline-purple-600 dark:outline-white dark:text-white p-3 rounded flex flex-col justify-between gap-8 relative">
                                     <div className="flex justify-between items-center text-gray-500">
                                         <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
                                             <svg className="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clipRule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
-                                            Article
+                                            {category}
                                         </span>
                                         <span className="text-sm"><Date dateString={date} /></span>
                                     </div>
