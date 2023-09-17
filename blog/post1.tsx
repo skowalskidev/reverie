@@ -11,7 +11,7 @@ Post.metadata = {
 export default async function Post() {
     return (
         <>
-            <div className="flex flex-col gap-6 justify-between px-4 mx-auto max-w-screen-xl text-gray-900 dark:text-gray-400" style={{ gap: '24px' }}>
+            <div className="flex flex-col gap-6 justify-between px-4 mx-auto max-w-screen-xl text-gray-900 dark:text-gray-400" style={{ gap: '48px' }}>
                 <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert flex flex-col gap-4">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.419645034808!2d100.47663647509248!3d13.873838086530869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ad4b986bed7%3A0xc407310b6ec1aef8!2sThe%20Politan%20Rive!5e0!3m2!1sen!2sus!4v1694872659853!5m2!1sen!2sus" height="450" className="border-none" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     <p>I have lived it, here's how.</p>
@@ -28,29 +28,27 @@ export default async function Post() {
 
                     <p>The major drawback is that it takes around an hour to get to the Bangkok city centre where all the clubs and bars are.</p>
                 </article>
-                <section className='flex flex-col gap-4'>
-                    <h3 className='font-light text-gray-500 sm:text-xl dark:text-gray-400'>Tags</h3>
-                    <div className='flex flex-wrap gap-1' style={{ marginLeft: '-10px', marginRight: '-10px' }}>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Travelling</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Thailand</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Bangkok</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Nontaburit</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Remote Work</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Web Development</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Immigration</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Visa</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Affordable Living</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Condo</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Nightlife</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">City Centre</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Restaurant</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">AirBnb</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Lifestyle</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Cost of Living</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Tourism</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Contracts</span>
-                        <span className="text-xs font-medium px-2.5 py-0.5 rounded">Digital Nomad</span>
-                    </div>
+                <section className='flex w-full flex-wrap' style={{ marginLeft: '-10px', marginRight: '-10px', color: 'rgb(107 114 128)' }}>
+                    {/* <div className='flex flex-wrap gap-1' > */}
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Travelling</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Thailand</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Bangkok</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Nontaburit</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Remote Work</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Web Development</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Immigration</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Visa</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Affordable Living</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Condo</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Nightlife</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">City Centre</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Restaurant</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">AirBnb</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Lifestyle</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Cost of Living</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Tourism</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Contracts</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Digital Nomad</span>
                 </section>
             </div>
         </>
