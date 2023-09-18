@@ -21,7 +21,7 @@ const MainComponent: React.FC<MainComponentProps> = ({ children }) => {
     return (
         <main ref={mainRef} className="mx-auto max-w-screen-lg">
             <section className="hidden lg:flex absolute justify-center mx-auto left-0 right-0 pointer-events-none">
-                <div className='flex shadow-[inset_0_0_10px_rgba(0,0,0,0.1)] rounded-xl dark:shadow-none dark:bg-gray-950'>
+                <div className='flex'>
                     <DrippingColumn height={mainHeight} />
                     <DrippingColumn height={mainHeight} />
                     <DrippingColumn height={mainHeight} />
