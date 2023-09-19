@@ -1,6 +1,5 @@
 import React from 'react';
 import ToolLink from '../../components/ToolLink';
-import ThemeToggle from '../../components/ThemeToggle';
 import Link from 'next/link';
 import Button from '../../components/Button';
 import { getSortedPostsData } from '@/lib/posts';

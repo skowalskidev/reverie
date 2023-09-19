@@ -1,4 +1,4 @@
-import Chat from '@/components/Chat';
+import ColdOutreach from '@/components/ColdOutreach';
 
 export const metadata = {
     title: 'AI Tool X',
@@ -8,5 +8,8 @@ export const metadata = {
 export const runtime = 'edge';
 
 export default function Page() {
-    return <Chat />;
+    return (<>
+        <ColdOutreach />
+        {/* <Chat /> */}
+    </>);
 }
