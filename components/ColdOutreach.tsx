@@ -32,39 +32,37 @@ export default function ColdOutreach() {
     };
 
     return (
-        <section className='mx-auto w-full max-w-2xl'>
-            <Button onClick={() => {
-                setAboutYou(demoAboutYou);
-                setYourOffer(demoOffer);
-                setAboutRecipient(demoRecipient);
-            }}>
-                Fill with Demo Data
-            </Button>
+        <section className='mx-auto w-full max-w-2xl flex flex-col gap-5'>
+            <div>
+                <Button onClick={() => {
+                    setAboutYou(demoAboutYou);
+                    setYourOffer(demoOffer);
+                    setAboutRecipient(demoRecipient);
+                }}
+                    color='bg-gray-400'>
+                    Fill with Demo Data
+                </Button>
+            </div>
 
             <form onSubmit={handleFormSubmit} className='flex flex-col gap-5 mt-4'>
                 <div>
                     <label htmlFor="aboutYou" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About you</label>
-                    <textarea id="aboutYou" rows={2} value={aboutYou} onChange={(e) => setAboutYou(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <textarea id="aboutYou" rows={2} value={aboutYou} onChange={(e) => setAboutYou(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <div>
                     <label htmlFor="yourOffer" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your offer</label>
-                    <textarea id="yourOffer" rows={2} value={yourOffer} onChange={(e) => setYourOffer(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <textarea id="yourOffer" rows={2} value={yourOffer} onChange={(e) => setYourOffer(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <div>
                     <label htmlFor="aboutRecipient" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About your recipient</label>
-                    <textarea id="aboutRecipient" rows={6} value={aboutRecipient} onChange={(e) => setAboutRecipient(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <textarea id="aboutRecipient" rows={6} value={aboutRecipient} onChange={(e) => setAboutRecipient(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
-                <Button type="submit">Send</Button>
+                <Button type="submit">Generate</Button>
             </form>
-
-            <ul>
-                {messages.map((m, index) => (
-                    <li key={index}>
-                        {m.role !== 'user' && 'AI: '}
-                        {m.role !== 'user' && m.content}
-                    </li>
-                ))}
-            </ul>
+            <div>
+                <label htmlFor="coldOutreach" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your cold outreach message</label>
+                <textarea id="coldOutreach" rows={6} value={messages.filter((m) => m.role !== 'user').map((m) => m.content).join('\n\n')} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+            </div>
         </section>
     );
 }
