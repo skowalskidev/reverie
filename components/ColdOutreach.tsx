@@ -19,16 +19,30 @@ export default function ColdOutreach() {
     const [yourOffer, setYourOffer] = useState('');
     const [aboutRecipient, setAboutRecipient] = useState('');
 
-    const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const prompt = 'Craft a cold outreach message (300 chars) for the following';
-        const concatenatedMessage = `${prompt}\n\n${aboutYou}\n\n${yourOffer}\n\n${aboutRecipient}`;
-
+        const promptTitle = 'Craft a cold outreach message (300 chars) for the following';
+        const promptAbout = 'About me';
+        const promptOffer = 'About my offer';
+        const promptRecipient = 'About my recipient';
+        const concatenatedMessage = `${promptTitle}\n\n${promptAbout}\n\n${aboutYou}\n\n${promptOffer}\n\n${yourOffer}\n\n${promptRecipient}\n\n${aboutRecipient}`;
+        console.log(concatenatedMessage);
         // Directly set the input to the concatenated message
         handleInputChange({ target: { value: concatenatedMessage } } as React.ChangeEvent<HTMLInputElement>);
 
         // Then submit the form as usual
         handleSubmit(e);
+    };
+
+    const [clipboardStatus, setClipboardStatus] = useState('');
+
+    const handleCopyToClipboard = () => {
+        const textToCopy = messages.filter((m) => m.role !== 'user').map((m) => m.content).join('\n\n');
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            setClipboardStatus('Copied to clipboard');
+        }).catch(() => {
+            setClipboardStatus('Failed to copy');
+        });
     };
 
     return (
@@ -39,7 +53,7 @@ export default function ColdOutreach() {
                     setYourOffer(demoOffer);
                     setAboutRecipient(demoRecipient);
                 }}
-                    color='bg-gray-400'>
+                    color='bg-gray-300'>
                     Fill with Demo Data
                 </Button>
             </div>
@@ -47,15 +61,15 @@ export default function ColdOutreach() {
             <form onSubmit={handleFormSubmit} className='flex flex-col gap-5 mt-4'>
                 <div>
                     <label htmlFor="aboutYou" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About you</label>
-                    <textarea id="aboutYou" rows={2} value={aboutYou} onChange={(e) => setAboutYou(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <textarea required id="aboutYou" rows={2} value={aboutYou} onChange={(e) => setAboutYou(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <div>
                     <label htmlFor="yourOffer" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your offer</label>
-                    <textarea id="yourOffer" rows={2} value={yourOffer} onChange={(e) => setYourOffer(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <textarea required id="yourOffer" rows={2} value={yourOffer} onChange={(e) => setYourOffer(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <div>
                     <label htmlFor="aboutRecipient" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About your recipient</label>
-                    <textarea id="aboutRecipient" rows={6} value={aboutRecipient} onChange={(e) => setAboutRecipient(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <textarea required id="aboutRecipient" rows={6} value={aboutRecipient} onChange={(e) => setAboutRecipient(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <Button type="submit">Generate</Button>
             </form>
@@ -63,6 +77,8 @@ export default function ColdOutreach() {
                 <label htmlFor="coldOutreach" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your cold outreach message</label>
                 <textarea id="coldOutreach" rows={6} value={messages.filter((m) => m.role !== 'user').map((m) => m.content).join('\n\n')} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
             </div>
+            <Button color='bg-gray-300' onClick={handleCopyToClipboard}>Copy to Clipboard</Button>
+            {clipboardStatus && <div>{clipboardStatus}</div>}
         </section>
     );
 }
