@@ -15,11 +15,15 @@ export default function ColdOutreach() {
         api: '/api/chat',
     });
 
-    const [aboutYou, setAboutYou] = useState('');
-    const [yourOffer, setYourOffer] = useState('');
-    const [aboutRecipient, setAboutRecipient] = useState('');
+    const [aboutYou, setAboutYou] = useState(localStorage.getItem('aboutYou') || ''); // Load from local storage
+    const [yourOffer, setYourOffer] = useState(localStorage.getItem('yourOffer') || ''); // Load from local storage
+    const [aboutRecipient, setAboutRecipient] = useState(localStorage.getItem('aboutRecipient') || ''); // Load from local storage
 
     useEffect(() => {
+        localStorage.setItem('aboutYou', aboutYou);
+        localStorage.setItem('yourOffer', yourOffer);
+        localStorage.setItem('aboutRecipient', aboutRecipient);
+
         const promptTitle = 'Craft a cold outreach message (300 chars) for the following';
         const promptAbout = 'About me';
         const promptOffer = 'About my offer';
