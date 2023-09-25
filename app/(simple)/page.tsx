@@ -36,7 +36,7 @@ export default async function Home() {
             </section>
 
             <section className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                <ToolLink title='Cold Outreach AI' alt='ai tool symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='cold-outreach-ai' />
+                <ToolLink title='Cold Outreach AI' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
                 <ToolLink title='Subscription Management' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
                 <ToolLink title='Web Development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' label='*Service' />
             </section>
