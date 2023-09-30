@@ -24,21 +24,37 @@ type AllPostsData = {
 export default async function Home() {
     const allPostsData: AllPostsData = await getSortedPostsData();
     return (
-        <>
+        <div className='flex flex-col gap-8'>
             <section className="bg-white dark:bg-gray-900 text-center p-6">
-                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">fast free <span className="text-purple-600 dark:text-purple-600">fun</span> easy</h1>
-                <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Knowledge & tools made by me, for me,<br></br> with the hopes of helping you</p>
-                <Link href='/contact' scroll={false}>
-                    <Button>
-                        Contact
-                    </Button>
-                </Link>
+                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Free tools</h1>
+                <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Made by me, for me + you</p>
+                <div className='mt-8 mb-4'>
+                    <Link href='/contact' scroll={false}>
+                        <Button>
+                            Contact
+                        </Button>
+                    </Link>
+                </div>
             </section>
 
-            <section className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                <ToolLink title='Cold Outreach AI' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
-                <ToolLink title='Subscription Management' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
-                <ToolLink title='Web Development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' label='*Service' />
+            <section className="bg-white dark:bg-gray-900">
+                <div className="mx-auto max-w-screen-sm text-center">
+                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Tools</h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
+                    <ToolLink title='Cold Outreach AI' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
+                    <ToolLink title='Subscription Management' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
+                </div>
+            </section>
+
+            <section className="bg-white dark:bg-gray-900">
+
+                <div className="mx-auto max-w-screen-sm text-center">
+                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Services</h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
+                    <ToolLink title='Web Development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
+                </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
@@ -82,6 +98,6 @@ export default async function Home() {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 }
