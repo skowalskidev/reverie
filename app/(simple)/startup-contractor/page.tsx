@@ -15,7 +15,7 @@ export default function Home() {
         <div className='flex flex-col gap-8'>
             <section className="flex flex-col gap-4 items-center bg-white dark:bg-gray-900 text-center p-6">
                 <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tigh md:text-5xl lg:text-6xl dark:text-white relative">Simon<br></br> [startup-contractor]</h1>
-                <p className="text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">I'm easy to work with and I get the job done!</p>
+                <p className="text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">I&apos;m easy to work with and I get the job done!</p>
                 <Link href='/contact' scroll={false}>
                     <Button>
                         Hire!
@@ -101,7 +101,7 @@ export default function Home() {
             </section>
 
             <section className="bg-white dark:bg-gray-900 text-center p-6 flex flex-col">
-                <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Not sure whether I suit your needs? Hire me anyway, I've got you covered.</h2>
+                <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Not sure whether I suit your needs? Hire me anyway, I&apos;ve got you covered.</h2>
                 <Link href='/contact' scroll={false}>
                     <Button>
                         Hire!
