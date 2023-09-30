@@ -53,49 +53,47 @@ export default async function Home() {
                     <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Services</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
+                    <ToolLink title='Startup Contractor' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
                     <ToolLink title='Web Development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
                 </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
-                <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-                    <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                        <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
-                        <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Onlining offline info</p>
-                    </div>
-                    <div className="grid gap-8 lg:grid-cols-2">
-                        {allPostsData.map(({ id, date, title, author, authorImage, category }, index) => (
-                            <Link key={index} href={`/blog/${id}`}>
-                                <article className="outline outline-black text-black hover:!text-purple-600 hover:!outline-purple-600 dark:outline-white dark:text-white p-3 rounded flex flex-col justify-between gap-8 relative">
-                                    <div className="flex justify-between items-center text-gray-500">
-                                        <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
-                                            <svg className="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clipRule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
-                                            {category}
+                <div className="mx-auto max-w-screen-sm text-center">
+                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
+                </div>
+                <div className="grid gap-8 lg:grid-cols-2 p-6">
+                    {allPostsData.map(({ id, date, title, author, authorImage, category }, index) => (
+                        <Link key={index} href={`/blog/${id}`}>
+                            <article className="outline outline-black text-black hover:!text-purple-600 hover:!outline-purple-600 dark:outline-white dark:text-white p-3 rounded flex flex-col justify-between gap-8 relative">
+                                <div className="flex justify-between items-center text-gray-500">
+                                    <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                                        <svg className="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clipRule="evenodd"></path><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path></svg>
+                                        {category}
+                                    </span>
+                                    <span className="text-sm"><Date dateString={date} /></span>
+                                </div>
+                                <h2 className="text-2xl font-bold tracking-tight ">{title}</h2>
+                                <div className="flex justify-between items-center">
+                                    <div className="flex items-center space-x-4">
+                                        <Image className="w-7 h-7 rounded-full object-cover"
+                                            width={28}
+                                            height={28}
+                                            src={authorImage}
+                                            alt="Jese Leos avatar"
+                                        />
+                                        <span className="font-medium">
+                                            {author}
                                         </span>
-                                        <span className="text-sm"><Date dateString={date} /></span>
                                     </div>
-                                    <h2 className="text-2xl font-bold tracking-tight ">{title}</h2>
-                                    <div className="flex justify-between items-center">
-                                        <div className="flex items-center space-x-4">
-                                            <Image className="w-7 h-7 rounded-full object-cover"
-                                                width={28}
-                                                height={28}
-                                                src={authorImage}
-                                                alt="Jese Leos avatar"
-                                            />
-                                            <span className="font-medium">
-                                                {author}
-                                            </span>
-                                        </div>
-                                        <div className="inline-flex items-center font-medium hover:underline">
-                                            Read more
-                                            <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                                        </div>
+                                    <div className="inline-flex items-center font-medium hover:underline">
+                                        Read more
+                                        <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                                     </div>
-                                </article>
-                            </Link>
-                        ))}
-                    </div>
+                                </div>
+                            </article>
+                        </Link>
+                    ))}
                 </div>
             </section>
         </div>
