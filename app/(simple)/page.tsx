@@ -53,7 +53,7 @@ export default async function Home() {
                     <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Services</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='Startup Contractor' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
+                    <ToolLink title='Startup Contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
                     <ToolLink title='Web Development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
                 </div>
             </section>
