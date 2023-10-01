@@ -50,8 +50,14 @@ export default function ColdOutreach() {
     const handleCopyToClipboard = () => {
         navigator.clipboard.writeText(coldOutreach).then(() => {
             setClipboardStatus('Copied to clipboard');
+            setTimeout(() => {
+                setClipboardStatus('');
+            }, 2000);
         }).catch(() => {
             setClipboardStatus('Failed to copy');
+            setTimeout(() => {
+                setClipboardStatus('');
+            }, 2000);
         });
     };
 
