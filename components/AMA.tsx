@@ -34,11 +34,11 @@ export default function AMA() {
                     {messages.slice(2).reverse().map((m, index) => (
                         <React.Fragment key={index}>
                             {m.role === 'user'
-                                ? <li className='flex gap-4 w-4/5 self-end justify-end text-end'>
+                                ? <li className='flex gap-4 lg:w-4/5 self-end justify-end text-end'>
                                     {m.content}
                                     <span className='text-blue-500'>You</span>
                                 </li>
-                                : <li className='flex gap-4 w-4/5 self-start justify-start text-start'>
+                                : <li className='flex gap-4 lg:w-4/5 self-start justify-start text-start'>
                                     <span className='text-purple-600 flex gap-4 items-center flex-shrink-0'>
                                         <Image
                                             src="/images/profile.jpeg"
