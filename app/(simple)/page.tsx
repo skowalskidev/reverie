@@ -39,7 +39,7 @@ export default async function Home() {
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="mx-auto max-w-screen-sm text-center">
-                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">'tools'</h2>
+                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">&apos;tools&apos;</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
                     <ToolLink title='cold outreach AI' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
@@ -50,7 +50,7 @@ export default async function Home() {
             <section className="bg-white dark:bg-gray-900">
 
                 <div className="mx-auto max-w-screen-sm text-center">
-                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">'services'</h2>
+                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">&apos;services&apos;</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
                     <ToolLink title='startup contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
@@ -60,7 +60,7 @@ export default async function Home() {
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="mx-auto max-w-screen-sm text-center">
-                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">'blog'</h2>
+                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">&apos;blog&apos;</h2>
                 </div>
                 <div className="grid gap-8 lg:grid-cols-2 p-6">
                     {allPostsData.map(({ id, date, title, author, authorImage, category }, index) => (
