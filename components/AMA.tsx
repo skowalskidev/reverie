@@ -51,7 +51,7 @@ export default function AMA() {
                                         />
                                         Simon AI
                                     </span>
-                                    {m.content}
+                                    <pre className='font-sans whitespace-pre-wrap'>{m.content}</pre>
                                 </li>
                             }
                             {index !== messages.length - 3 && <hr className="text-gray-500 dark:text-gray-400" />}

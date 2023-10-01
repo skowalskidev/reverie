@@ -19,7 +19,7 @@ export default function Home() {
                 <p className="text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">I&apos;m easy to work with and I get the job done!</p>
                 <Link href='/contact' scroll={false}>
                     <Button>
-                        Hire!
+                        Contact
                     </Button>
                 </Link>
             </section>
@@ -108,7 +108,7 @@ export default function Home() {
                 <h2 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Not sure whether I suit your needs? Hire me anyway, I&apos;ve got you covered.</h2>
                 <Link href='/contact' scroll={false}>
                     <Button>
-                        Hire!
+                        Contact
                     </Button>
                 </Link>
             </section>
