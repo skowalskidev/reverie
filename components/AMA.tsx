@@ -41,7 +41,7 @@ export default function AMA() {
                                     <span className='text-blue-500'>You</span>
                                 </li>
                                 : <li className='flex gap-4 lg:w-4/5 self-start justify-start text-start'>
-                                    <span className='text-purple-600 flex gap-4 items-center flex-shrink-0'>
+                                    <span className='text-purple-600 flex flex-col lg:flex-row gap-4 items-center flex-shrink-0'>
                                         <Image
                                             src="/images/profile.jpeg"
                                             alt="Jese image"
@@ -66,7 +66,7 @@ export default function AMA() {
                     <input required value={input} placeholder='Say something...' onChange={handleInputChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
                 </div>
                 <div>
-                    <Button type="submit">Ask</Button>
+                    <Button type="submit">ask</Button>
                 </div>
             </form>
         </div>
