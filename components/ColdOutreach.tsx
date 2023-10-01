@@ -19,6 +19,11 @@ export default function ColdOutreach() {
     const [aboutYou, setAboutYou] = useState(localStorage.getItem('aboutYou') || ''); // Load from local storage
     const [yourOffer, setYourOffer] = useState(localStorage.getItem('yourOffer') || ''); // Load from local storage
     const [aboutRecipient, setAboutRecipient] = useState(localStorage.getItem('aboutRecipient') || ''); // Load from local storage
+    const [coldOutreach, setColdOutreach] = useState('');
+
+    useEffect(() => {
+        setColdOutreach(messages.filter((m) => m.role !== 'user').map((m) => m.content).join('\n\n'));
+    }, [messages]);
 
     useEffect(() => {
         localStorage.setItem('aboutYou', aboutYou);
@@ -43,8 +48,7 @@ export default function ColdOutreach() {
     const [clipboardStatus, setClipboardStatus] = useState('');
 
     const handleCopyToClipboard = () => {
-        const textToCopy = messages.filter((m) => m.role !== 'user').map((m) => m.content).join('\n\n');
-        navigator.clipboard.writeText(textToCopy).then(() => {
+        navigator.clipboard.writeText(coldOutreach).then(() => {
             setClipboardStatus('Copied to clipboard');
         }).catch(() => {
             setClipboardStatus('Failed to copy');
@@ -81,7 +85,13 @@ export default function ColdOutreach() {
             </form>
             <div>
                 <label htmlFor="coldOutreach" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your cold outreach message</label>
-                <textarea id="coldOutreach" rows={6} value={messages.filter((m) => m.role !== 'user').map((m) => m.content).join('\n\n')} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                <textarea
+                    id="coldOutreach"
+                    rows={6}
+                    value={coldOutreach}
+                    onChange={(e) => setColdOutreach(e.target.value)}
+                    className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                ></textarea>
             </div>
             <Button color='bg-gray-300' onClick={handleCopyToClipboard}>Copy to Clipboard</Button>
             {clipboardStatus && <div>{clipboardStatus}</div>}
