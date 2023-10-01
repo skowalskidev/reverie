@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { useChat } from 'ai/react';
 import Button from './Button';
-import { set } from 'date-fns';
 
 const demoAboutYou = 'My name is Simon White, I am a programmer working on a cold outreach tool which will automate your cold outreach messages.';
 

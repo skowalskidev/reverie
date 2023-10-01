@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import Button from '@/components/Button';
+import AMA from '@/components/AMA';
 
 export const metadata = {
     title: 'Subscription Management',
@@ -22,9 +23,12 @@ export default function Home() {
                     </Button>
                 </Link>
             </section>
+            <section className="bg-white dark:bg-gray-900 text-center p-6 flex flex-col gap-8">
+                <AMA />
+            </section>
             <section className="bg-white dark:bg-gray-900 text-center p-6 flex flex-col lg:flex-row gap-8 items-center">
                 <div className='flex-1'>
-                    <div className='relative lg:w-60 lg:h-60 w-44 h-44'>
+                    <div className='relative lg:w-44 lg:h-44 w-44 h-44'>
                         <Image
                             src="/images/profile.jpeg"
                             alt="Jese image"
