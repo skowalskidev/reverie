@@ -21,11 +21,13 @@ export default function AMA() {
             role: 'user',
         }, {
             id: '2',
-            content: 'Hello, I\'m Simon AI, ask me anything!',
+            content: 'Hello, I\'ve read Simon\'s resume so you can ask me anything about him!',
             role: 'system',
             // role: 'system' | 'user' | 'assistant' | 'function'
         }],
     });
+
+    //TODO it works badly, make sure to add the context or the final instruction to every prompt
 
     return (
         <div className='flex flex-col gap-4'>
