@@ -32,7 +32,7 @@ export default function AMA() {
     return (
         <div className='flex flex-col gap-4'>
             <div>
-                <ul className="max-h-96 overflow-auto flex flex-col-reverse gap-4 p-2.5 w-full text-sm text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <ul className="max-h-96 overflow-auto flex flex-col-reverse gap-4 p-2.5 w-full text-base text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     {messages.slice(2).reverse().map((m, index) => (
                         <React.Fragment key={index}>
                             {m.role === 'user'
@@ -63,7 +63,7 @@ export default function AMA() {
 
             <form onSubmit={handleSubmit} className='flex items-center gap-4'>
                 <div className='grow'>
-                    <input required value={input} placeholder='Say something...' onChange={handleInputChange} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
+                    <input required value={input} placeholder='Say something...' onChange={handleInputChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
                 </div>
                 <div>
                     <Button type="submit">Ask</Button>

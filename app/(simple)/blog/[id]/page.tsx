@@ -36,7 +36,7 @@ export default async function Post({ params }: Props) {
                     <article className="mx-auto w-full max-w-2xl">
                         <header className="mb-4 px-4 lg:mb-6 not-format">
                             <address className="flex items-center mb-6 not-italic">
-                                <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                                <div className="inline-flex items-center mr-3 text-base text-gray-900 dark:text-white">
                                     <Image width={64} height={64} className="mr-4 w-16 h-16 rounded-full object-cover" src={postData.authorImage} alt="Jese Leos" />
                                     <div>
                                         <a href="#" rel="author" className="text-xl font-bold text-gray-900 dark:text-white">{postData.author}</a>

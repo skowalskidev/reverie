@@ -125,7 +125,7 @@ const MatrixEffect = () => {
                         row.map((character: Character, characterIndex) => (
                             <div
                                 key={characterIndex}
-                                className={`text-gray-500 dark:text-gray-400 text-sm w-5 ml-1 ${getCharacterClass(character)}`}
+                                className={`text-gray-500 dark:text-gray-400 text-base w-5 ml-1 ${getCharacterClass(character)}`}
                                 style={getCharacterStyle(character)}
                             >
                                 {character?.char}

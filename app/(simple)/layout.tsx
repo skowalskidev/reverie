@@ -14,8 +14,8 @@ export default function Layout(props: {
                     <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
                         <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
                             <li>
-                                <Link href="/" className="flex items-top text-sm font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
-                                    <p className="text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie Zero</p>
+                                <Link href="/" className="flex items-top text-base font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
+                                    <p className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">Reverie Zero</p>
                                 </Link>
                             </li>
                         </ul>
@@ -29,7 +29,7 @@ export default function Layout(props: {
             <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-                    <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">2023 <a href="#" className="hover:underline">Reverie Zero</a></span>
+                    <span className="block text-base text-gray-500 sm:text-center dark:text-gray-400">2023 <a href="#" className="hover:underline">Reverie Zero</a></span>
                 </div>
             </footer >
         </>

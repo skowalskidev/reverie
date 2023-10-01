@@ -75,27 +75,27 @@ export default function ColdOutreach() {
 
             <form onSubmit={handleFormSubmit} className='flex flex-col gap-5 mt-4'>
                 <div>
-                    <label htmlFor="aboutYou" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About you</label>
-                    <textarea required id="aboutYou" rows={2} value={aboutYou} onChange={(e) => setAboutYou(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <label htmlFor="aboutYou" className="block mb-2 text-base font-medium text-gray-900 dark:text-white">About you</label>
+                    <textarea required id="aboutYou" rows={2} value={aboutYou} onChange={(e) => setAboutYou(e.target.value)} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <div>
-                    <label htmlFor="yourOffer" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your offer</label>
-                    <textarea required id="yourOffer" rows={2} value={yourOffer} onChange={(e) => setYourOffer(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <label htmlFor="yourOffer" className="block mb-2 text-base font-medium text-gray-900 dark:text-white">Your offer</label>
+                    <textarea required id="yourOffer" rows={2} value={yourOffer} onChange={(e) => setYourOffer(e.target.value)} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <div>
-                    <label htmlFor="aboutRecipient" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About your recipient</label>
-                    <textarea required id="aboutRecipient" rows={6} value={aboutRecipient} onChange={(e) => setAboutRecipient(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <label htmlFor="aboutRecipient" className="block mb-2 text-base font-medium text-gray-900 dark:text-white">About your recipient</label>
+                    <textarea required id="aboutRecipient" rows={6} value={aboutRecipient} onChange={(e) => setAboutRecipient(e.target.value)} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
                 <Button type="submit">Generate</Button>
             </form>
             <div>
-                <label htmlFor="coldOutreach" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your cold outreach message</label>
+                <label htmlFor="coldOutreach" className="block mb-2 text-base font-medium text-gray-900 dark:text-white">Your cold outreach message</label>
                 <textarea
                     id="coldOutreach"
                     rows={6}
                     value={coldOutreach}
                     onChange={(e) => setColdOutreach(e.target.value)}
-                    className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-purple-600 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 ></textarea>
             </div>
             <Button color='bg-gray-300' onClick={handleCopyToClipboard}>Copy to Clipboard</Button>

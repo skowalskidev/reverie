@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ExampleTable = () => {
     return (
-        <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400">
+        <table className="w-full text-base text-center text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-white uppercase bg-purple-600">
                 <tr>
                     <th scope="col" className="px-5 py-3 rounded-l-lg">
@@ -115,7 +115,7 @@ const ExampleTable = () => {
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
                     <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
-                        <div className="w-10 h-10 rounded-full object-cover shrink-0 flex items-center justify-center text-sm tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">RZ</div>
+                        <div className="w-10 h-10 rounded-full object-cover shrink-0 flex items-center justify-center text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">RZ</div>
                         Reverie<br></br>Zero
                     </th>
                     <td className="px-5 py-4">
