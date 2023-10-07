@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.reveriezero.com/
+
+# Sitemaps
+Sitemap: https://www.reveriezero.com/sitemap.xml
