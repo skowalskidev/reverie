@@ -1,3 +1,4 @@
+import GithubButton from "@/components/GithubButton";
 import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
 
@@ -9,6 +10,7 @@ export default function Layout(props: {
             <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
                 <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-1 relative bg-white dark:bg-gray-900 !bg-opacity-80">
                     <div className="flex gap-2 items-center">
+                        <GithubButton />
                         <ThemeToggle />
                     </div>
                     <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
