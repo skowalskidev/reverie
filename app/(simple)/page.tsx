@@ -26,8 +26,8 @@ export default async function Home() {
     return (
         <div className='flex flex-col gap-8'>
             <section className="bg-white dark:bg-gray-900 text-center p-6">
-                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">free tools</h1>
-                <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">made by me, for me + you</p>
+                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">web development</h1>
+                <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">by Simon Kowalski</p>
                 <div className='mt-8 mb-4'>
                     <Link href='/contact' scroll={false}>
                         <Button>
@@ -38,29 +38,29 @@ export default async function Home() {
             </section>
 
             <section className="bg-white dark:bg-gray-900">
-                <div className="mx-auto max-w-screen-sm text-center">
-                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">&apos;tools&apos;</h2>
+                <div className="px-6 max-w-screen-sm">
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">tools</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='cold outreach AI' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
-                    <ToolLink title='subscription management' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
+                    <ToolLink title='cold outreach' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
+                    <ToolLink title='subscriptions' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
                 </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
 
-                <div className="mx-auto max-w-screen-sm text-center">
-                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">&apos;services&apos;</h2>
+                <div className="px-6 max-w-screen-sm">
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">services</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='startup contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
-                    <ToolLink title='web development' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
+                    <ToolLink title='contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
+                    <ToolLink title='websites' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
                 </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
-                <div className="mx-auto max-w-screen-sm text-center">
-                    <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">&apos;blog&apos;</h2>
+                <div className="px-6 max-w-screen-sm">
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">blog</h2>
                 </div>
                 <div className="grid gap-8 lg:grid-cols-2 p-6">
                     {allPostsData.map(({ id, date, title, author, authorImage, category }, index) => (
@@ -73,7 +73,7 @@ export default async function Home() {
                                     </span>
                                     <span className="text-base"><Date dateString={date} /></span>
                                 </div>
-                                <h2 className="text-2xl font-bold tracking-tight ">{title}</h2>
+                                <h2 className="text-lg tracking-tight ">{title}</h2>
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center space-x-4">
                                         <Image className="w-7 h-7 rounded-full object-cover"

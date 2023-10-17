@@ -45,7 +45,7 @@ export default async function Post({ params }: Props) {
                                     </div>
                                 </div>
                             </address>
-                            <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{postData.title}</h1>
+                            <h1 className="mb-4 text-3xl font-semibold leading-tight text-gray-900 lg:mb-6 lg:text-xl dark:text-white">{postData.title}</h1>
                         </header>
                         <PostComponent />
                     </article>

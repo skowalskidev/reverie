@@ -24,7 +24,7 @@ const ToolLink = ({ title, imgSrc, alt, toolLinkHref, label }: Props) => {
                     className='object-cover rounded-lg'
                     sizes="40vw,(min-width: 1024px) 33vw"></Image>
             </div>
-            <h2 className='text-lg lg:text-2xl font-extrabold'>{title}</h2>
+            <h2 className='text-lg text-center'>{title}</h2>
         </Link >
     );
 };

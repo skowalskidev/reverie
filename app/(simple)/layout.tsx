@@ -14,7 +14,7 @@ export default function Layout(props: {
                         <ThemeToggle />
                     </div>
                     <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
-                        <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
+                        <ul className="grow px-5 py-1.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
                             <li>
                                 <Link href="/" className="flex items-top text-base font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
                                     <p className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">reverie zero</p>
@@ -25,7 +25,7 @@ export default function Layout(props: {
                 </div>
             </nav>
 
-            <main className='mx-auto max-w-screen-lg mt-28'>
+            <main className='mx-auto max-w-screen-md mt-28'>
                 {props.children}
             </main>
             <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
