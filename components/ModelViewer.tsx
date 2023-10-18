@@ -43,9 +43,7 @@ const ModelViewer = () => {
                 camera.position.set(3, 2, 2);
                 setLoading(false);  // Set loading to false once the model is loaded
             },
-            (xhr) => {
-                console.log((xhr.loaded / xhr.total * 100) + '% loaded');  // Optional: log loading progress
-            },
+            undefined,
             (error) => {
                 console.error(error);
                 setLoading(false);  // Optionally, set loading to false also on error
@@ -78,8 +76,8 @@ const ModelViewer = () => {
     }, []);  // Empty dependency array ensures this useEffect runs once on mount
 
     return (
-        <div className='h-48 flex items-center justify-center' ref={containerRef}>
-            {loading && <div className="loader">
+        <div className='h-48 flex items-center justify-center relative' ref={containerRef}>
+            {loading && <div className="loader absolute">
                 <div role="status" className='flex gap-4'>
                     <span className='flex items-center'>Loading the lucky cat</span>
                     <svg aria-hidden="true" className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-purple-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
