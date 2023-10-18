@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lucky cat maneki neko
+* source:	https://sketchfab.com/3d-models/lucky-cat-maneki-neko-50b5d360717c442c971b3db0576606c4
+* author:	Rice & Soy Sauce (https://sketchfab.com/rice_soysauce)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lucky cat maneki neko" (https://sketchfab.com/3d-models/lucky-cat-maneki-neko-50b5d360717c442c971b3db0576606c4) by Rice & Soy Sauce (https://sketchfab.com/rice_soysauce) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
