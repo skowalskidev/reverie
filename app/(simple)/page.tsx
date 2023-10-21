@@ -29,7 +29,7 @@ export default async function Home() {
 
 
             <section className="bg-white dark:bg-gray-900 text-center p-6">
-                <ModelViewer />
+                {/* <ModelViewer /> */}
                 <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">web development</h1>
                 <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">by Simon Kowalski</p>
                 <div className='mt-8 mb-4'>
