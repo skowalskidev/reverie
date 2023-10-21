@@ -22,7 +22,7 @@ const ExampleTable = () => {
             </thead>
             <tbody>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-start items-center gap-3">
                         <div className="relative">
                             <Image
                                 src="/images/profile.png"
@@ -32,7 +32,7 @@ const ExampleTable = () => {
                                 height={40}
                             />
                         </div>
-                        Bonnie
+                        {/* Bonnie */}
                     </th>
                     <td className="px-5 py-4">
                         Design
@@ -45,7 +45,7 @@ const ExampleTable = () => {
                     </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-start items-center gap-3">
                         <div className="relative">
                             <Image
                                 src="/images/profile2.jpeg"
@@ -55,7 +55,7 @@ const ExampleTable = () => {
                                 height={40}
                             />
                         </div>
-                        Roger
+                        {/* Roger */}
                     </th>
                     <td className="px-5 py-4">
                         Dev
@@ -68,7 +68,7 @@ const ExampleTable = () => {
                     </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-start items-center gap-3">
                         <div className="relative">
                             <Image
                                 src="/images/logos/vercel-favicon.ico"
@@ -78,7 +78,7 @@ const ExampleTable = () => {
                                 height={40}
                             />
                         </div>
-                        Vercel
+                        {/* Vercel */}
                     </th>
                     <td className="px-5 py-4">
                         Hosting
@@ -91,7 +91,7 @@ const ExampleTable = () => {
                     </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-start items-center gap-3">
                         <div className="relative">
                             <Image
                                 src="/images/logos/sanity-logo.webp"
@@ -101,7 +101,7 @@ const ExampleTable = () => {
                                 height={40}
                             />
                         </div>
-                        Sanity
+                        {/* Sanity */}
                     </th>
                     <td className="px-5 py-4">
                         Headless CMS
@@ -114,9 +114,9 @@ const ExampleTable = () => {
                     </td>
                 </tr>
                 <tr className="bg-white dark:bg-gray-800">
-                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex justify-start items-center gap-3">
+                    <th scope="row" className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white flex justify-start items-center gap-3">
                         <div className="w-10 h-10 rounded-full object-cover shrink-0 flex items-center justify-center text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">RZ</div>
-                        Reverie<br></br>Zero
+                        {/* Reverie<br></br>Zero */}
                     </th>
                     <td className="px-5 py-4">
                         Quality Control & Management
