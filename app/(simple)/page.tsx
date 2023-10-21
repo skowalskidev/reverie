@@ -5,7 +5,6 @@ import Button from '../../components/Button';
 import { getSortedPostsData } from '@/lib/posts';
 import Date from '@/components/Date'
 import Image from 'next/image';
-import ModelViewer from '@/components/ModelViewer';
 
 export const metadata = {
     title: 'Reverie Zero',
