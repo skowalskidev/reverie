@@ -51,13 +51,21 @@ export default async function Home() {
             </section>
 
             <section className="bg-white dark:bg-gray-900">
-
                 <div className="px-6 max-w-screen-sm">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">services</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
                     <ToolLink title='contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
                     <ToolLink title='websites' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
+                </div>
+            </section>
+
+            <section className="bg-white dark:bg-gray-900">
+                <div className="px-6 max-w-screen-sm">
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">demos</h2>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
+                    <ToolLink title='3D' alt='3d symbol' imgSrc='/images/homepage/3d-models.png' toolLinkHref='3d' />
                 </div>
             </section>
 
