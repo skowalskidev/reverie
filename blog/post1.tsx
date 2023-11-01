@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 Post.metadata = {
     category: 'Travel',
     title: 'How to Live in a 57-Floor Riverside Condo with a Rooftop Office Lounge, 3 Swimming Pools, a Gym, a Golf Course, an Arcade, a Library, and a Private Park for $360 a Month.',
