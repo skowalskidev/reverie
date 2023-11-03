@@ -58,18 +58,17 @@ export default async function Post() {
                     ></Image>
                 </article >
                 <section className='flex w-full flex-wrap' style={{ marginLeft: '-10px', marginRight: '-10px', color: 'rgb(107 114 128)' }}>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">LinkedIn DMs</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">No Response</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">The Mom Test</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">SaaS List</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Revenue Generation</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Analysis Paralysis</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Positive Feedback</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Overcoming Challenges</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Self-Doubt</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Persistence</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Reflection</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Uncertainty</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">LinkedIn Outreach</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Cold Messaging</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Booking Calls</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">E-commerce Engagement</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Micro-SaaS Journey</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Insight Exchange</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Mom Test Application</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Relevant Questioning</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Cold Call Preparation</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Incremental Progress</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Targeted Communication</span>
                 </section>
             </div >
         </>
