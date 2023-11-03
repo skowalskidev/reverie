@@ -20,6 +20,8 @@ export default async function Post() {
                     <p>Here is the message that I've used ⬇️</p>
 
                     <p className='outline outline-black text-black dark:outline-white dark:text-white p-3 rounded flex flex-col justify-between gap-4'>
+                        <b>Title: Micro-SaaS founder</b>
+
                         Hi [?],
                         <br></br>
                         <br></br>
