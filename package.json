@@ -24,8 +24,7 @@
     "autoprefixer": "10.4.16",
     "date-fns": "^2.30.0",
     "eslint": "8.51.0",
-    "eslint-config-next": "^13.5.4",
-    "next": "^13.5.4",
+    "next": "^14.0.1",
     "next-sitemap": "^4.2.3",
     "openai": "^4.7.1",
     "postcss": "8.4.31",
@@ -36,6 +35,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@types/three": "^0.157.0"
+    "@types/three": "^0.157.0",
+    "eslint-config-next": "^14.0.1"
   }
 }
