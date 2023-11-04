@@ -40,16 +40,20 @@ export default async function Post() {
                     <div className='outline outline-black text-black dark:outline-white dark:text-white p-3 rounded flex flex-col justify-between gap-4'>
                         <span className='font-extrabold'>Plan for today:</span>
                         <ol className="list-decimal list-inside p-4 space-y-4">
-                            <li>Send more LinkedIn DMs<br></br>
+                            <li>
+                                Send more LinkedIn DMs<br></br>
                                 <div className='font-bold p-4'>Tangible outcome: Send 10+ more DMs</div>
-                                <li>Compile relevant questions</li>
+                            </li>
+                            <li>
+                                Compile relevant questions
                                 <ul className="list-disc list-inside ml-5 p-4">
-                                    <li> using the Mom Test as a reference and my interviewee background</li>
+                                    <li>using the Mom Test as a reference and my interviewee background</li>
                                 </ul>
                                 <span className='font-bold p-4'>Tangible outcome: high quality custom questions with follow up to extract as much context as possible</span>
                             </li>
                         </ol>
                     </div>
+
 
                     <Image
                         src="/images/blog/Seoul Day 3 03-11-2023 at 15.17.jpg"
