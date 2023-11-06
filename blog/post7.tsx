@@ -107,7 +107,7 @@ export default async function Post() {
                     </div>
 
                     <Image
-                        src="/images/blog/Photo on 06-11-2023 at 13.52.jpg"
+                        src="/images/blog/Photo on 06-11-2023 at 14.50.jpg"
                         alt="day 2 image of Simon in a cafe in seoul"
                         className='object-cover rounded'
                         width={500}
