@@ -51,18 +51,18 @@ export default async function Post() {
                     ></Image>
                 </article >
                 <section className='flex w-full flex-wrap' style={{ marginLeft: '-10px', marginRight: '-10px', color: 'rgb(107 114 128)' }}>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Micro-SaaS Journey</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Solo-Founder Insights</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Google Meet Automation</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Python Bots</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">OpenAI Whisper Transcription</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Meeting Summary Tool</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Notion Integration</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">SaaS Startup</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Tech Entrepreneurship</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Automation Hacking</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Developer Diary</span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">Building a SaaS</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">MicroSaaSFounderJourney</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">MedicalResearchChallenges</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">AcademicPaperNavigation</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">FirefliesAIInsights</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">NotionIntegration</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">SaaSValueProposition</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">TechInnovationSetbacks</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">GoogleAPIUpdates</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">AutomatedMeetingAccess</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">StartupStrategyRealities</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">IdeaBrainstorming</span>
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded">PlatformIndependence</span>
                 </section>
             </div >
         </>
