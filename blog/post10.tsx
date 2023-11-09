@@ -83,7 +83,7 @@ export default async function Post() {
                     <p>Actually scratch the adblock idea, reddit is already overran with posts and solutions and I'm not a diehard follower of this situation so it will be a pain to check and update the site everyday for such a mundane topic with people only getting utitlity from the site one time and never come back to it most likely.</p>
 
                     <Image
-                        src="/images/blog/Photo on 09-11-2023 at 19.00.jpg"
+                        src="/images/blog/Photo on 09-11-2023 at 20.01.jpg"
                         alt="Simon at a library in Seoul"
                         className='object-cover rounded'
                         width={500}
