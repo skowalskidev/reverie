@@ -42,11 +42,10 @@ export default async function Home() {
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Tools</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Products</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='Cold outreach' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
-                    <ToolLink title='Subscriptions' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
+                    <ToolLink title='Weekend trips' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='weekend-adventures' />
                 </div>
             </section>
 
@@ -66,6 +65,8 @@ export default async function Home() {
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
                     <ToolLink title='3D' alt='3d symbol' imgSrc='/images/homepage/3d-models.png' toolLinkHref='3d' />
+                    <ToolLink title='Cold outreach' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
+                    <ToolLink title='Subscriptions' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
                 </div>
             </section>
 
