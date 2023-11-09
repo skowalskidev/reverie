@@ -17,7 +17,7 @@ export default function AMA() {
             // role: 'system' | 'user' | 'assistant' | 'function'
         }, {
             id: '1',
-            content: 'Prompt: answer all questions only related to this resume and nothing else, if the answer is not in the resume, please ask to Contact Simon using the contact button.',
+            content: 'Prompt: answer all questions only related to this resume and nothing else, if the answer is not in the resume, please ask to Contact Simon using the Contact button.',
             role: 'user',
         }, {
             id: '2',

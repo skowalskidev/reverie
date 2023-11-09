@@ -29,12 +29,12 @@ export default async function Home() {
 
             <section className="bg-white dark:bg-gray-900 text-center p-6">
                 {/* <ModelViewer /> */}
-                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">web development</h1>
+                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Web development</h1>
                 <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">by Simon Kowalski</p>
                 <div className='mt-8 mb-4'>
                     <Link href='/contact' scroll={false}>
                         <Button>
-                            contact
+                            Contact
                         </Button>
                     </Link>
                 </div>
@@ -42,27 +42,27 @@ export default async function Home() {
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">tools</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Tools</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='cold outreach' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
-                    <ToolLink title='subscriptions' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
+                    <ToolLink title='Cold outreach' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
+                    <ToolLink title='Subscriptions' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
                 </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">services</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Services</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
-                    <ToolLink title='websites' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
+                    <ToolLink title='Contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
+                    <ToolLink title='Websites' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
                 </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">demos</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Demos</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
                     <ToolLink title='3D' alt='3d symbol' imgSrc='/images/homepage/3d-models.png' toolLinkHref='3d' />
@@ -71,7 +71,7 @@ export default async function Home() {
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">blog</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
                 </div>
                 <div className="grid gap-8 lg:grid-cols-2 p-6">
                     {allPostsData.map(({ id, date, title, author, authorImage, category }, index) => (
