@@ -45,7 +45,7 @@ export default async function Home() {
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Products</h2>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='Weekend trips' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='weekend-adventures' />
+                    <ToolLink title='Weekend trips' alt='weekend trips symbol' imgSrc="/images/weekend-trips/DALL·E 2023-11-09 23.01.46 - A European man is sitting relaxed on a pink flamingo floatie in the middle of a swimming pool. It's a sunny day with a clear blue sky. The man appears.png" toolLinkHref='weekend-adventures' />
                 </div>
             </section>
 
