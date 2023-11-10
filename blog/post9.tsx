@@ -3,7 +3,7 @@ import Image from 'next/image';
 Post.metadata = {
     category: 'Micro SaaS',
     title: 'Day 8: My micro-SaaS solo-founder journey',
-    date: '2023-11-07 10:00',
+    date: '2023-11-08 10:00',
     author: 'Simon',
     authorImage: '/images/captain-tylor.jpg',
 };
