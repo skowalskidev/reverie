@@ -8,6 +8,11 @@ export default function Layout(props: {
     return (
         <>
             <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
+                <Link href='https://www.simonkowalski.com/'>
+                    <div className='hover:cursor-pointer w-full flex justify-center items-center text-white bg-purple-600 font-medium p-1 text-center'>
+                        ➡️ Go to my new site simonkowalski.com
+                    </div>
+                </Link>
                 <div className="max-w-screen-2xl flex flex-wrap flex-row-reverse lg:flex-row justify-between items-center lg:justify-end mx-auto px-4 py-1 relative bg-white dark:bg-gray-900 !bg-opacity-80">
                     <div className="flex gap-2 items-center">
                         <GithubButton />

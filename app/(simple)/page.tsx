@@ -74,6 +74,11 @@ export default async function Home() {
                 <div className="px-6 max-w-screen-sm">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
                 </div>
+                <Link href='https://www.simonkowalski.com/'>
+                    <div className='hover:cursor-pointer w-full flex justify-center items-center text-gray-900 dark:text-white font-medium p-1 text-center'>
+                        ➡️ Continued on my new site simonkowalski.com
+                    </div>
+                </Link>
                 <div className="grid gap-8 lg:grid-cols-2 p-6">
                     {allPostsData.map(({ id, date, title, author, authorImage, category }, index) => (
                         <Link key={index} href={`/blog/${id}`}>
