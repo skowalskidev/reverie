@@ -1,9 +1,43 @@
 "use client"
 
+import React, { useEffect, useState } from 'react';
 import { setToastCookie } from "@/app/actions";
 import { Toast, ToastToggle } from "flowbite-react";
+import Skeleton from './Skeleton';
+
+async function getMessage() {
+    const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            messages: [
+                {
+                    content: 'Fun fact about the internet. 100 characters or less.',
+                    role: 'user',
+                }
+            ]
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return response.text();
+}
 
 const CustomToast = () => {
+    const [messageContent, setMessageContent] = useState('');
+    const showSkeleton = messageContent.length === 0;
+
+    useEffect(() => {
+        getMessage()
+            .then(textData => setMessageContent(textData))
+            .catch(error => console.error('Error fetching message:', error));
+    }, []);
+
     return (
         <Toast className="ml-4 bottom-4 sticky z-20 dark:bg-gray-900 border border-purple-600">
             <div className="w-full">
@@ -17,7 +51,7 @@ const CustomToast = () => {
                         <div className="text-sm font-semibold text-purple-600 dark:text-purple-600">Simon AI</div>
                     </div>
                     <div className="ms-3 text-sm font-normal">
-                        <div className="text-sm font-normal">In 2023, AI coding assistants like GitHub Copilot significantly boost programming efficiency and innovation.</div>
+                        <div className="text-sm font-normal">{showSkeleton ? <Skeleton /> : messageContent}</div>
                     </div>
                 </div>
             </div>
