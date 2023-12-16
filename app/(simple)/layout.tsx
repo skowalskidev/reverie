@@ -1,5 +1,6 @@
 import GithubButton from "@/components/GithubButton";
 import ThemeToggle from "@/components/ThemeToggle";
+import Toast from "@/components/Toast";
 import Link from "next/link";
 
 export default function Layout(props: {
@@ -33,6 +34,7 @@ export default function Layout(props: {
             <main className='mx-auto max-w-screen-md mt-28'>
                 {props.children}
             </main>
+            <Toast />
             <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
