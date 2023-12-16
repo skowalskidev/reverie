@@ -1,11 +1,18 @@
 import GithubButton from "@/components/GithubButton";
 import ThemeToggle from "@/components/ThemeToggle";
-import Toast from "@/components/Toast";
 import Link from "next/link";
+import CustomToast from "@/components/CustomToast"
+import { cookies } from "next/headers";
 
 export default function Layout(props: {
     children: React.ReactNode
 }) {
+    const cookieStore = cookies();
+    const toastDismissed = cookieStore.get('toastDismissed');
+
+    // Determine if the toast should be shown
+    const shouldShowToast = !toastDismissed;
+
     return (
         <>
             <nav className="bg-transparent fixed w-full z-10 top-0 left-0 ">
@@ -34,7 +41,7 @@ export default function Layout(props: {
             <main className='mx-auto max-w-screen-md mt-28'>
                 {props.children}
             </main>
-            <Toast />
+            {shouldShowToast && <CustomToast />}
             <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
