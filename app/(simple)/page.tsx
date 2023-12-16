@@ -5,6 +5,7 @@ import Button from '../../components/Button';
 import { getSortedPostsData } from '@/lib/posts';
 import Date from '@/components/Date'
 import Image from 'next/image';
+import AMA from '@/components/AMA';
 
 export const metadata = {
     title: 'Reverie Zero',
@@ -25,8 +26,6 @@ export default async function Home() {
     const allPostsData: AllPostsData = await getSortedPostsData();
     return (
         <div className='flex flex-col gap-8'>
-
-
             <section className="bg-white dark:bg-gray-900 text-center p-6">
                 {/* <ModelViewer /> */}
                 <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Web development</h1>
@@ -38,6 +37,10 @@ export default async function Home() {
                         </Button>
                     </Link>
                 </div>
+            </section>
+
+            <section className="bg-white dark:bg-gray-900 text-center p-6 flex flex-col gap-8">
+                <AMA />
             </section>
 
             <section className="bg-white dark:bg-gray-900">
