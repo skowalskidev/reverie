@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Skeleton from "./Skeleton";
 
-const funFacts = [
+export const funFacts = [
     'Google processes over 3.5 billion searches daily',
     'Facebook has 2.8 billion users across all continents',
     '5 billion YouTube videos watched daily',
@@ -21,16 +20,6 @@ const funFacts = [
     'Tesla has 1 million electric cars on the roads',
 ]
 
-const getFunFact = () => {
-    const randomIndex = Math.floor(Math.random() * funFacts.length);
-    return funFacts[randomIndex];
-}
-
-export const FunFact = () => {
-    const [randomFact, setRandomFact] = useState('');
-    useEffect(() => {
-        setRandomFact(getFunFact());
-    }, [])
-
-    return randomFact === '' ? <Skeleton /> : randomFact;
+export const FunFact = ({ funFactIndex }: any) => {
+    return funFactIndex === -1 ? <Skeleton /> : funFacts[funFactIndex];
 };
