@@ -1,43 +1,11 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { setToastCookie } from "@/app/actions";
 import { Toast, ToastToggle } from "flowbite-react";
-import Skeleton from './Skeleton';
+import { FunFact } from './FunFact';
 
-async function getMessage() {
-    const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            messages: [
-                {
-                    content: 'Fun fact about the internet. 100 characters or less.',
-                    role: 'user',
-                }
-            ]
-        })
-    });
-
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return response.text();
-}
-
-const CustomToast = () => {
-    const [messageContent, setMessageContent] = useState('');
-    const showSkeleton = messageContent.length === 0;
-
-    useEffect(() => {
-        getMessage()
-            .then(textData => setMessageContent(textData))
-            .catch(error => console.error('Error fetching message:', error));
-    }, []);
-
+const CustomToast = async () => {
     return (
         <Toast className="ml-4 bottom-4 sticky z-20 dark:bg-gray-900 border border-purple-600">
             <div className="w-full">
@@ -45,13 +13,13 @@ const CustomToast = () => {
                     <span className="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Fun fact</span>
                     <ToastToggle className=" dark:bg-gray-900" onDismiss={() => setToastCookie()} />
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-start">
                     <div className="flex flex-col shrink-0 gap-2 items-center">
                         <img className="w-12 h-12 rounded-full" src="/images/profile.jpeg" alt="Jese Leos image" />
                         <div className="text-sm font-semibold text-purple-600 dark:text-purple-600">Simon AI</div>
                     </div>
                     <div className="ms-3 text-sm font-normal">
-                        <div className="text-sm font-normal">{showSkeleton ? <Skeleton /> : messageContent}</div>
+                        <div className="text-sm font-normal"><FunFact /></div>
                     </div>
                 </div>
             </div>
