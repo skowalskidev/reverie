@@ -14,11 +14,12 @@ const CustomToast = async () => {
                     <ToastToggle className=" dark:bg-gray-900" onDismiss={() => setToastCookie()} />
                 </div>
                 <div className="flex items-start">
-                    <div className="flex flex-col shrink-0 gap-2 items-center">
+                    {/* <div className="flex flex-col shrink-0 gap-2 items-center">
                         <img className="w-12 h-12 rounded-full" src="/images/profile.jpeg" alt="Jese Leos image" />
                         <div className="text-sm font-semibold text-purple-600 dark:text-purple-600">Simon AI</div>
-                    </div>
-                    <div className="ms-3 text-sm font-normal">
+                    </div> */}
+                    {/* <div className="ms-3 text-sm font-normal"> */}
+                    <div className="text-sm font-normal">
                         <div className="text-sm font-normal"><FunFact /></div>
                     </div>
                 </div>
