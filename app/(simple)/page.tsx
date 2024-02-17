@@ -6,6 +6,7 @@ import { getSortedPostsData } from '@/lib/posts';
 import Date from '@/components/Date'
 import Image from 'next/image';
 import AMA from '@/components/AMA';
+import Project from '@/components/Project';
 
 export const metadata = {
     title: 'Web Development by Simon Kowalski',
@@ -25,7 +26,7 @@ type AllPostsData = {
 export default async function Home() {
     const allPostsData: AllPostsData = await getSortedPostsData();
     return (
-        <div className='flex flex-col gap-8'>
+        <div className='flex flex-col gap-12'>
             <section className="bg-white dark:bg-gray-900 text-center p-6">
                 {/* <ModelViewer /> */}
                 <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Web development</h1>
@@ -39,30 +40,35 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="bg-white dark:bg-gray-900 text-center p-6 flex flex-col gap-8">
-                <AMA />
-            </section>
-
             <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Products</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Projects</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='Weekend trips' alt='weekend trips symbol' imgSrc="/images/weekend-trips/DALL·E 2023-11-09 23.01.46 - A European man is sitting relaxed on a pink flamingo floatie in the middle of a swimming pool. It's a sunny day with a clear blue sky. The man appears.png" toolLinkHref='weekend-adventures' />
+                <div className="p-6 flex flex-col gap-8">
+                    <Project title='Sub-contractor' review='its been great working with simon' alt='Sub-contracting symbol' imgSrc="/images/homepage/contractor.png" description='Ive made a real estate website for Rumbl and integrated Sanity.io preview features into their base code' />
+                    <Project title='B2B-contract employee' review='its been great working with simon' alt='Sub-contracting symbol' imgSrc="/images/homepage/contractor.png" description='Ive made a real estate website for Rumbl and integrated Sanity.io preview features into their base code' />
                 </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
-                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Services</h2>
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">About</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-                    <ToolLink title='Contracting' alt='contractor symbol' imgSrc='/images/homepage/contractor.png' toolLinkHref='startup-contractor' />
-                    <ToolLink title='Websites' alt='web development symbol' imgSrc='/images/homepage/room.png' toolLinkHref='web-development' />
+                <div className="p-6 gap-8">
+                    <Project title='Simon Kowalski' alt='simon kowalski profile picture' imgSrc="/images/profile.png" description='Ive made a real estate website for Rumbl and integrated Sanity.io preview features into their base code' />
                 </div>
             </section>
 
             <section className="bg-white dark:bg-gray-900">
+                <div className="px-6 max-w-screen-sm">
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Questions</h2>
+                </div>
+                <div className="p-6 flex flex-col gap-8">
+                    <AMA />
+                </div>
+            </section>
+
+            {/* <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Demos</h2>
                 </div>
@@ -71,9 +77,9 @@ export default async function Home() {
                     <ToolLink title='Cold outreach' alt='ai tool symbol' imgSrc='/images/homepage/ai_robot.png' toolLinkHref='cold-outreach-ai' />
                     <ToolLink title='Subscriptions' alt='subscriptions symbol' imgSrc='/images/homepage/dollars.png' toolLinkHref='subscription-management' />
                 </div>
-            </section>
+            </section> */}
 
-            <section className="bg-white dark:bg-gray-900">
+            {/* <section className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Blog</h2>
                 </div>
@@ -115,7 +121,7 @@ export default async function Home() {
                         </Link>
                     ))}
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }
