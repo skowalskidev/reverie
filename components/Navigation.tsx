@@ -27,7 +27,7 @@ const Navigation: React.FC<any> = () => {
                     <ul className="grow px-5 py-2.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
                         <li>
                             <Link href="/" className="flex items-top text-base font-light text-gray-500/100 dark:text-gray-400/100 tracking-wider">
-                                <p className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">reverie zero</p>
+                                <p className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white">simon kowalski</p>
                             </Link>
                         </li>
                     </ul>

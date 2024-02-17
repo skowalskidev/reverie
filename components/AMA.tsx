@@ -21,7 +21,7 @@ export default function AMA() {
             role: 'user',
         }, {
             id: '2',
-            content: 'Hello, I\'ve read Simon\'s resume so you can ask me anything about him!',
+            content: 'Hi, do you have any questions about my services?',
             role: 'system',
             // role: 'system' | 'user' | 'assistant' | 'function'
         }],
@@ -63,7 +63,7 @@ export default function AMA() {
 
             <form onSubmit={handleSubmit} className='flex items-center gap-4'>
                 <div className='grow'>
-                    <input required value={input} placeholder='Say something...' onChange={handleInputChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
+                    <input required value={input} placeholder='Type here...' onChange={handleInputChange} className="block p-2.5 w-full text-base text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></input>
                 </div>
                 <div>
                     <Button type="submit">ask</Button>
