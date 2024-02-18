@@ -28,7 +28,7 @@ export default function Layout(props: {
                         </ul>
                     </div>
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-                    <span className="block text-base text-gray-500 sm:text-center dark:text-gray-400">2024 <Link href="/" className="hover:underline">simon kowalski</Link></span>
+                    <span className="block text-base text-gray-500 sm:text-center dark:text-gray-400">2024 <Link href="/" className="hover:underline">Simon Kowalski</Link></span>
                 </div>
             </footer>
         </>

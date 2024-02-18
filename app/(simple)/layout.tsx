@@ -32,17 +32,27 @@ export default function Layout(props: {
                     <div className="items-center justify-center w-fit md:flex md:order-1 lg:absolute lg:mx-auto lg:left-0 lg:right-0" id="navbar-sticky">
                         <ul className="flex gap-4 grow px-5 py-1.5 transition-all ease-in duration-75 bg-transparent rounded-md group-hover:bg-opacity-0">
                             <li className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-600">
-                                <Link href="/" className="flex items-top">
+                                <Link href="#projects" className="flex items-top">
                                     <p className="">Projects</p>
                                 </Link>
                             </li>
                             <li className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-600">
-                                <Link href="/" className="flex items-top">
+                                <Link href="#why" className="flex items-top">
+                                    <p className="">Why</p>
+                                </Link>
+                            </li>
+                            <li className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-600">
+                                <Link href="#about" className="flex items-top">
                                     <p className=" ">About</p>
                                 </Link>
                             </li>
                             <li className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-600">
-                                <Link href="/" className="flex items-top">
+                                <Link href="#questions" className="flex items-top">
+                                    <p className=" ">Questions</p>
+                                </Link>
+                            </li>
+                            <li className="text-base tracking-widest font-light text-gray-500/100 text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-600">
+                                <Link href="#contact" className="flex items-top">
                                     <p className=" ">Contact</p>
                                 </Link>
                             </li>
@@ -58,7 +68,7 @@ export default function Layout(props: {
             <footer className="bg-white rounded-lg dark:bg-gray-900 m-4">
                 <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                     <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-                    <span className="block text-base text-gray-500 sm:text-center dark:text-gray-400">2024 <a href="#" className="hover:underline">simon kowalski</a></span>
+                    <span className="block text-base text-gray-500 sm:text-center dark:text-gray-400">2024 <a href="#" className="hover:underline">Simon Kowalski</a></span>
                 </div>
             </footer >
         </>

@@ -29,7 +29,7 @@ export default async function Home() {
         <div className='flex flex-col gap-12'>
             <section className="bg-white dark:bg-gray-900 text-center p-6">
                 {/* <ModelViewer /> */}
-                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Web development</h1>
+                <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Get a custom web app</h1>
                 <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">by Simon Kowalski</p>
                 <div className='mt-8 mb-4'>
                     <Link href='/contact' scroll={false}>
@@ -40,7 +40,7 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="bg-white dark:bg-gray-900">
+            <section id='projects' className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Projects</h2>
                 </div>
@@ -50,16 +50,132 @@ export default async function Home() {
                 </div>
             </section>
 
-            <section className="bg-white dark:bg-gray-900">
+            <section id='why' className="bg-white dark:bg-gray-900">
+                <div className="px-6 max-w-screen-sm">
+                    <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Why choose SK</h2>
+                </div>
+                <div className="p-6 font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                    <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400">
+                        <li className="flex items-center space-x-3">
+                            <svg
+                                className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 16 12"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 5.917 5.724 10.5 15 1.5"
+                                />
+                            </svg>
+                            <span>💰 Pay less for the same app - no agency overhead</span>
+                        </li>
+                        <li className="flex items-center space-x-3">
+                            <svg
+                                className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 16 12"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 5.917 5.724 10.5 15 1.5"
+                                />
+                            </svg>
+                            <span>⏱️ No bs, no sales - get what you need</span>
+                        </li>
+                        <li className="flex items-center space-x-3">
+                            <svg
+                                className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 16 12"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 5.917 5.724 10.5 15 1.5"
+                                />
+                            </svg>
+                            <span>🔄 Unlimited revisions until you're 100% satisfied</span>
+                        </li>
+                        <li className="flex items-center space-x-3">
+                            <svg
+                                className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 16 12"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 5.917 5.724 10.5 15 1.5"
+                                />
+                            </svg>
+                            <span>🔧 Ongoing support after completion</span>
+                        </li>
+                        <li className="flex items-center space-x-3">
+                            <svg
+                                className="flex-shrink-0 w-3.5 h-3.5 text-purple-600 dark:text-white"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 16 12"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M1 5.917 5.724 10.5 15 1.5"
+                                />
+                            </svg>
+                            <span>⌛️ Live progress view in Notion of your project's development</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id='about' className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">About</h2>
                 </div>
                 <div className="p-6 gap-8">
-                    <Project title='Simon Kowalski' alt='simon kowalski profile picture' imgSrc="/images/profile.png" description='Ive made a real estate website for Rumbl and integrated Sanity.io preview features into their base code' />
+                    <div className={'text-black dark:text-white flex gap-4'}>
+                        <div className='flex gap-4'>
+                            <div className='flex flex-col'>
+                                <div className='relative aspect-square w-24'>
+                                    <Image
+                                        priority
+                                        src='/images/profile.jpeg'
+                                        alt='simon kowalski profile picture'
+                                        fill
+                                        className='object-cover rounded-lg'
+                                        sizes="40vw,(min-width: 1024px) 33vw"></Image>
+                                </div>
+                                <h2 className='text-lg text-center'>Simon Kowalski</h2>
+                            </div>
+                            <p>Ive made a real estate website for Rumbl and integrated Sanity.io preview features into their base code</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section className="bg-white dark:bg-gray-900">
+            <section id='questions' className="bg-white dark:bg-gray-900">
                 <div className="px-6 max-w-screen-sm">
                     <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Questions</h2>
                 </div>
